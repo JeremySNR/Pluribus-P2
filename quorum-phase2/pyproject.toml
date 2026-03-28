@@ -1,0 +1,22 @@
+[project]
+name = "quorum-phase2"
+version = "0.1.0"
+description = "Latent Resonance Loop — Multi-agent LLM communication through shared activations"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.30",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "pytest>=7.0",
+    "openai>=1.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"

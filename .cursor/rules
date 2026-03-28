@@ -1,0 +1,42 @@
+# Quorum Phase 2 — Latent Resonance Loop
+
+## What this project is
+
+This is the implementation of the Latent Resonance Loop — a system where multiple LLM agents communicate through a shared continuous-valued latent buffer (activations, not text), using Hopfield-energy cross-inhibition and contraction-enforced convergence. This is Phase 2 of the Quorum project.
+
+The full technical specification is in `docs/latent_resonance_loop_spec.md`. Read it before writing any code.
+
+## Technical stack
+
+- Python 3.11+
+- PyTorch 2.x (CPU for development, GPU for scale testing later)
+- HuggingFace Transformers (for loading open-weight models and extracting hidden states)
+- NumPy, SciPy (numerical operations, Anderson acceleration, spectral methods)
+- pytest for testing
+
+## What we're building
+
+1. **Universal Latent Buffer** — a matrix B ∈ ℝ^{S × D} with S named slots and D dimensions
+2. **Per-Agent Codecs** — encoder/decoder MLPs that translate between each model's hidden space and the shared buffer space
+3. **TIES-Resolve** — adapted from static weight merging to dynamic activation merging for the multi-writer problem
+4. **Hopfield Energy Cross-Inhibition** — competitive dynamics with β-annealing and bee-inspired stop signals
+5. **Contraction Enforcement** — damped iteration, spectral normalisation, Jacobian regularisation
+6. **Anderson Acceleration** — for faster convergence to fixed points
+7. **Convergence Controller** — DEQ-style residual monitoring with PonderNet-style adaptive halting
+8. **Dissenter Channel (Carol)** — structurally immune slot exempt from cross-inhibition
+
+## Critical constraints
+
+- All tensor operations must be numerically stable (use log-sum-exp trick, clamp denominators, handle edge cases)
+- The system must be testable on CPU with small models (GPT-2 small, 124M params) or synthetic tensors
+- Every mechanism must have unit tests that verify shapes, gradients, and expected behaviour
+- The spec distinguishes [PROVEN], [PLAUSIBLE], and [SPECULATIVE] mechanisms — implement all of them but mark speculative components clearly in code comments
+- Do NOT attempt to run 8B+ parameter models — this codebase is for validating the architecture, not production inference
+
+## Code style
+
+- Type hints everywhere
+- Docstrings on all public functions referencing the spec section they implement
+- Each mechanism in its own module
+- Tests mirror the module structure
+- No global mutable state

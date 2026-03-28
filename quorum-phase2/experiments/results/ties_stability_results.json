@@ -1,0 +1,36 @@
+{
+  "source": "gpt2_real",
+  "num_inputs": 400,
+  "hidden_dim": 768,
+  "density_0.2": {
+    "mean_threshold": 0.3842180371284485,
+    "std_threshold": 0.004827049095183611,
+    "coefficient_of_variation": 0.012563306843322072,
+    "stable": true
+  },
+  "density_0.3": {
+    "mean_threshold": 0.3108123540878296,
+    "std_threshold": 0.0043129874393343925,
+    "coefficient_of_variation": 0.013876499381731864,
+    "stable": true
+  },
+  "density_0.5": {
+    "mean_threshold": 0.2025010585784912,
+    "std_threshold": 0.00336112710647285,
+    "coefficient_of_variation": 0.016598071783264515,
+    "stable": true
+  },
+  "output_stability": {
+    "norm_mean": 30.747875213623047,
+    "norm_std": 0.16328145563602448,
+    "norm_cov": 0.005310332868248224,
+    "variance_mean": 0.20517227053642273,
+    "variance_std": 0.0021760924719274044
+  },
+  "sparsity": {
+    "mean": 0.6998699307441711,
+    "std": 1.1932867494124366e-07,
+    "min": 0.6998698115348816,
+    "max": 0.6998698115348816
+  }
+}

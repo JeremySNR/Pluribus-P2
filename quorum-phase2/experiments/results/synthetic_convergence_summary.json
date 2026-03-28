@@ -1,0 +1,160 @@
+{
+  "total_experiments": 14,
+  "converged": 14,
+  "results": [
+    {
+      "num_agents": 3,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.00704583621553839,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.708742141723633,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006333967648060335,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.710050582885742,
+      "converged": true
+    },
+    {
+      "num_agents": 7,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006116691849775251,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.71202850341797,
+      "converged": true
+    },
+    {
+      "num_agents": 10,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.009003483567486979,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.71036148071289,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006333967648060335,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.710050582885742,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 512,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.005716027079164148,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 55.420753479003906,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 2048,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006974841173097018,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 110.84105682373047,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.1,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.0063345855261894455,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.710050582885742,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006333967648060335,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.710050582885742,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.5,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006332652842119798,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.710050582885742,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.8,
+      "agent_type": "target_seeking",
+      "rounds": 5,
+      "final_residual": 0.006324368322743703,
+      "halt_reason": "converged at round 4",
+      "buffer_norm": 27.710052490234375,
+      "converged": true
+    },
+    {
+      "num_agents": 3,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "random",
+      "rounds": 17,
+      "final_residual": 0.015222821622788346,
+      "halt_reason": "converged at round 16",
+      "buffer_norm": 27.676523208618164,
+      "converged": true
+    },
+    {
+      "num_agents": 5,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "random",
+      "rounds": 12,
+      "final_residual": 0.019720729979947803,
+      "halt_reason": "converged at round 11",
+      "buffer_norm": 27.665414810180664,
+      "converged": true
+    },
+    {
+      "num_agents": 7,
+      "D": 128,
+      "sigma": 0.3,
+      "agent_type": "random",
+      "rounds": 11,
+      "final_residual": 0.01741663722022665,
+      "halt_reason": "converged at round 10",
+      "buffer_norm": 27.66907501220703,
+      "converged": true
+    }
+  ]
+}

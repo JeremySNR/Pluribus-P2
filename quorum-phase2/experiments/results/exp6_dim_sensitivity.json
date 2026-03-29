@@ -1,0 +1,58 @@
+{
+  "64": {
+    "D": 64,
+    "roundtrip_mse": 0.4433574974536896,
+    "roundtrip_normalised": 0.008340278534255,
+    "roundtrip_cosine": 0.9993548393249512,
+    "alignment_cosine": 0.9713963270187378,
+    "cross_decode_mse": 0.20543354749679565
+  },
+  "128": {
+    "D": 128,
+    "roundtrip_mse": 0.5287368297576904,
+    "roundtrip_normalised": 0.0099464032001821,
+    "roundtrip_cosine": 0.9995303153991699,
+    "alignment_cosine": 0.9739422798156738,
+    "cross_decode_mse": 0.21501925587654114
+  },
+  "256": {
+    "D": 256,
+    "roundtrip_mse": 0.47561272978782654,
+    "roundtrip_normalised": 0.008947052127571553,
+    "roundtrip_cosine": 0.9995896220207214,
+    "alignment_cosine": 0.9745265245437622,
+    "cross_decode_mse": 0.21053752303123474
+  },
+  "512": {
+    "D": 512,
+    "roundtrip_mse": 0.38828596472740173,
+    "roundtrip_normalised": 0.0073042930713192854,
+    "roundtrip_cosine": 0.9996390342712402,
+    "alignment_cosine": 0.9772674441337585,
+    "cross_decode_mse": 0.22337326407432556
+  },
+  "768": {
+    "D": 768,
+    "roundtrip_mse": 0.3068615198135376,
+    "roundtrip_normalised": 0.005772566295570636,
+    "roundtrip_cosine": 0.9997320175170898,
+    "alignment_cosine": 0.9781855344772339,
+    "cross_decode_mse": 0.209803968667984
+  },
+  "1024": {
+    "D": 1024,
+    "roundtrip_mse": 0.2654946446418762,
+    "roundtrip_normalised": 0.004994387821077936,
+    "roundtrip_cosine": 0.999764621257782,
+    "alignment_cosine": 0.9834028482437134,
+    "cross_decode_mse": 0.18413184583187103
+  },
+  "2048": {
+    "D": 2048,
+    "roundtrip_mse": 0.2132273018360138,
+    "roundtrip_normalised": 0.004011153749815127,
+    "roundtrip_cosine": 0.9996896982192993,
+    "alignment_cosine": 0.9849174618721008,
+    "cross_decode_mse": 0.2047407478094101
+  }
+}

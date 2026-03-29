@@ -147,14 +147,21 @@ def extract_hidden_states(model_name: str, prompts: list[str], device: str = "cp
 
     hidden_states = []
     with torch.no_grad():
-        for prompt in prompts:
+        for i, prompt in enumerate(prompts):
             inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True, max_length=64).to(device)
             outputs = model(**inputs, output_hidden_states=True)
             last_hidden = outputs.hidden_states[-1]
             pooled = last_hidden.mean(dim=1).squeeze(0)
             hidden_states.append(pooled)
+            if (i + 1) % 25 == 0:
+                print(f"    Extracted {i + 1}/{len(prompts)} hidden states")
 
-    return torch.stack(hidden_states)
+    stacked = torch.stack(hidden_states)
+    print(f"  Hidden state stats: shape={stacked.shape}, "
+          f"mean={stacked.mean():.4f}, std={stacked.std():.4f}, "
+          f"min={stacked.min():.4f}, max={stacked.max():.4f}, "
+          f"norm_mean={stacked.norm(dim=-1).mean():.4f}")
+    return stacked
 
 
 def train_and_evaluate_codec(
@@ -178,6 +185,9 @@ def train_and_evaluate_codec(
     optimizer = torch.optim.Adam(codec.parameters(), lr=1e-4)
     train_losses = []
 
+    print(f"  Training codec: agent_dim={agent_dim}, buffer_dim={buffer_dim}, steps={num_steps}")
+    print(f"  Train samples: {train_n}, Test samples: {N - train_n}")
+    print(f"  Train data stats: mean={train_data.mean():.4f}, var={train_data.var():.4f}")
     for step in range(num_steps):
         idx = torch.randint(0, train_n, (min(32, train_n),))
         batch = train_data[idx]
@@ -190,6 +200,7 @@ def train_and_evaluate_codec(
 
         if step % 200 == 0:
             train_losses.append(components["reconstruction"])
+            print(f"    Step {step:5d}/{num_steps}: recon_loss={components['reconstruction']:.6f}")
 
     with torch.no_grad():
         test_recon = codec.roundtrip(test_data)
@@ -199,6 +210,13 @@ def train_and_evaluate_codec(
 
         cos_sims = torch.cosine_similarity(test_recon, test_data, dim=-1)
         mean_cos_sim = cos_sims.mean().item()
+
+        print(f"  --- Evaluation on {test_data.shape[0]} held-out samples ---")
+        print(f"  Test data variance: {test_data_var:.6f}")
+        print(f"  Raw MSE: {test_loss:.6f}")
+        print(f"  Normalised loss (MSE / var): {normalised_loss:.6f}")
+        print(f"  Per-sample cosine similarities: {cos_sims.tolist()}")
+        print(f"  Cosine sim: mean={mean_cos_sim:.6f}, min={cos_sims.min():.6f}, max={cos_sims.max():.6f}")
 
     return {
         "train_losses": train_losses,

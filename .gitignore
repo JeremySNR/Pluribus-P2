@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Model checkpoints
+quorum-phase2/checkpoints/
+*.pt
+
+# AWS infrastructure scripts and credentials — not useful to external users
+quorum-phase2/aws/
+
+# Internal session and handoff docs
+quorum-phase2/docs/
+
+# Claude Code local configuration and memory
+.claude/
+
+# Duplicate artefact directory
+quorum-phase2/quorum-phase2/
+
+# Runtime state
+.instance-state.json
+*.pem
+*.key
+
+# Misc
+.DS_Store
+*.log

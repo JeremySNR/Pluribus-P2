@@ -1,0 +1,32 @@
+{
+  "raw_cosine_sim": 0.9987793564796448,
+  "encoded_cosine_sim": 0.9553600549697876,
+  "resolved_sim_to_optimistic": 0.8452046513557434,
+  "resolved_sim_to_pessimistic": 0.8350915908813477,
+  "resolved_sim_to_average": 0.8503878116607666,
+  "majority_wins": true,
+  "top_tokens_resolved": [
+    " market",
+    " growth",
+    " at",
+    " that",
+    " in",
+    " markets",
+    " a",
+    " business",
+    " no",
+    " the"
+  ],
+  "top_probs_resolved": [
+    0.02525365725159645,
+    0.010268843732774258,
+    0.00872157234698534,
+    0.008263280615210533,
+    0.007394113577902317,
+    0.007038254290819168,
+    0.006203849799931049,
+    0.0059261261485517025,
+    0.005845834966748953,
+    0.005809421185404062
+  ]
+}

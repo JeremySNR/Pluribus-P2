@@ -1,0 +1,855 @@
+{
+  "summary": {
+    "models": {
+      "qwen": "Qwen/Qwen3-8B-Base",
+      "mistral": "mistralai/Mistral-7B-v0.3",
+      "olmo": "allenai/OLMo-2-1124-7B"
+    },
+    "hidden_dims": {
+      "qwen": 4096,
+      "mistral": 4096,
+      "olmo": 4096
+    },
+    "buffer_dim": 1024,
+    "device": "cuda",
+    "elapsed_seconds": 1236.3952586650848,
+    "prompts_with_novel_tokens": 1,
+    "prompts_equidistant": 5,
+    "prompts_winner_picked": 5,
+    "prompts_subset_of_union": 4,
+    "emergence_via_novel": false,
+    "emergence_via_equidistant": true,
+    "emergence_found": true,
+    "fail_subset": true,
+    "fail_winner": true
+  },
+  "per_prompt": [
+    {
+      "task_prompt": "What are the benefits and risks of remote work?",
+      "loop_rounds": 19,
+      "final_residual": 0.007354584747212068,
+      "collective_tokens": {
+        "top_tokens": [
+          " ____",
+          " ______",
+          " __",
+          " which",
+          "____",
+          " ",
+          " _____",
+          "\n",
+          ":\n",
+          " \uff08"
+        ],
+        "top_probs": [
+          0.17783236503601074,
+          0.07648474723100662,
+          0.06749755144119263,
+          0.06242503225803375,
+          0.04030463099479675,
+          0.03188358619809151,
+          0.031389277428388596,
+          0.029951857402920723,
+          0.024445993825793266,
+          0.023326529189944267
+        ]
+      },
+      "individual_tokens": {
+        "qwen_A": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            "\uff1a\n",
+            "____",
+            " which",
+            "\uff08",
+            " _____",
+            ":\n",
+            " \uff08"
+          ],
+          "top_probs": [
+            0.1576395481824875,
+            0.0636921301484108,
+            0.047331973910331726,
+            0.04309625178575516,
+            0.03744267672300339,
+            0.03686217963695526,
+            0.029619593173265457,
+            0.026550831273198128,
+            0.023431025445461273,
+            0.022710131481289864
+          ]
+        },
+        "mistral_B": {
+          "top_tokens": [
+            ",",
+            " and",
+            " which",
+            " (",
+            " the",
+            " that",
+            " __",
+            "\n",
+            ":",
+            " ,"
+          ],
+          "top_probs": [
+            0.3328312337398529,
+            0.1987425982952118,
+            0.06976521760225296,
+            0.06156758964061737,
+            0.0429811030626297,
+            0.019072748720645905,
+            0.01606086455285549,
+            0.013314926065504551,
+            0.011388858780264854,
+            0.011388858780264854
+          ]
+        },
+        "olmo_C": {
+          "top_tokens": [
+            " ____",
+            " ",
+            "\n",
+            " __",
+            " ______",
+            " and",
+            " _____",
+            ",",
+            ".",
+            "____"
+          ],
+          "top_probs": [
+            0.1091790571808815,
+            0.08772783726453781,
+            0.07503759860992432,
+            0.07160137593746185,
+            0.069398432970047,
+            0.06029440090060234,
+            0.03832545503973961,
+            0.03329772874712944,
+            0.029847893863916397,
+            0.025932300835847855
+          ]
+        },
+        "qwen_D": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            "\uff1a\n",
+            "____",
+            " which",
+            "\uff08",
+            " _____",
+            ":\n",
+            " \uff08"
+          ],
+          "top_probs": [
+            0.1576395481824875,
+            0.0636921301484108,
+            0.047331973910331726,
+            0.04309625178575516,
+            0.03744267672300339,
+            0.03686217963695526,
+            0.029619593173265457,
+            0.026550831273198128,
+            0.023431025445461273,
+            0.022710131481289864
+          ]
+        }
+      },
+      "collective_steered_text": "What are the benefits and risks of remote work? How does remote work affect employee satisfaction and well-being? What are the key factors for successful remote work? Can remote work be a viable solution for companies and employees?\n\nRemote work offers several benefits, including improved work-life balance, increased productivity, reduced costs",
+      "individual_steered_texts": {
+        "qwen_A": "What are the benefits and risks of remote work? Also, how can we define an algorithm, and how do we prove that \\( n^2 + n \\log n \\) is \\( O(n^2) \\)? Lastly, can you explain how to find a simple path \\( u \\rightarrow",
+        "mistral_B": "What are the benefits and risks of remote work? How can someone become a consultant, and what are the key characteristics of a good consultant? Can you describe your experience as a consultant and whether you have regretted choosing this career path? Lastly, how can one effectively communicate complex topics like AI and digital",
+        "olmo_C": "What are the benefits and risks of remote work? How do remote workers maintain a healthy work-life balance, and what strategies can they use to overcome the potential isolation and lack of social interaction?\n\nRemote work offers several benefits, including increased productivity and efficiency, reduced commuting costs and time, greater flexibility in work",
+        "qwen_D": "What are the benefits and risks of remote work? How can I ensure a smooth transition to a remote work environment, and what should I do to stay connected with my team while working remotely?\n\nRemote work offers several benefits, including increased flexibility and autonomy, reduced commuting time and expenses, better work-life balance"
+      },
+      "unsteered_text": "What are the benefits and risks of remote work? How can I stay productive while working from home? What are some tips for managing time effectively while working remotely? How can I maintain a healthy work-life balance while working from home?\n\nRemote work offers several benefits, including the ability to work from anywhere,",
+      "distinctness": {
+        "collective_vs_qwen_A": 0.9990076422691345,
+        "collective_vs_mistral_B": 0.9849697351455688,
+        "collective_vs_olmo_C": 0.9888356924057007,
+        "collective_vs_qwen_D": 0.9990076422691345
+      },
+      "distinctness_spread": 0.014037907123565674,
+      "equidistant": true,
+      "max_individual_sim": 0.9990076422691345,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.014269501902163029,
+      "individual_candidate_variances": {
+        "qwen_A": 0.00875881128013134,
+        "mistral_B": 0.0011590607464313507,
+        "olmo_C": 0.0023702511098235846,
+        "qwen_D": 0.0016918480396270752
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    },
+    {
+      "task_prompt": "Should governments regulate artificial intelligence?",
+      "loop_rounds": 20,
+      "final_residual": 0.002481323327705253,
+      "collective_tokens": {
+        "top_tokens": [
+          " ____",
+          "\uff08",
+          " which",
+          " ______",
+          " \uff08",
+          "____",
+          " __",
+          "\n",
+          " _____",
+          "\uff1a\n"
+        ],
+        "top_probs": [
+          0.11965284496545792,
+          0.07144797593355179,
+          0.06607857346534729,
+          0.059232451021671295,
+          0.04987872391939163,
+          0.04759461060166359,
+          0.04200210049748421,
+          0.03271126747131348,
+          0.02319576032459736,
+          0.017509078606963158
+        ]
+      },
+      "individual_tokens": {
+        "qwen_A": {
+          "top_tokens": [
+            " ____",
+            "\uff08",
+            " ______",
+            " \uff08",
+            "____",
+            " which",
+            " __",
+            "\uff1a\n",
+            "\n",
+            "\uff1f\n"
+          ],
+          "top_probs": [
+            0.10194957256317139,
+            0.0885753259062767,
+            0.05372365191578865,
+            0.0496862530708313,
+            0.04523984715342522,
+            0.04119135066866875,
+            0.03361940383911133,
+            0.03158250451087952,
+            0.024215146899223328,
+            0.02239534817636013
+          ]
+        },
+        "mistral_B": {
+          "top_tokens": [
+            ",",
+            " which",
+            " the",
+            " and",
+            " (",
+            "\n",
+            " that",
+            " __",
+            ":\n",
+            ":"
+          ],
+          "top_probs": [
+            0.19041027128696442,
+            0.17887389659881592,
+            0.12684059143066406,
+            0.09425991773605347,
+            0.053707681596279144,
+            0.0265872310847044,
+            0.018560877069830894,
+            0.01491408422589302,
+            0.014682862907648087,
+            0.012364210560917854
+          ]
+        },
+        "olmo_C": {
+          "top_tokens": [
+            " ",
+            " ____",
+            "\n",
+            " and",
+            " ______",
+            ",",
+            " __",
+            ".",
+            " which",
+            " ("
+          ],
+          "top_probs": [
+            0.105341337621212,
+            0.07127752155065536,
+            0.06801348179578781,
+            0.04898827522993088,
+            0.04602022469043732,
+            0.0412522591650486,
+            0.03998306393623352,
+            0.031138839200139046,
+            0.027479931712150574,
+            0.024250952526926994
+          ]
+        },
+        "qwen_D": {
+          "top_tokens": [
+            " ____",
+            "\uff08",
+            " ______",
+            " \uff08",
+            "____",
+            " which",
+            " __",
+            "\uff1a\n",
+            "\n",
+            "\uff1f\n"
+          ],
+          "top_probs": [
+            0.10194957256317139,
+            0.0885753259062767,
+            0.05372365191578865,
+            0.0496862530708313,
+            0.04523984715342522,
+            0.04119135066866875,
+            0.03361940383911133,
+            0.03158250451087952,
+            0.024215146899223328,
+            0.02239534817636013
+          ]
+        }
+      },
+      "collective_steered_text": "Should governments regulate artificial intelligence? Should they regulate other new technologies too? If so, what is the best way to do so?\nWhy are companies increasingly seeking to outsource to other firms? How are they choosing which to outsource to?\nHow are the effects of the digital revolution",
+      "individual_steered_texts": {
+        "qwen_A": "Should governments regulate artificial intelligence? Why or why not?\n\nShould governments regulate artificial intelligence? Why or why not?\n\nFor this week's discussion, please answer the following questions:\n\nShould governments regulate artificial intelligence? Why or why not?\n\nHow should AI systems be made more ethical and/or inclusive",
+        "mistral_B": "Should governments regulate artificial intelligence? What about regulating the sharing economy? And what do the answers to these two questions have in common? These are questions that you will be able to answer once you finish this course.\nThis MOOC is taught by one of the leading experts in this field",
+        "olmo_C": "Should governments regulate artificial intelligence? Why or why not?\nGovernments should regulate artificial intelligence (AI) because it has the potential to impact various aspects of society, including privacy, security, and employment. Regulation can help ensure that AI is developed and used in a responsible and ethical manner",
+        "qwen_D": "Should governments regulate artificial intelligence? If so, how?\n\nWhat are the advantages and disadvantages of AI?\n\nChoose your answer. Are these two questions paraphrases of each other?\nSelect from the following.\n (1). no\n (2). yes\n(1)."
+      },
+      "unsteered_text": "Should governments regulate artificial intelligence? If so, how? Yes, governments should regulate artificial intelligence (AI) to ensure its development and deployment are safe, ethical, and beneficial to society. Regulation is necessary to mitigate risks, protect individuals, and promote responsible innovation. Here are some key",
+      "distinctness": {
+        "collective_vs_qwen_A": 0.9994022846221924,
+        "collective_vs_mistral_B": 0.9867393970489502,
+        "collective_vs_olmo_C": 0.9893082976341248,
+        "collective_vs_qwen_D": 0.9994022846221924
+      },
+      "distinctness_spread": 0.012662887573242188,
+      "equidistant": true,
+      "max_individual_sim": 0.9994022846221924,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.0190739706158638,
+      "individual_candidate_variances": {
+        "qwen_A": 0.017117001116275787,
+        "mistral_B": 0.03978031501173973,
+        "olmo_C": 0.05601823702454567,
+        "qwen_D": 0.008926413021981716
+      },
+      "novel_tokens": [
+        " _____"
+      ],
+      "novel_token_count": 1,
+      "collective_is_subset_of_union": false
+    },
+    {
+      "task_prompt": "The economy is growing strongly but inequality is rising. Advise.",
+      "loop_rounds": 9,
+      "final_residual": 0.010895620258161542,
+      "collective_tokens": {
+        "top_tokens": [
+          " ____",
+          " ______",
+          " __",
+          " which",
+          "____",
+          " _____",
+          " the",
+          "\n",
+          " ",
+          " ___"
+        ],
+        "top_probs": [
+          0.21368184685707092,
+          0.1468612402677536,
+          0.08110447973012924,
+          0.06122087314724922,
+          0.042739056050777435,
+          0.03771708533167839,
+          0.03713233396410942,
+          0.026745419949293137,
+          0.023236822336912155,
+          0.019875505939126015
+        ]
+      },
+      "individual_tokens": {
+        "qwen_A": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            "____",
+            " which",
+            " _____",
+            "\uff08",
+            " the",
+            " \uff08",
+            " ___"
+          ],
+          "top_probs": [
+            0.19289296865463257,
+            0.12454105913639069,
+            0.07321391254663467,
+            0.040432561188936234,
+            0.03681426867842674,
+            0.034047629684209824,
+            0.02570050023496151,
+            0.023400571197271347,
+            0.023400571197271347,
+            0.02232898212969303
+          ]
+        },
+        "mistral_B": {
+          "top_tokens": [
+            " the",
+            " which",
+            " (",
+            " ____",
+            " __",
+            "\n",
+            " ______",
+            ",",
+            ":\n",
+            ":"
+          ],
+          "top_probs": [
+            0.20519277453422546,
+            0.09394410252571106,
+            0.06661634147167206,
+            0.0552268847823143,
+            0.048737555742263794,
+            0.043688058853149414,
+            0.03855457901954651,
+            0.03678903728723526,
+            0.02649814821779728,
+            0.02231367863714695
+          ]
+        },
+        "olmo_C": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            " _____",
+            "____",
+            " ",
+            " ___",
+            " which",
+            " the",
+            "\n"
+          ],
+          "top_probs": [
+            0.28778207302093506,
+            0.18580608069896698,
+            0.0850682184100151,
+            0.07390855252742767,
+            0.03956039622426033,
+            0.03834325075149536,
+            0.0377487912774086,
+            0.027189435437321663,
+            0.019892215728759766,
+            0.016491226851940155
+          ]
+        },
+        "qwen_D": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            "____",
+            " which",
+            " _____",
+            "\uff08",
+            " the",
+            " \uff08",
+            " ___"
+          ],
+          "top_probs": [
+            0.19289296865463257,
+            0.12454105913639069,
+            0.07321391254663467,
+            0.040432561188936234,
+            0.03681426867842674,
+            0.034047629684209824,
+            0.02570050023496151,
+            0.023400571197271347,
+            0.023400571197271347,
+            0.02232898212969303
+          ]
+        }
+      },
+      "collective_steered_text": "The economy is growing strongly but inequality is rising. Advise. | Oxfam GB | Oxfam's international confederation\nHome \u00bb The economy is growing strongly but inequality is rising. Advise.\nGlobalization and Development\nThe economy is growing strongly but inequality is rising. Advise.\nQuestion\nPosted",
+      "individual_steered_texts": {
+        "qwen_A": "The economy is growing strongly but inequality is rising. Advise. The economy is growing strongly but inequality is rising. Advise.\nThe economy is growing strongly but inequality is rising. Advise.\nThe growth rate in real GDP per capita of Country A is 1% a year, the growth rate in labour productivity",
+        "mistral_B": "The economy is growing strongly but inequality is rising. Advise. The economy is growing rapidly and unemployment is falling. Advise. Explain what you mean by \u2018moral hazard\u2019 using an example. Explain the term \u2018crowding out\u2019. Explain the term \u2018deflation\u2019. Explain the term \u2018negative interest rates\u2019.",
+        "olmo_C": "The economy is growing strongly but inequality is rising. Advise. What are the policies that governments can adopt?\nThe economy is growing strongly, yet inequality is rising. Advise. What are the policies that governments can adopt?\nThe economy is growing strongly, yet inequality is rising. Advise. What are the policies",
+        "qwen_D": "The economy is growing strongly but inequality is rising. Advise. In a few words please. Address the root causes and offer one concrete action. \"Tackle structural inequalities and boost progressive taxation to fund inclusive growth initiatives.\""
+      },
+      "unsteered_text": "The economy is growing strongly but inequality is rising. Advise. The rapid economic growth you're referring to could be a double-edged sword, especially if it's not inclusive. Here are some strategies that might help address the issue of rising inequality while maintaining or even enhancing economic growth:\n\n1. **Progressive Tax",
+      "distinctness": {
+        "collective_vs_qwen_A": 0.9991660118103027,
+        "collective_vs_mistral_B": 0.9863788485527039,
+        "collective_vs_olmo_C": 0.9909798502922058,
+        "collective_vs_qwen_D": 0.9991660118103027
+      },
+      "distinctness_spread": 0.012787163257598877,
+      "equidistant": true,
+      "max_individual_sim": 0.9991660118103027,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.034802570939064026,
+      "individual_candidate_variances": {
+        "qwen_A": 0.0034361183643341064,
+        "mistral_B": 0.0027439522091299295,
+        "olmo_C": 0.04736824333667755,
+        "qwen_D": 0.033454474061727524
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    },
+    {
+      "task_prompt": "A company must choose between short-term profit and long-term sustainability.",
+      "loop_rounds": 8,
+      "final_residual": 0.00792495820686395,
+      "collective_tokens": {
+        "top_tokens": [
+          " ____",
+          " ______",
+          " __",
+          " which",
+          " the",
+          "____",
+          " ",
+          " _____",
+          " ___",
+          "\n"
+        ],
+        "top_probs": [
+          0.25380149483680725,
+          0.11262372881174088,
+          0.09192080795764923,
+          0.0811198279261589,
+          0.04550410062074661,
+          0.042747143656015396,
+          0.034348294138908386,
+          0.030789613723754883,
+          0.02116137184202671,
+          0.01957106962800026
+        ]
+      },
+      "individual_tokens": {
+        "qwen_A": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            "____",
+            " which",
+            " _____",
+            " ___",
+            " ",
+            " \uff08",
+            " the"
+          ],
+          "top_probs": [
+            0.2541638910770416,
+            0.11278454959392548,
+            0.0825149342417717,
+            0.04280818626284599,
+            0.04280818626284599,
+            0.033864062279462814,
+            0.026788678020238876,
+            0.02439136989414692,
+            0.01959901675581932,
+            0.01784510537981987
+          ]
+        },
+        "mistral_B": {
+          "top_tokens": [
+            " the",
+            ",",
+            " which",
+            " (",
+            " and",
+            "\n",
+            " that",
+            ":",
+            " ",
+            " a"
+          ],
+          "top_probs": [
+            0.21421876549720764,
+            0.15672579407691956,
+            0.09358524531126022,
+            0.07638205587863922,
+            0.07288426905870438,
+            0.022578490898013115,
+            0.020881690084934235,
+            0.019312407821416855,
+            0.019012995064258575,
+            0.016778910532593727
+          ]
+        },
+        "olmo_C": {
+          "top_tokens": [
+            " ____",
+            " the",
+            " which",
+            " ______",
+            " ",
+            " __",
+            "\n",
+            " _____",
+            "____",
+            " ___"
+          ],
+          "top_probs": [
+            0.20110081136226654,
+            0.12584567070007324,
+            0.1027122512459755,
+            0.08515144139528275,
+            0.07514588534832001,
+            0.06631600856781006,
+            0.029890965670347214,
+            0.028971320018172264,
+            0.018415290862321854,
+            0.015999482944607735
+          ]
+        },
+        "qwen_D": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " __",
+            "____",
+            " which",
+            " _____",
+            " ___",
+            " ",
+            " \uff08",
+            " the"
+          ],
+          "top_probs": [
+            0.2541638910770416,
+            0.11278454959392548,
+            0.0825149342417717,
+            0.04280818626284599,
+            0.04280818626284599,
+            0.033864062279462814,
+            0.026788678020238876,
+            0.02439136989414692,
+            0.01959901675581932,
+            0.01784510537981987
+          ]
+        }
+      },
+      "collective_steered_text": "A company must choose between short-term profit and long-term sustainability. Which of the following actions might the company take? ____ \nA. Save on fixed costs\nB. Reduce training and development investment\nC. Increase employee salaries\nD. Expand market share\nAnswer:\nABD\n\nThe contents of the audit committee",
+      "individual_steered_texts": {
+        "qwen_A": "A company must choose between short-term profit and long-term sustainability. To maximize profits in the short term, the company decides to cut costs in other areas, such as employee benefits and training. However, this decision puts employees at risk of layoffs, and leads to a decrease in overall quality of the company's products.",
+        "mistral_B": "A company must choose between short-term profit and long-term sustainability. What is the most suitable strategy under these circumstances?\nA. Maximize profit\nB. Minimize costs\nC. Pursue profit growth\nD. Focus on sustainable development\nAnswer: D\n\nThe concept of 'sustainable development' refers to",
+        "olmo_C": "A company must choose between short-term profit and long-term sustainability. This decision is an example of which type of choice?\nTradeoff",
+        "qwen_D": "A company must choose between short-term profit and long-term sustainability. What should the company do?\nA. Prioritize short-term profit\nB. Strive for long-term sustainability\nC. Choose either short-term profit or long-term sustainability\nD. Balance both short-term profit and long-term sustainability\nAnswer: D"
+      },
+      "unsteered_text": "A company must choose between short-term profit and long-term sustainability. How should they approach this decision?\n\nThe company should prioritize long-term sustainability over short-term profit. While maximizing short-term profits might seem beneficial, it can lead to negative consequences such as damage to the company's reputation, loss of customer trust, and decreased",
+      "distinctness": {
+        "collective_vs_qwen_A": 0.9986650347709656,
+        "collective_vs_mistral_B": 0.984993040561676,
+        "collective_vs_olmo_C": 0.9884663820266724,
+        "collective_vs_qwen_D": 0.9986650347709656
+      },
+      "distinctness_spread": 0.01367199420928955,
+      "equidistant": true,
+      "max_individual_sim": 0.9986650347709656,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.0006294416380114853,
+      "individual_candidate_variances": {
+        "qwen_A": 0.3054570257663727,
+        "mistral_B": 0.0005340866628102958,
+        "olmo_C": 0.002027440583333373,
+        "qwen_D": 0.0019796714186668396
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    },
+    {
+      "task_prompt": "Explain why some scientific discoveries are initially rejected by the mainstream.",
+      "loop_rounds": 10,
+      "final_residual": 0.003406445342459567,
+      "collective_tokens": {
+        "top_tokens": [
+          " ____",
+          " ______",
+          " __",
+          " ",
+          " the",
+          "\n",
+          " _____",
+          ":\n",
+          " which",
+          " a"
+        ],
+        "top_probs": [
+          0.21145276725292206,
+          0.10632512718439102,
+          0.10305385291576385,
+          0.09988322108983994,
+          0.08280609548091888,
+          0.05871831253170967,
+          0.03142964839935303,
+          0.027736566960811615,
+          0.027736566960811615,
+          0.026056094095110893
+        ]
+      },
+      "individual_tokens": {
+        "qwen_A": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " the",
+            " ",
+            " __",
+            "\n",
+            " _____",
+            " a",
+            ":\n",
+            " which"
+          ],
+          "top_probs": [
+            0.22041548788547516,
+            0.10742192715406418,
+            0.10742192715406418,
+            0.10091356933116913,
+            0.0918828472495079,
+            0.04918134585022926,
+            0.031753864139318466,
+            0.031261563301086426,
+            0.02632487751543522,
+            0.024346530437469482
+          ]
+        },
+        "mistral_B": {
+          "top_tokens": [
+            ",",
+            " (",
+            " and",
+            " __",
+            " ____",
+            ":",
+            ":\n",
+            " which",
+            " the",
+            " ,"
+          ],
+          "top_probs": [
+            0.1691111922264099,
+            0.13802453875541687,
+            0.10098090767860413,
+            0.04411529377102852,
+            0.036572862416505814,
+            0.033824365586042404,
+            0.026342444121837616,
+            0.025934042409062386,
+            0.025136135518550873,
+            0.023985067382454872
+          ]
+        },
+        "olmo_C": {
+          "top_tokens": [
+            " ____",
+            " ",
+            " __",
+            " ______",
+            " _____",
+            " ___",
+            "\n",
+            "____",
+            " (",
+            " $"
+          ],
+          "top_probs": [
+            0.20981723070144653,
+            0.15350556373596191,
+            0.13546818494796753,
+            0.10225675255060196,
+            0.04467266425490379,
+            0.03167766332626343,
+            0.03167766332626343,
+            0.028395675122737885,
+            0.018049389123916626,
+            0.016692956909537315
+          ]
+        },
+        "qwen_D": {
+          "top_tokens": [
+            " ____",
+            " ______",
+            " the",
+            " ",
+            " __",
+            "\n",
+            " _____",
+            " a",
+            ":\n",
+            " which"
+          ],
+          "top_probs": [
+            0.22041548788547516,
+            0.10742192715406418,
+            0.10742192715406418,
+            0.10091356933116913,
+            0.0918828472495079,
+            0.04918134585022926,
+            0.031753864139318466,
+            0.031261563301086426,
+            0.02632487751543522,
+            0.024346530437469482
+          ]
+        }
+      },
+      "collective_steered_text": "Explain why some scientific discoveries are initially rejected by the mainstream. Some scientific discoveries are initially rejected by the mainstream because they challenge established beliefs or existing paradigms. This rejection may be due to resistance to new ideas, skepticism towards the methods used to arrive at the discovery, or a lack of understanding of the significance",
+      "individual_steered_texts": {
+        "qwen_A": "Explain why some scientific discoveries are initially rejected by the mainstream. Some scientific discoveries are initially rejected by the mainstream for various reasons. First, these discoveries may challenge the existing paradigms or widely accepted theories, causing resistance from the scientific community. Second, they may require a significant change in the established way of thinking",
+        "mistral_B": "Explain why some scientific discoveries are initially rejected by the mainstream. Some scientific discoveries are initially rejected by the mainstream due to a number of factors including:\n\n1. Lack of understanding: The scientific community may not fully understand the discovery or the implications of the findings, leading to skepticism and doubt.\n\n2. Resistance to change",
+        "olmo_C": "Explain why some scientific discoveries are initially rejected by the mainstream. Some scientific discoveries are initially rejected by the mainstream due to various reasons. One of the main reasons is because the existing scientific community is rooted in their understanding of the world and is skeptical of any new information that contradicts their beliefs. This can be due",
+        "qwen_D": "Explain why some scientific discoveries are initially rejected by the mainstream. Some scientific discoveries are initially rejected by the mainstream for a variety of reasons, including:\n\n1. Lack of Evidence: Scientists often require a substantial amount of evidence before accepting a new idea. If a discovery is based on limited or inconclusive evidence, it"
+      },
+      "unsteered_text": "Explain why some scientific discoveries are initially rejected by the mainstream. Some scientific discoveries are initially rejected by the mainstream for various reasons, including:\n\n1. Lack of evidence: The discovery may not have enough evidence to support it, or the evidence may be inconclusive.\n\n2. Contradiction to existing theories: The",
+      "distinctness": {
+        "collective_vs_qwen_A": 0.99953693151474,
+        "collective_vs_mistral_B": 0.990291953086853,
+        "collective_vs_olmo_C": 0.9934853315353394,
+        "collective_vs_qwen_D": 0.99953693151474
+      },
+      "distinctness_spread": 0.009244978427886963,
+      "equidistant": true,
+      "max_individual_sim": 0.99953693151474,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.011704285629093647,
+      "individual_candidate_variances": {
+        "qwen_A": 0.0007681302377022803,
+        "mistral_B": 0.002103870501741767,
+        "olmo_C": 0.00041521029197610915,
+        "qwen_D": 0.002189355669543147
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    }
+  ]
+}

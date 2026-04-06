@@ -1,0 +1,449 @@
+{
+  "summary": {
+    "prompts_with_novel": 4,
+    "prompts_subset": 1,
+    "emergence_novel": true,
+    "emergence_distinct": true,
+    "avg_individual_sim": 0.9379289031028748
+  },
+  "per_prompt": [
+    {
+      "task_prompt": "What are the benefits and risks of remote work?",
+      "loop_rounds": 20,
+      "final_residual": 0.20657539098767236,
+      "individual_pairwise_sim": 0.9502293864885966,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.5418722629547119,
+        "collective_vs_supportive_B": 0.5503573417663574,
+        "collective_vs_critical_C": 0.5372406244277954,
+        "collective_vs_carol_D": 0.5568679571151733
+      },
+      "distinctness_spread": 0.01962733268737793,
+      "max_sim_to_individual": 0.5568679571151733,
+      "avg_js_collective_vs_individual": 0.0189215037971735,
+      "kl_collective_vs_baseline": 4.331254005432129,
+      "collective_top_tokens": [
+        "\n",
+        ".",
+        ",",
+        " the",
+        " and",
+        " in",
+        " a",
+        " (",
+        " of",
+        " \""
+      ],
+      "individual_top_tokens": {
+        "neutral_A": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " (",
+          " is",
+          "\n\n",
+          " \"",
+          " in"
+        ],
+        "supportive_B": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " (",
+          " in",
+          " of",
+          " a",
+          " is"
+        ],
+        "critical_C": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " (",
+          " of",
+          " is",
+          " in",
+          " a"
+        ],
+        "carol_D": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " (",
+          " in",
+          " of",
+          " a",
+          " to"
+        ]
+      },
+      "novel_tokens": [],
+      "novel_count": 0,
+      "collective_is_subset": true
+    },
+    {
+      "task_prompt": "Should governments regulate artificial intelligence?",
+      "loop_rounds": 20,
+      "final_residual": 0.16636412509239068,
+      "individual_pairwise_sim": 0.9236043691635132,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.4849586486816406,
+        "collective_vs_supportive_B": 0.5204688310623169,
+        "collective_vs_critical_C": 0.5165250897407532,
+        "collective_vs_carol_D": 0.5580463409423828
+      },
+      "distinctness_spread": 0.07308769226074219,
+      "max_sim_to_individual": 0.5580463409423828,
+      "avg_js_collective_vs_individual": 0.24810270965099335,
+      "kl_collective_vs_baseline": 1.6051239967346191,
+      "collective_top_tokens": [
+        "\n",
+        " The",
+        " If",
+        " In",
+        " I",
+        " It",
+        "\n\n",
+        " But",
+        " This",
+        " And"
+      ],
+      "individual_top_tokens": {
+        "neutral_A": [
+          "\n",
+          " and",
+          ".",
+          ",",
+          " the",
+          " (",
+          " \"",
+          " The",
+          "\n\n",
+          " of"
+        ],
+        "supportive_B": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " in",
+          " a",
+          " of",
+          " (",
+          " to"
+        ],
+        "critical_C": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " of",
+          " a",
+          "-",
+          " in",
+          " ("
+        ],
+        "carol_D": [
+          "\n",
+          ".",
+          ",",
+          " and",
+          " the",
+          " of",
+          " a",
+          " in",
+          " (",
+          " to"
+        ]
+      },
+      "novel_tokens": [
+        " If",
+        " In",
+        " I",
+        " It",
+        " But",
+        " This",
+        " And"
+      ],
+      "novel_count": 7,
+      "collective_is_subset": false
+    },
+    {
+      "task_prompt": "The economy is growing strongly but inequality is rising. Advise.",
+      "loop_rounds": 20,
+      "final_residual": 0.23347619546439338,
+      "individual_pairwise_sim": 0.9513148566087087,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.2483215630054474,
+        "collective_vs_supportive_B": 0.2781270444393158,
+        "collective_vs_critical_C": 0.26955121755599976,
+        "collective_vs_carol_D": 0.2789396345615387
+      },
+      "distinctness_spread": 0.03061807155609131,
+      "max_sim_to_individual": 0.2789396345615387,
+      "avg_js_collective_vs_individual": 0.38407041877508163,
+      "kl_collective_vs_baseline": 2.7255938053131104,
+      "collective_top_tokens": [
+        "\n",
+        " The",
+        " It",
+        " But",
+        " He",
+        " I",
+        " In",
+        "<|endoftext|>",
+        " We",
+        " This"
+      ],
+      "individual_top_tokens": {
+        "neutral_A": [
+          "\n",
+          " the",
+          ",",
+          ".",
+          " and",
+          " in",
+          " of",
+          " a",
+          " to",
+          " ("
+        ],
+        "supportive_B": [
+          "\n",
+          " the",
+          ",",
+          ".",
+          " and",
+          " in",
+          " a",
+          " of",
+          " to",
+          " ("
+        ],
+        "critical_C": [
+          "\n",
+          " the",
+          ",",
+          ".",
+          " and",
+          " in",
+          " of",
+          " a",
+          " to",
+          " ("
+        ],
+        "carol_D": [
+          "\n",
+          " the",
+          ",",
+          ".",
+          " and",
+          " of",
+          " in",
+          " (",
+          " to",
+          " a"
+        ]
+      },
+      "novel_tokens": [
+        " The",
+        " It",
+        " But",
+        " He",
+        " I",
+        " In",
+        "<|endoftext|>",
+        " We",
+        " This"
+      ],
+      "novel_count": 9,
+      "collective_is_subset": false
+    },
+    {
+      "task_prompt": "A company must choose between short-term profit and long-term sustainability.",
+      "loop_rounds": 20,
+      "final_residual": 0.007320232353164269,
+      "individual_pairwise_sim": 0.9554498593012491,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.6774208545684814,
+        "collective_vs_supportive_B": 0.6943787336349487,
+        "collective_vs_critical_C": 0.6748384237289429,
+        "collective_vs_carol_D": 0.6982959508895874
+      },
+      "distinctness_spread": 0.02345752716064453,
+      "max_sim_to_individual": 0.6982959508895874,
+      "avg_js_collective_vs_individual": 0.48212551325559616,
+      "kl_collective_vs_baseline": 0.2257353663444519,
+      "collective_top_tokens": [
+        "\n",
+        " The",
+        " In",
+        " It",
+        " I",
+        " This",
+        " If",
+        " \"",
+        " (",
+        "\n\n"
+      ],
+      "individual_top_tokens": {
+        "neutral_A": [
+          ",",
+          "\n",
+          ".",
+          " the",
+          " and",
+          " of",
+          " in",
+          " to",
+          "-",
+          " a"
+        ],
+        "supportive_B": [
+          ",",
+          "\n",
+          ".",
+          " the",
+          " and",
+          " in",
+          " of",
+          " to",
+          " a",
+          "-"
+        ],
+        "critical_C": [
+          "\n",
+          ",",
+          ".",
+          " the",
+          " and",
+          " of",
+          " in",
+          " to",
+          "-",
+          " a"
+        ],
+        "carol_D": [
+          ",",
+          "\n",
+          ".",
+          " the",
+          " and",
+          " in",
+          " of",
+          " to",
+          " a",
+          "-"
+        ]
+      },
+      "novel_tokens": [
+        " The",
+        " In",
+        " It",
+        " I",
+        " This",
+        " If",
+        " \"",
+        " (",
+        "\n\n"
+      ],
+      "novel_count": 9,
+      "collective_is_subset": false
+    },
+    {
+      "task_prompt": "Explain why some scientific discoveries are initially rejected by the mainstream.",
+      "loop_rounds": 20,
+      "final_residual": 0.029179044128746213,
+      "individual_pairwise_sim": 0.9090460439523061,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.6328349113464355,
+        "collective_vs_supportive_B": 0.6288187503814697,
+        "collective_vs_critical_C": 0.6280139684677124,
+        "collective_vs_carol_D": 0.681831419467926
+      },
+      "distinctness_spread": 0.05381745100021362,
+      "max_sim_to_individual": 0.681831419467926,
+      "avg_js_collective_vs_individual": 0.2267719879746437,
+      "kl_collective_vs_baseline": 2.143490791320801,
+      "collective_top_tokens": [
+        "\n",
+        " \"",
+        " The",
+        " I",
+        " the",
+        " and",
+        " A",
+        " (",
+        " a",
+        "The"
+      ],
+      "individual_top_tokens": {
+        "neutral_A": [
+          "\n",
+          " and",
+          " the",
+          ".",
+          ",",
+          " of",
+          " (",
+          " a",
+          " \"",
+          " in"
+        ],
+        "supportive_B": [
+          "\n",
+          ",",
+          ".",
+          " the",
+          " and",
+          " of",
+          " a",
+          " to",
+          " in",
+          " ("
+        ],
+        "critical_C": [
+          "\n",
+          ",",
+          ".",
+          " the",
+          " and",
+          " of",
+          " a",
+          " to",
+          " in",
+          "-"
+        ],
+        "carol_D": [
+          "\n",
+          ",",
+          ".",
+          " the",
+          " and",
+          " of",
+          " a",
+          " to",
+          " in",
+          "-"
+        ]
+      },
+      "novel_tokens": [
+        " The",
+        " I",
+        " A",
+        "The"
+      ],
+      "novel_count": 4,
+      "collective_is_subset": false
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "config": {
+    "local_mode": true,
+    "buffer_dim": 512,
+    "num_slots": 6,
+    "isocal_k": 16,
+    "num_steps": 500,
+    "batch_size": 16,
+    "num_prompts": 50,
+    "device": "cuda",
+    "reference_model": "gpt2"
+  },
+  "models": {
+    "gpt2": {
+      "model_key": "gpt2",
+      "kl_start": 50.95332717895508,
+      "kl_end": 15.092178344726562,
+      "kl_min": 13.53054428100586,
+      "kl_reduction_pct": 70.3803869534942,
+      "hidden_dim": 768,
+      "extraction_layer": 7,
+      "elapsed_seconds": 68.8870804309845
+    },
+    "distilgpt2": {
+      "model_key": "distilgpt2",
+      "kl_start": 54.19902038574219,
+      "kl_end": 6.395610809326172,
+      "kl_min": 5.939992904663086,
+      "kl_reduction_pct": 88.19976677842571,
+      "hidden_dim": 768,
+      "extraction_layer": 3,
+      "elapsed_seconds": 48.761486768722534
+    }
+  },
+  "elapsed_seconds": 117.94595909118652
+}

@@ -1,0 +1,68 @@
+{
+  "What are the benefits and risks of remote work?": {
+    "rounds_to_converge": 10,
+    "final_residual": 0.0025297709264148777,
+    "decoded_norm": 220.5388946533203,
+    "unsteered_text": "\n\nThe benefits of remote work include:\n\nBetter working conditions\n\nBetter pay\n\nBetter time for research\n\nBetter working conditions\n\nImproved communication\n\nBetter job opportunities\n\nLess time for travel\n\nLess stress and stress",
+    "steered_text": "What are the benefits and risks of remote work?\n\nFor those who have the flexibility, it's no longer needed to take on an entirely new role. Instead, your job is to help your clients achieve the things they want from your job. From creating a list of things you want to hire",
+    "unsteered_sim_to_buffer": 0.9812434911727905,
+    "steered_sim_to_buffer": 0.9950297474861145,
+    "sim_improvement": 0.013786256313323975,
+    "all_candidate_sims": [
+      0.9836918711662292,
+      0.9874278903007507,
+      0.9845545887947083,
+      0.9950297474861145,
+      0.979738175868988,
+      0.9896324872970581,
+      0.9913932681083679,
+      0.9898043870925903,
+      -0.8384103178977966,
+      0.8460601568222046
+    ]
+  },
+  "Explain the causes and consequences of climate change.": {
+    "rounds_to_converge": 9,
+    "final_residual": 0.005975905137283132,
+    "decoded_norm": 244.63453674316406,
+    "unsteered_text": " It is time to address the problem and to act to prevent the catastrophic consequences of climate change.\n\nI am calling on you to join the Climate Action Network, which is a network of activists dedicated to the fight for climate action. We are a",
+    "steered_text": "Explain the causes and consequences of climate change. (Photo by Kevin Lamarque/Getty Images)\n\nTo be clear, climate change isn't a \"scientific\" problem. A study last year found the human-caused rise in temperature is, in fact, relatively small compared to any other",
+    "unsteered_sim_to_buffer": 0.9908509254455566,
+    "steered_sim_to_buffer": 0.9924687743186951,
+    "sim_improvement": 0.0016178488731384277,
+    "all_candidate_sims": [
+      0.9751071333885193,
+      0.9881623387336731,
+      0.9924687743186951,
+      0.9883600473403931,
+      -0.008830301463603973,
+      0.9058704376220703,
+      0.9878222942352295,
+      0.8406841158866882,
+      0.9343456029891968,
+      0.9743321537971497
+    ]
+  },
+  "What are the key differences between capitalism and socialism?": {
+    "rounds_to_converge": 11,
+    "final_residual": 0.003745771727642966,
+    "decoded_norm": 234.04991149902344,
+    "unsteered_text": "\n\nThe main difference is that capitalism is not a system based on a monopoly of production. It is based on the distribution of capital.\n\nWhat is socialism?\n\nSocialism is a system of production based on a distribution of goods.",
+    "steered_text": "What are the key differences between capitalism and socialism? And can one be either revolutionary or anti-capitalist in one's worldview?\n\nAs the first of two parts, there are many interesting points to note. Firstly, capitalism's social structure was designed to avoid the worst aspects of capitalist relations: the",
+    "unsteered_sim_to_buffer": 0.9905803203582764,
+    "steered_sim_to_buffer": 0.9954571723937988,
+    "sim_improvement": 0.004876852035522461,
+    "all_candidate_sims": [
+      0.9954571723937988,
+      0.9884892106056213,
+      0.984754204750061,
+      0.843051016330719,
+      0.9921056628227234,
+      0.9879385232925415,
+      0.9862961769104004,
+      -0.7260517477989197,
+      0.9796860814094543,
+      0.9951682686805725
+    ]
+  }
+}

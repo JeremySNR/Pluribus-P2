@@ -1,0 +1,21 @@
+{
+  "gpt2": {
+    "agent_dim": 768,
+    "test_mse": 0.3595513105392456,
+    "normalised_loss": 0.0067637473020673465,
+    "mean_cosine_similarity": 0.9997196197509766,
+    "data_variance": 53.15859603881836
+  },
+  "distilgpt2": {
+    "agent_dim": 768,
+    "test_mse": 0.09412454068660736,
+    "normalised_loss": 0.003587964397745157,
+    "mean_cosine_similarity": 0.9995366334915161
+  },
+  "cross_model": {
+    "alignment_cosine_similarity": 0.9764078855514526,
+    "cross_decode_mse": 0.2291669249534607,
+    "training_steps": 10,
+    "final_loss": 0.08620832860469818
+  }
+}

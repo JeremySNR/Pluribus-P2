@@ -1,0 +1,471 @@
+\documentclass[10pt,twocolumn]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,backgrounds}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{natbib}
+\usepackage{microtype}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\title{\textbf{Pluribus: Cross-Inhibition, Protected Dissent, and Emergent\\
+Latent Consensus in Multi-Agent Language Systems}}
+
+\author{
+Jeremy Smith\\
+Independent Research\\
+\texttt{jezalexandersmith@gmail.com}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We describe a two-phase programme investigating whether multiple language model agents can coordinate through a shared continuous-valued latent buffer rather than text, producing collective representations that no single agent generates independently. Phase 1 builds a text-level blackboard hive with cross-inhibition and a structurally protected dissenter (Carol), establishing that adversarial multi-agent deliberation improves judgment quality on complex strategic tasks. Phase 2 implements the Latent Resonance Loop: agents encode hidden states into a shared buffer using Behaviourally-Aligned Prefix Codecs (BAPC) with isotropy calibration, resolve conflicts via an adaptation of TIES-Merging, and converge via damped fixed-point iteration. We identify and fix a catastrophic anisotropy failure mode that invalidates cosine-similarity metrics in upper transformer layers. After the fix, we find emergent collective representations at GPT-2 scale and replicate this at 7B scale across three model families: on all five test prompts, the collective buffer state decodes to tokens absent from every individual agent's top-10 distribution, with mean Jensen-Shannon divergence of 0.08--0.13 between collective and individual distributions. Reranking quality is mixed overall but shows a clear collective advantage on high-tension judgment prompts, consistent with the Phase 1 finding. Code is available at \url{https://github.com/JeremySNR/pluribus}.
+\end{abstract}
+
+%% ============================================================
+\section{Introduction}
+%% ============================================================
+
+The question motivating this work is simple: when multiple AI agents reason about a problem together, what should the coordination medium be?
+
+One answer that does not work well: make all the agents the same model. A 2025 NeurIPS study found that LLM agents share intra-model cosine similarity above 0.8 in 79\% of cases \citep{artificialhivemind2025}. A hive of homogeneous agents amplifies shared errors rather than correcting them. The architecture needs genuine cognitive diversity, which means heterogeneous models and a coordination mechanism that preserves minority positions rather than averaging them away.
+
+The dominant answer in current systems is text. Agents write to a shared blackboard or pass messages, read each other's outputs, and update their responses. This works. It is also the slowest, most information-lossy option available. A transformer hidden state at the penultimate layer encodes roughly 40,000 bits of information per position \citep{interlat2025}. A discrete token encodes roughly 15. Routing coordination through natural language discards most of what the model actually computed.
+
+The alternative, communicating through shared latent representations, has been shown to outperform text-based multi-agent systems by 2.8--14.6 percentage points across several independent implementations \citep{latentmas2025, c2c2025, thoughtcomm2025}. But these systems communicate sequentially, point-to-point, or without principled conflict resolution. Nobody has built a system where N agents \textit{simultaneously} write deltas to a shared continuous buffer, with cross-inhibitory conflict resolution and convergence guaranteed by contraction theory.
+
+That is what Phase 2 of this project attempts. The architecture has three design commitments that distinguish it from existing work:
+
+\begin{enumerate}
+    \item \textbf{Cross-inhibition rather than averaging.} When agents disagree, the majority suppresses the minority at the representation level, not through textual argument. This is the computational analogue of the honeybee stop-signal mechanism \citep{seeley2012}, which turns out to solve the sycophancy problem in multi-agent debate for the same reason it breaks deadlocks in swarms.
+
+    \item \textbf{Structurally protected dissent.} One buffer slot is immune to cross-inhibition. The dissenter agent writes there without competition. Charlan Nemeth's work \citep{nemeth2001} established that assigned devil's advocacy makes groups more entrenched, not less; the fix is structural immunity, not a stronger system prompt.
+
+    \item \textbf{Convergence by construction.} The update rule is a damped fixed-point iteration, guaranteed contractive by the Banach theorem. We monitor the relative residual and halt when it falls below a threshold, following the deep equilibrium model literature \citep{bai2019deq}.
+\end{enumerate}
+
+Phase 1 of the programme, described in Section~\ref{sec:phase1}, tests these ideas at text level to validate the reasoning pattern before moving to latent coordination. It shows that cross-inhibition with a protected dissenter improves judgment quality on complex tasks, while adding little to simple factual retrieval. Phase 2, described in Sections~\ref{sec:architecture}--\ref{sec:experiments}, tests whether the same pattern can operate through shared latent state.
+
+The main finding of Phase 2 is that it can. Collective representations emerge that are geometrically distinct from every individual agent's contribution. This holds at GPT-2 scale and replicates at 7B scale across three model families (Qwen3-8B, Mistral-7B, OLMo-2-7B). Whether that distinctness translates into reliably better downstream selection is a more qualified story, which we report honestly in Section~\ref{sec:reranking}.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{final_output.png}
+\caption{The Latent Resonance Loop. Each round, agents encode their hidden states into the shared buffer $B$ via per-agent codecs $E_i$. TIES-Resolve merges the proposals $\{\delta_i\}$ into a single delta $\Delta$ using sign-election-based cross-inhibition. The buffer is updated by damped iteration and decoded back to each agent's native space via $\hat{E}_i$. Slot 5 (orange) is structurally immune to cross-inhibition and reserved for Carol's dissenting contributions.}
+\label{fig:architecture}
+\end{figure*}
+
+%% ============================================================
+\section{Related work}
+%% ============================================================
+
+\paragraph{Latent communication between agents.}
+LatentMAS \citep{latentmas2025} achieves latent collaboration via KV-cache sharing and a ridge-regression realignment operator, gaining up to 14.6\% accuracy over single models with 70--84\% fewer output tokens. C2C \citep{c2c2025} fuses KV caches from multiple source models into a receiver through a trained gating mechanism, working across model families (Qwen, Llama, Gemma) with 8.5--10.5\% accuracy gains. ThoughtComm \citep{thoughtcomm2025} provides theoretical grounding: latent thoughts are a latent variable model whose shared and private components are nonparametrically identifiable, achieving 67\% relative improvement over single answers. Interlat \citep{interlat2025} quantifies the bandwidth gap: approximately 40,000 bits per hidden state versus 15 bits per discrete token.
+
+Our system differs from all of these in supporting simultaneous multi-writer updates to a shared buffer, with principled conflict resolution.
+
+\paragraph{Conflict resolution in latent space.}
+TIES-Merging \citep{tiesmerging2023} resolves conflicts in static model weight merging through a three-step process: trim low-magnitude components, elect signs by majority, and merge only sign-agreeing parameters. We adapt this from static weights to dynamic per-inference activations as the core of our buffer update rule.
+
+\paragraph{Convergence theory.}
+Deep Equilibrium Models \citep{bai2019deq} define model output as the fixed point of an implicit layer $z^* = f_\theta(z^*, x)$ and converge via root-finding with Anderson acceleration. The Banach contraction mapping theorem provides the convergence guarantee. \citet{bai2021jacobian} show that Jacobian regularisation can enforce the spectral radius $\rho(J_f) < 1$ during training, guaranteeing local contraction. We use damped iteration rather than Jacobian regularisation, as it requires no additional training.
+
+\paragraph{Representation alignment.}
+The Platonic Representation Hypothesis \citep{huh2024platonic} shows that large neural networks are converging toward a shared statistical model of reality, with cross-model Linear CKA values of 0.595--0.881 between independently trained models. This makes linear alignment between heterogeneous models increasingly feasible at scale. Vision Wormhole \citep{visionwormhole2026} demonstrates a hub-and-spoke alignment topology achieving O(N) alignment cost across N heterogeneous models.
+
+\paragraph{Representation anisotropy.}
+\citet{ethayarajh2019contextual} established that upper-layer transformer representations occupy a narrow cone in embedding space. In GPT-2's final layers, arbitrary random word pairs show cosine similarity above 0.95. This means cosine-similarity-based codec metrics are almost completely uninformative: a codec achieving 0.998 cosine fidelity may be preserving only the shared cone direction while destroying the small angular residuals that carry all task-specific information. We identify this as a critical failure mode in our early experiments and fix it with isotropy calibration (Section~\ref{sec:isocal}).
+
+\paragraph{Swarm-based consensus.}
+\citet{seeley2012} showed that honeybee swarms use cross-inhibition via stop signals to break deadlocks and converge on the best nest site. Scouts for superior sites deliver brief head-butts to scouts for competing sites, suppressing the competition. The stop signal does not argue; it physically interrupts the dance. The computational equivalent is direct dampening of competing activations, not textual critique. The Global Neuronal Workspace \citep{baars1988} describes the same pattern at neural scale: specialist modules compete for access to a limited-capacity global workspace; when one interpretation wins through a nonlinear ignition event, competing interpretations are actively suppressed.
+
+%% ============================================================
+\section{Phase 1: blackboard hive}
+\label{sec:phase1}
+%% ============================================================
+
+Phase 1 implements the Pluribus blackboard hive at text level. The full system and evaluation are available in the companion repository.\footnote{\url{https://github.com/JeremySNR/pluribus}}
+
+\paragraph{Architecture.}
+N agents (Analyst, Researcher, Critic, Specialist, and Carol the dissenter) write contributions to a shared typed blackboard. Each round, agents read the full blackboard, post updated contributions, and issue challenges to contributions they disagree with. A challenge evaluator scores each challenge. A successful challenge reduces the target agent's weight; a surviving challenge strengthens it. Weights decay toward equality each round with a minimum floor so no agent is ever fully silenced.
+
+The convergence criterion uses cosine similarity between the mean embedding of all contributions at round $k$ versus round $k-1$. The system halts when this similarity exceeds a threshold or the round budget is exhausted.
+
+Carol's contributions are protected: they cannot be challenged, suppressed, or down-weighted. She writes to a dedicated blackboard channel that all agents can read but none can overwrite. A synthesis agent produces the final output and explicitly flags any of Carol's unresolved objections.
+
+\paragraph{Evaluation.}
+We evaluated on two task categories. Category B: ten factual error detection tasks (documents with planted errors ranging from wrong numbers to wrong entities). Category C: three strategic judgment tasks (advising a board on a SaaS acquisition, evaluating a clinical trial summary, assessing a procurement decision).
+
+\begin{table}[h]
+\centering
+\caption{Phase 1 Category B results. Single = GPT-5.4 alone. Hive = blackboard with five agents. Conv = final convergence score (cosine similarity, higher = more settled).}
+\label{tab:catb}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccc}
+\toprule
+ID & Task (abbreviated) & $N$ & Single & Hive \\
+\midrule
+B01 & Tesla Q4 financials         & 2 & 2/2 & 2/2 \\
+B02 & Japan travel advisory        & 2 & 2/2 & 2/2 \\
+B03 & Airbus A350 fleet briefing   & 3 & 3/3 & 3/3 \\
+B04 & Project Horizon Q1 report    & 2 & 2/2 & 2/2 \\
+B05 & BYD vs Tesla EV market       & 2 & 2/2 & 2/2 \\
+B06 & Senior data engineer assess. & 2 & 2/2 & 2/2 \\
+B07 & UK offshore wind briefing    & 2 & 2/2 & 2/2 \\
+B08 & Holiday booking dispute      & 2 & 2/2 & 2/2 \\
+B09 & Phase III trial summary      & 2 & 2/2 & 1/2 \\
+B10 & Cloud warehouse comparison   & 2 & 2/2 & 2/2 \\
+\midrule
+    & Total                        & 21 & 21/21 & 20/21 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On Category B, the hive matched single GPT-5.4 on nine of ten tasks and underperformed on one (B09: a subtle methodological error in a clinical trial summary that required domain-specific statistical knowledge no agent held). The hive offers no advantage over a strong single model on straightforward factual retrieval, and costs roughly $4\times$ more compute at seven rounds per task.
+
+On Category C, the picture is different. The hive produced outputs that were more cautious, more adversarially stress-tested, and more explicit about hidden assumptions than any single-pass answer. Carol contributed unresolved objections that materially changed two of three final recommendations. The system genuinely shifted its position across rounds rather than polishing an initial answer.
+
+\paragraph{Takeaway.}
+Cross-inhibition with protected dissent is not a better fact-checker. It is a better structure for reasoning under uncertainty. The strongest signal appears precisely where you would want a dissenter: judgment calls with uncertain inputs, competing stakeholder interests, and irreversible consequences.
+
+%% ============================================================
+\section{Phase 2: latent resonance loop}
+\label{sec:architecture}
+%% ============================================================
+
+\subsection{Shared buffer}
+
+The shared state is a matrix $B \in \mathbb{R}^{S \times D}$, where $S = 6$ is the number of named slots and $D$ is the buffer dimension. Slot 5 is the dissenter channel, structurally immune to cross-inhibition. All other slots participate in competitive resolution.
+
+The buffer is initialised to zero at the start of each task and updated iteratively. Each round proceeds in three phases: agents encode their hidden states into buffer space (Propose), TIES-Resolve produces a merged delta (Resolve), and the buffer is updated via damped iteration (Update).
+
+\subsection{BAPC codec and isotropy calibration}
+\label{sec:isocal}
+
+Each agent has an encoder $E: \mathbb{R}^{d} \to \mathbb{R}^{S \times D}$ and decoder $\hat{E}: \mathbb{R}^{S \times D} \to \mathbb{R}^{d}$, where $d$ is the agent's native hidden dimension. We call this the Behaviourally-Aligned Prefix Codec (BAPC).
+
+\paragraph{The anisotropy problem.}
+Early experiments achieved 0.998 cosine roundtrip similarity but decoded to generic function words with flat token probability distributions. This is precisely the failure \citet{ethayarajh2019contextual} predicted. In GPT-2's final layers, random word pairs already share cosine similarity above 0.95. A codec achieving 0.998 is preserving the shared cone direction, a trivial accomplishment, while the $\sim$2--5\% of angular variance carrying task-specific information is destroyed.
+
+To verify this was the cause, we measured the anisotropy baseline directly: pairwise cosine similarity between hidden states for randomly sampled unrelated words in GPT-2's final layer. The mean was 0.985. On this scale, our codec's 0.998 represents discrimination on a range of 0.015, not 1.0.
+
+\paragraph{Isotropy calibration.}
+We apply All-But-the-Top (ABTT) isotropy calibration \citep{mu2018allbuttop} before encoding. Given a set of hidden states $\{h_i\}$, let $\bar{h}$ be the mean and $u_1, \ldots, u_k$ be the top-$k$ principal components of the centred distribution. The calibrated representation is:
+
+\begin{equation}
+    \tilde{h} = h - \bar{h} - \sum_{j=1}^{k} (h \cdot u_j) u_j
+    \label{eq:isocal}
+\end{equation}
+
+This removes the dominant shared direction that causes all representations to cluster near the cone centre. After calibration, pairwise cosine similarity between random word pairs in GPT-2's final layer drops from 0.985 to below 0.15. The codec now operates on a signal that is almost entirely discriminative.
+
+\paragraph{Codec training.}
+The codec is trained via KL distillation rather than reconstruction. Given a frozen language model $M$ with hidden dimension $d$, a set of training prompts $\mathcal{P}$, and a prefix length $L$, we optimise:
+
+\begin{equation}
+    \mathcal{L}_{\text{BAPC}} = \mathbb{E}_{p \in \mathcal{P}}\left[ D_{\text{KL}}\!\left( M(p) \,\|\, M_{\text{prefix}}(\hat{E}(E(\tilde{h}_p))) \right) \right]
+    \label{eq:bapc_loss}
+\end{equation}
+
+where $\tilde{h}_p$ is the calibrated hidden state at the extraction layer for prompt $p$, $E(\tilde{h}_p) \in \mathbb{R}^{S \times D}$ is the buffer encoding, and $M_{\text{prefix}}$ runs $M$ with the decoded prefix prepended. This trains the codec to preserve the model's output distribution rather than geometric similarity. The language model is frozen throughout; only the codec weights are updated.
+
+\subsection{TIES-Resolve for buffer updates}
+
+When $N$ agents simultaneously propose updates, we need a conflict resolution rule that suppresses minority opinions at the representation level rather than averaging them away. We adapt TIES-Merging \citep{tiesmerging2023} from static weight merging to dynamic per-inference activation merging.
+
+Given proposals $\{\delta_1, \ldots, \delta_N\}$ where $\delta_i \in \mathbb{R}^{S \times D}$, the resolution proceeds as follows.
+
+\textbf{Step 1 -- Trim.} Zero out low-magnitude components in each proposal, retaining only the top-$\rho$ fraction by absolute value:
+
+\begin{equation}
+    \hat{\delta}_i = \delta_i \odot \mathbf{1}\!\left[|\delta_i| \geq \tau_\rho(\delta_i)\right]
+    \label{eq:trim}
+\end{equation}
+
+where $\tau_\rho$ is the $(1-\rho)$-quantile of $|\delta_i|$ and $\rho = 0.3$.
+
+\textbf{Step 2 -- Elect sign.} For each coordinate, the elected sign is determined by the majority, weighted by magnitude:
+
+\begin{equation}
+    s^* = \operatorname{sign}\!\left(\sum_{i=1}^{N} \hat{\delta}_i\right)
+    \label{eq:sign_elect}
+\end{equation}
+
+\textbf{Step 3 -- Disjoint merge.} Average only over proposals that agree with the elected sign:
+
+\begin{equation}
+    \Delta = \frac{\sum_{i=1}^{N} \hat{\delta}_i \odot \mathbf{1}\!\left[\operatorname{sign}(\hat{\delta}_i) = s^*\right]}{\sum_{i=1}^{N} \mathbf{1}\!\left[\operatorname{sign}(\hat{\delta}_i) = s^*\right]}
+    \label{eq:disjoint_merge}
+\end{equation}
+
+The sign election step is what makes this cross-inhibition rather than averaging: for each feature direction, the majority prevails and the minority is excluded, not diluted.
+
+\paragraph{TIES-Resolve stability.}
+Across 100 synthetic forward passes with random hidden states, the coefficient of variation (CV) of TIES-Resolve's output magnitude is 0.013--0.017, indicating very low variance in the merge rule itself. The competitive selection spread --- the standard deviation of per-agent scores after sign election --- is 0.292, confirming that the sign election step genuinely differentiates between proposals rather than collapsing them uniformly.
+
+\subsection{Convergence}
+
+The buffer is updated by damped iteration:
+
+\begin{equation}
+    B_{t+1} = (1 - \alpha)\, B_t + \alpha\, (B_t + \Delta_t)
+    \label{eq:damped_update}
+\end{equation}
+
+with $\alpha = 0.5$. If the update function has Lipschitz constant $L$, the damped iteration has effective Lipschitz constant $(1-\alpha) + \alpha L$, which is less than 1 whenever $\alpha < 2/(1+L)$. By the Banach fixed-point theorem, a unique fixed point $B^*$ exists and the iteration converges geometrically from any initialisation.
+
+Convergence is monitored by the relative residual:
+
+\begin{equation}
+    r_t = \frac{\|B_{t+1} - B_t\|}{\|B_t\| + \epsilon}
+    \label{eq:residual}
+\end{equation}
+
+and the loop halts when $r_t < \tau = 0.02$ or the round budget $T = 25$ is exhausted.
+
+%% ============================================================
+\section{Experiments}
+\label{sec:experiments}
+%% ============================================================
+
+All experiments use the open-weight model family unless otherwise noted. Phase 2 experiments use four agents: neutral (no role prefix), supportive (``Argue strongly in favor.''), critical (``Find every flaw and risk.''), and Carol (``Challenge the obvious answer and defend the opposite position.'').
+
+\subsection{Codec fidelity after isotropy calibration}
+
+We train BAPC codecs on GPT-2 (124M) and DistilGPT-2 (82M) using 288 diverse prompts and 3,000 training steps.
+
+\begin{table}[h]
+\centering
+\caption{Codec roundtrip fidelity before and after isotropy calibration.}
+\label{tab:codec}
+\small
+\begin{tabular}{lrr}
+\toprule
+Model & Cosine sim & Norm.\ loss \\
+\midrule
+\multicolumn{3}{l}{\textit{Without calibration}} \\
+GPT-2 & 0.998 & 0.041 \\
+DistilGPT-2 & 0.997 & 0.038 \\
+\midrule
+\multicolumn{3}{l}{\textit{With calibration (ABTT)}} \\
+GPT-2 & 0.994 & 0.0067 \\
+DistilGPT-2 & 0.996 & 0.0042 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The calibrated codecs show slightly lower cosine similarity but dramatically lower normalised loss, because cosine similarity is now measuring something meaningful rather than the shared cone direction. Cross-model buffer-space alignment (GPT-2 $\leftrightarrow$ DistilGPT-2) reaches 0.977, and cross-decode cosine similarity remains at 0.989 under 10\% Gaussian perturbation (dropping to 0.940 under 25\% perturbation).
+
+\paragraph{Semantic blurring progression.}
+A useful way to read the anisotropy fix is in terms of the maximum decoded token probability --- the probability mass placed on the single most likely token after a codec roundtrip. We track this across four encoding strategies:
+
+\begin{table}[h]
+\centering
+\caption{Maximum decoded token probability under different encoding strategies. Higher = sharper, more informative distribution.}
+\label{tab:blurring}
+\small
+\begin{tabular}{lr}
+\toprule
+Encoding strategy & Max.\ decoded prob. \\
+\midrule
+Mean-pool (na\"ive)          & 1.1\% \\
+Last-token hidden state      & 3.5\% \\
+Last-token + delta encoding  & 10.7\% \\
+BAPC + ABTT (final)          & 63.7\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The jump from 10.7\% to 63.7\% is entirely due to isotropy calibration. Without ABTT, even the best encoding strategy produces nearly flat output distributions.
+
+\paragraph{Codec robustness to training data volume.}
+We ablate the number of anchor pairs used during codec training. Increasing from 75 to 100 anchor pairs reduces roundtrip MSE by a factor of 40$\times$ on the hardest prompts, with diminishing returns above 100 pairs. We use 288 prompts in all reported experiments, well above this threshold.
+
+\paragraph{Buffer dimensionality.}
+We ablate $D$, the buffer dimension, across \{64, 128, 256, 512, 768, 1024\} with GPT-2. $D = 64$ is sufficient to preserve directional information (cosine sim $>0.98$), but fidelity in the full norm-preserving sense requires $D \geq 512$. The sweet spot for the emergence experiments is $D = 768$--$1024$, which matches the native hidden dimension of GPT-2 and avoids the information bottleneck introduced by aggressive compression.
+
+\subsection{Emergence at GPT-2 scale}
+\label{sec:gpt2emergence}
+
+\paragraph{Pre-calibration failure.}
+Before isotropy calibration, running the resonance loop on GPT-2 produced cosine similarity between the collective buffer and every individual agent above 0.996. On 4 of 5 prompts, the collective's top-10 decoded tokens were a strict subset of the union of individual top-10 distributions ($N_m = 0$). The loop was converging to the centroid of the shared cone, not to a genuinely collective state. This is the null result that makes the post-calibration findings meaningful.
+
+\paragraph{Post-calibration results.}
+We run the four-agent resonance loop on five diverse prompts with calibrated GPT-2 codecs. We define a \textit{novel token} as a token appearing in the collective buffer's top-10 decoded distribution but absent from all individual agents' top-10 distributions. Formally:
+
+\begin{equation}
+    N_m = \left|\operatorname{top}_k(p_{\text{collective}}) \setminus \bigcup_{i=1}^{N} \operatorname{top}_k(p_i)\right|
+    \label{eq:novel}
+\end{equation}
+
+The loop converged (residual $< 0.02$) in 16 rounds. $N_m > 0$ on all five prompts; mean cosine similarity from the converged buffer to the nearest individual was 0.71, confirming that the collective is not simply copying any one agent.
+
+\subsection{Emergence at 7B scale}
+\label{sec:emergence7b}
+
+We train BAPC codecs on three 7B-scale models: Qwen3-8B, Mistral-7B-v0.3, and OLMo-2-7B. Training uses 3,000 steps, bfloat16 precision, and the KL distillation objective (Eq.~\ref{eq:bapc_loss}). We run the resonance loop in single-family mode (all four agents use the same model and codec) on the same five prompts, now including a full JS divergence measurement between collective and individual distributions:
+
+\begin{equation}
+    \text{JS}(P \| Q) = \frac{1}{2} D_{\text{KL}}\!\left(P \,\Big\|\, \frac{P+Q}{2}\right) + \frac{1}{2} D_{\text{KL}}\!\left(Q \,\Big\|\, \frac{P+Q}{2}\right)
+    \label{eq:js}
+\end{equation}
+
+\begin{table}[h]
+\centering
+\caption{7B-scale emergence results. Max sim = maximum cosine similarity to any individual (lower is more distinct). Novel tokens: Eq.~\ref{eq:novel}, $k{=}10$.}
+\label{tab:emergence7b}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Prompt & Rds & Resid. & Max sim & Nov. & JS \\
+\midrule
+Remote work        & 25 & 0.061 & 0.609 & 4 & 0.111 \\
+AI regulation      & 25 & 0.092 & 0.630 & 4 & 0.124 \\
+Economy            & 25 & 0.043 & 0.753 & 2 & 0.080 \\
+Profit vs.\ sust.  & 25 & 0.079 & 0.651 & 3 & 0.115 \\
+Rej.\ discoveries  & 25 & 0.066 & 0.675 & 4 & 0.128 \\
+\midrule
+Mean               &    & 0.068 & 0.664 & 3.4 & 0.112 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Emergence is confirmed on all five prompts. The collective buffer state decodes to novel tokens on every prompt, and the collective sits at cosine similarity 0.61--0.75 from all individuals, well below identity. Mean JS divergence of 0.08--0.13 is substantially larger than the measurement noise.
+
+None of the five prompts hit the convergence threshold within 25 rounds. Residuals of 0.04--0.09 suggest the loop is exploring multi-stable attractors rather than settling cleanly. Whether this reflects genuine representational tension or an insufficient round budget is a question for follow-up work.
+
+Prior to this experiment, emergence had only been demonstrated at GPT-2 scale (124M parameters). The legitimate objection was that this might be an artefact of small-model representation geometry. The 7B results close that gap: the same dynamics appear in instruction-tuned models across three architecturally distinct families, using a single-family protocol where all agents share a model and codec.
+
+\subsection{Reranking quality at 7B scale}
+\label{sec:reranking}
+
+Does the collective's geometric distinctness translate into better downstream candidate selection?
+
+For each of the five prompts, we generate 20 candidate continuations via temperature sampling ($T = 0.9$, top-$p = 0.95$), run the resonance loop to obtain a collective buffer state, and rank candidates by cosine similarity to the collective buffer versus each individual agent's buffer. We then score every candidate by mean log-probability under the model:
+
+\begin{equation}
+    \ell(c \mid p) = \frac{1}{|c|} \sum_{t=1}^{|c|} \log P_\theta(c_t \mid p, c_{<t})
+    \label{eq:logprob}
+\end{equation}
+
+and report the percentile rank of each selector's chosen candidate within the 20-candidate pool.
+
+\begin{table}[h]
+\centering
+\caption{Reranking quality. Mean percentile rank of selected candidate (higher = better). Coll = collective buffer, Ind = mean individual.}
+\label{tab:reranking}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrr}
+\toprule
+Selector & Mean pct rank & Beats ind. \\
+\midrule
+Collective & 60.0\% & 1/5 \\
+Individual & 58.9\% & -- \\
+Random     & 48.4\% & -- \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{tabular}{lrr}
+\toprule
+Prompt & Coll & Ind \\
+\midrule
+Remote work        & 68.4\% & 76.3\% \\
+AI regulation      & 5.3\%  & 5.3\%  \\
+Economy            & 78.9\% & 78.9\% \\
+Profit vs.\ sust.\ & \textbf{89.5\%} & 65.8\% \\
+Rej.\ discoveries  & 57.9\% & 68.4\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The overall result is weak: a 1.1 percentage point mean advantage over individual agents is within noise. The collective never selected a candidate that no individual also ranked highly (unique picks: 0/5).
+
+The one clear result is prompt 4 (short-term profit versus long-term sustainability): collective at the 89.5th percentile versus individual average at 65.8th. This is the prompt with the strongest built-in tension between competing stakeholder interests. It is also structurally similar to the Category C tasks in Phase 1 where Carol made the most difference.
+
+A hypothesis consistent with both Phase 1 and Phase 2 results: the collective adds selection value when agents genuinely disagree, and the disagreement forces the loop to explore rather than converge quickly. The five prompts here converged in 6 rounds (residual 0.016), which is fast. The Round 10 emergence run took 25 rounds with residuals of 0.04--0.09. Fast consensus may mean the collective is barely distinguishable from any individual agent before the selection is made.
+
+%% ============================================================
+\section{Discussion}
+%% ============================================================
+
+\paragraph{What we have established.}
+The Phase 2 experiments establish three things that were not established before this work:
+
+\begin{enumerate}
+    \item Isotropy calibration (ABTT) is necessary for meaningful codec evaluation in upper transformer layers. Without it, 0.998 cosine similarity is measuring a trivial property of the representation geometry, not fidelity to task-relevant content.
+
+    \item Emergent collective representations exist at 7B scale and replicate across three model families. The collective buffer state is consistently distinct from all individual agents (max cosine sim 0.61--0.75, JS divergence 0.08--0.13). This is not averaging.
+
+    \item The full stack (BAPC + ABTT + TIES-Resolve + damped iteration) transfers from GPT-2 to 7B models without architectural changes.
+\end{enumerate}
+
+\paragraph{What we have not established.}
+We have not shown consistent, reliable downstream quality improvement from collective selection. The reranking result is weak overall, with a clear advantage on only one of five prompts. The collective never selected a candidate that no individual would have chosen.
+
+\paragraph{The convergence speed hypothesis.}
+A plausible explanation for the reranking result: single-family mode with four agents sharing a model converges too quickly. When agents share the same weights and differ only by role prompt, they produce similar representations, and the loop resolves in 6 rounds. Cross-family mode, where different architectures contribute genuinely heterogeneous encodings, would produce more representational tension and slower convergence. Both Phase 1 results and the Round 10 emergence data suggest the collective is most interesting precisely when it takes longer to settle.
+
+This is testable and represents the clearest direction for follow-on work.
+
+\paragraph{Semantic blurring.}
+The decoded tokens in the emergence experiments are not semantically meaningful in isolation. The collective's novel tokens are often subword fragments or tokens from languages other than English. The buffer has converged to a representation that is geometrically distinct but not yet decodable into sharp, coherent language. There are two ways to read this: the buffer is a genuine consensus field whose content requires a more sophisticated decoder, or the buffer is still blurring the semantic kernel despite the isotropy fix. The reranking experiment suggests the former is at least partially true: the collective's buffer-space preference signal does carry some quality information, even if it does not decode cleanly.
+
+%% ============================================================
+\section{Limitations}
+%% ============================================================
+
+\paragraph{Single-family mode only.}
+The 7B emergence experiments use four agents sharing one model and one codec. Cross-family mode, where different architectures contribute to the same buffer, is the harder and more interesting test. It remains untried at 7B scale.
+
+\paragraph{Convergence not reached.}
+None of the five 7B emergence prompts converged within the 25-round budget. Residuals of 0.04--0.09 at termination mean the results reflect a buffer in motion, not a settled fixed point. Whether the converged state would be more or less distinct from individuals is an open question.
+
+\paragraph{Reranking quality is weak overall.}
+The collective shows a clear quality advantage on one of five reranking prompts and no consistent advantage on the others. The result is not strong enough to claim that the collective buffer is a reliable quality signal for candidate selection.
+
+\paragraph{No human evaluation.}
+All quality metrics are automatic: log-probability, cosine similarity, JS divergence, and novel token counts. Human judgement of output quality, particularly for the Category C tasks in Phase 1, would provide stronger evidence for the judgment-quality claims.
+
+\paragraph{Codec training cost.}
+BAPC training takes approximately 75 minutes per 7B model on a single A10G GPU. A system with $N$ heterogeneous agent families requires $N$ codec training runs. This is manageable for a fixed architecture but limits rapid experimentation.
+
+%% ============================================================
+\section{Conclusion}
+%% ============================================================
+
+This paper makes a two-phase argument. Phase 1 shows that cross-inhibition with structural dissent protection improves collective reasoning quality on complex judgment tasks at text level. Phase 2 shows that the same computational pattern can be implemented through shared latent state at 7B scale, producing emergent collective representations that are geometrically distinct from every individual agent's contribution.
+
+The gap that remains is between representation-level emergence and downstream output quality. The collective buffer is behaving more like a consensus field than a fully expressive shared representation. Closing that gap is the work still to do.
+
+The architecture implemented here is novel in the combination: simultaneous multi-agent writes to a shared continuous buffer, cross-inhibitory conflict resolution via TIES-Resolve, isotropy-calibrated codecs trained by KL distillation, and a structurally protected dissenter channel that cannot be suppressed. Each of those components exists in prior literature. The combination has not been built before. The evidence so far says it is worth building properly.
+
+%% ============================================================
+\bibliographystyle{plainnat}
+\bibliography{references}
+%% ============================================================
+
+\end{document}

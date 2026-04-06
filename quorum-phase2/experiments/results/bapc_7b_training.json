@@ -1,0 +1,46 @@
+{
+  "config": {
+    "local_mode": false,
+    "buffer_dim": 1024,
+    "num_slots": 6,
+    "isocal_k": 32,
+    "num_steps": 3000,
+    "batch_size": 4,
+    "num_prompts": 150,
+    "device": "cuda",
+    "reference_model": "qwen"
+  },
+  "models": {
+    "qwen": {
+      "model_key": "qwen",
+      "kl_start": 72.7552719116211,
+      "kl_end": 10.823331832885742,
+      "kl_min": 10.823331832885742,
+      "kl_reduction_pct": 85.12364595924636,
+      "hidden_dim": 4096,
+      "extraction_layer": 21,
+      "elapsed_seconds": 1149.639305114746
+    },
+    "mistral": {
+      "model_key": "mistral",
+      "kl_start": 113.75860595703125,
+      "kl_end": 5.481985092163086,
+      "kl_min": 5.481985092163086,
+      "kl_reduction_pct": 95.18103703359925,
+      "hidden_dim": 4096,
+      "extraction_layer": 19,
+      "elapsed_seconds": 891.7479968070984
+    },
+    "olmo": {
+      "model_key": "olmo",
+      "kl_start": 69.267822265625,
+      "kl_end": 4.052879333496094,
+      "kl_min": 4.052879333496094,
+      "kl_reduction_pct": 94.14897249410512,
+      "hidden_dim": 4096,
+      "extraction_layer": 19,
+      "elapsed_seconds": 1215.3968822956085
+    }
+  },
+  "elapsed_seconds": 3259.154281616211
+}

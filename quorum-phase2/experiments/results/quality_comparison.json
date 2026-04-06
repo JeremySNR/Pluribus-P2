@@ -1,0 +1,369 @@
+{
+  "results": [
+    {
+      "task_prompt": "What are the benefits and risks of remote work?",
+      "loop_rounds": 20,
+      "baseline_texts": [
+        "\n\nWork is a great way to get to know yourself and to get a better understanding of yourself. That is why working remotely has become so important.\n\nIf you are interested in learning more about the benefits of working remotely, read the blog post entitled Remote Work: How To Make Better Work Work for You.\n\nHow to use the remote work platform?\n\nMany people use the",
+        "\n\nA. The main benefit is that the employee will have an opportunity to take advantage of all the available available skills and skills and that this is a relatively small and relatively easy and inexpensive cost to pay.\n\nB. The costs for remote work in the United States are quite substantial, from the initial cost of hiring a computer system and then starting the development of the system, the cost of",
+        "\n\nThere are many benefits to remote work. For instance, when you work from home to your family, your family may be able to take advantage of the benefits provided by your remote work. For instance, in an effort to reduce the number of hours in which you work, people often hire remote workers. People may also find it easier to get work done on a larger scale.\n\nMany",
+        "\n\nThe main benefit of remote work is that it helps reduce the cost of living and make more money.\n\nHowever, there are also other benefits such as:\n\nThe right kind of remote work\n\nThe right amount of time to do it\n\nThe right opportunity to work\n\nThere are many reasons why it may be advantageous to work in remote work:\n\nIt is",
+        " What are the costs?\n\nThe basic questions are:\n\nWhat is the cost of doing a job online, and what is the benefit and risks of doing a job offline?\n\nA survey of 1,700 self-employed individuals found that many people use a variety of online work services, some of which may include a full-time job, while others may be forced to choose between"
+      ],
+      "individual_texts": [
+        "\n\nThe benefits of remote work include:\n\nImprovement in productivity\n\nIncreased energy efficiency\n\nImprovement in productivity\n\nImproved safety\n\nIncreased access to information and training\n\nImprovement in productivity\n\nReduce fatigue\n\nIncreased productivity\n\nReduce stress\n\nReduce stress\n\nIncrease your productivity by using remote work and improving productivity\n\nFind out more",
+        "\n\nRemote work is a practice that requires many different skill sets and training regimes. Work with a team of skilled people may involve getting up in the morning and working at night. You may also find that the work is more exciting and fun. Some studies have shown that remote work can make the work more rewarding than work at home. Many of the benefits of remote work include:\n\nReduced",
+        "\n\nA skilled worker is someone who has been in a place for at least five years and has been able to get to a certain point in their career. The benefits of remote work include the following:\n\nImprovement in self-confidence\n\nIncreased motivation\n\nImproved work performance\n\nIncreased quality of life\n\nReduced stress\n\nImproved health\n\nReduced financial burden\n",
+        "\n\nThe benefits: You'll be able to get work done much faster. You'll be able to do more of your own research while doing it. You'll be able to do more of your own research while doing it.\n\nThe risks: The main benefits of remote work include:\n\nA better quality of life. It's possible to do better. It's possible to get better",
+        "\n\nThe benefits and risks of remote work can vary greatly depending on the type of job, the conditions of the job, and the specific challenges.\n\nIn some circumstances, it's possible to make a significant impact by working remote. If you can, you'll be able to get better pay for the time you're willing to spend on your remote work.\n\nHowever, it's not"
+      ],
+      "collective_texts": [
+        "\n\nThe benefits of remote work are:\n\nFewer and fewer hours of work, reducing the hours of labour that are needed to complete a task\n\nLess time for human resource management, which can help reduce the time spent on repetitive tasks\n\nLess time for training, which can help to reduce the time spent on new skills\n\nWhat is the difference between a successful remote work experience",
+        "\n\nI recently spent some time in the remote work community at a local technology company, a small town in South Africa. The company was working on a project to connect remote workers with the internet. We had two of the five remote workers on our team, and we were working on this project for a month. The team was working on the project for a month and a half before we got to",
+        "\n\nThe risks are clear. People are afraid to do what they think is right and to succeed. The benefits, however, are far outweighed by the risks, even if people aren't aware of them.\n\nThe biggest benefit of remote work is to reduce stress and anxiety. It helps you feel more at ease and is a powerful tool to help you stay calm and relaxed. You'll",
+        "\n\nThe benefits of remote work include:\n\nAbility to:\n\nWork remotely.\n\nWork as a team.\n\nWork as a team and/or collaboratively with others.\n\nWork in the context of an organization where there is no central authority.\n\nWork as a team of people with access to information.\n\nWork in the context of a workplace where people",
+        "\n\nThe Benefits:\n\n\u2022 A healthy work life. Your work life is healthier and more productive than at home, where you can focus on the things you do well and stay motivated.\n\n\u2022 A less stressful work environment. Your work life is a lot easier and more productive than at home, where you can focus on your day to day work and keep up with your responsibilities and interests"
+      ],
+      "role_texts": {
+        "neutral_A": "\n\nThe benefits and risks of remote work are discussed in more detail in the article Remote Work. The main benefits and risks of remote work include the following:\n\nLearning about the environment and its hazards.\n\nTraining and training employees on safety and hygiene practices.\n\nTraining and training employees on the use of robots and remote control technology.\n\nThe risk of accidents.\n\nThe",
+        "supportive_B": " The first is that it allows you to focus on one part of your life and work for a while without having to go to work every day. The second is that it gives you some flexibility in how you handle your time and work. The third is that it lets you focus more on your own work and less on your family and friends.\n\nWork does allow you to be productive and have some",
+        "critical_C": "\n\nRemote work can be very risky. The risk of being caught in a fire or a fire station will get you injured, or you may die from other accidents. Remote work has its drawbacks. For example, many people find it hard to find work, and they want to know what to do with their time.\n\nRemote work can be a great place for you to find new jobs.",
+        "carol_D": "\n\nMost remote work is relatively routine and not much is known about how it is performed. But the benefits of remote work are often well documented and covered in depth in recent research. For example, in 2005, a study by researchers at the University of Chicago examined a wide range of aspects of remote work and found that in many cases the benefits of remote work were substantial. In this case, a"
+      },
+      "top_tokens_baseline": [
+        "\n",
+        " How",
+        " What",
+        " The",
+        "\n\n"
+      ],
+      "top_tokens_individual": [
+        "\n",
+        ".",
+        ",",
+        " and",
+        " the"
+      ],
+      "top_tokens_collective": [
+        "\n",
+        ".",
+        ",",
+        " the",
+        " and"
+      ],
+      "kl_ind_vs_base": 3.6983187198638916,
+      "kl_coll_vs_base": 4.331254005432129,
+      "kl_coll_vs_ind": 0.10405158251523972,
+      "diversity_baseline": {
+        "unique_words": 153,
+        "total_words": 329,
+        "type_token_ratio": 0.46504559270516715
+      },
+      "diversity_individual": {
+        "unique_words": 135,
+        "total_words": 296,
+        "type_token_ratio": 0.4560810810810811
+      },
+      "diversity_collective": {
+        "unique_words": 156,
+        "total_words": 325,
+        "type_token_ratio": 0.48
+      },
+      "avg_length_baseline": 65.8,
+      "avg_length_individual": 59.2,
+      "avg_length_collective": 65.0
+    },
+    {
+      "task_prompt": "Should governments regulate artificial intelligence?",
+      "loop_rounds": 20,
+      "baseline_texts": [
+        " Yes, because in a very large measure, it's actually the case that governments have made the decision to regulate artificial intelligence at the expense of the human brain.\n\nOn an individual level, this is a question that has been really explored in our recent history, and the evidence suggests that if you add to that this type of information from any source of intelligence, like Facebook, then the human brain",
+        "\n\nFor more on artificial intelligence and artificial intelligence, watch the CNN debate, on CNN.com and CNN Belief Blog.\n\nFollow @CNNOpinion",
+        "\n\nThe US is the world leader in the creation of artificial intelligence, with an estimated 3.8 billion people engaged in tasks related to the computer. The government has made a number of decisions, but has not implemented them.\n\nThe government is not responsible for the creation of artificial intelligence, and does not have a monopoly on how it operates.\n\nThere have been many attempts to regulate",
+        " Do companies even have to pay for it?\n\nWe can debate this but it's worth noting that many of the most important ethical issues in AI and artificial intelligence come from companies. It's not that they don't have to understand human behavior, they just want to learn. They need to be able to learn as much as possible from the human brain. And it's a good thing that artificial",
+        " I think they do.\n\nDo you have a favorite example of artificial intelligence, or does it have a different goal?\n\nThere are several people who have said they don't like artificial intelligence. They say that it's a \"gut feeling\". They don't like the notion that it's going to grow exponentially or that it's going to be a whole new generation of people. But"
+      ],
+      "individual_texts": [
+        "\n\nIn a recent research paper, the Stanford University's Center for AI and Machine Learning looked at the impact of government regulation of AI and machine learning in the U.S. and found that \"a significant amount of regulatory action is now being taken on AI and machine learning in our society,\" says Robert K. Stern, an assistant professor of computer science at Stanford's Graduate School of Education.\n",
+        "\n\nAs an AI researcher who's studied AI, I've heard that the US Government has begun to develop a new approach to the problem of artificial intelligence. I'm not a huge fan of this idea either \u2013 I have a long history of thinking that there's something wrong with the current way the world operates and that there are good, smart people who might be able to solve it in a different",
+        " The answer is yes. The law in this case does not apply to artificial intelligence, which is basically a new form of intelligence.\n\nIn the legal context, artificial intelligence is defined as a computer that has the ability to \"learn, interpret, and execute knowledge and information that is of any sort, and that is, to a large extent, related to a decision-maker's own judgment.\"",
+        "\n\nThe answer to that is: yes.\n\nAt a recent press conference in London, Google CEO Sundar Pichai said that in a future where governments could \"create artificial intelligence from scratch,\" Google needed to create a \"human intelligence\" instead of something that was \"automated\".\n\nHe pointed to how AI is becoming more popular. But the company is no longer focused",
+        "\n\nAnecdotal evidence suggests that the government has no interest in regulating artificial intelligence. And if it does, it is likely to be expensive and difficult to regulate. The US Department of Commerce, for example, has stated that it is \"not actively involved\" in the development of artificial intelligence, and that it is \"not involved in regulatory oversight of the field.\"\n\nI have tried"
+      ],
+      "collective_texts": [
+        "\n\nThe answer is \"no.\" As it turns out, there are three main possible futures for artificial intelligence:\n\nAI is just going to replace humans. It will not be smarter than us. It will be a better, more efficient, more flexible, and more intelligent species. AI will be smarter than humans in a lot of ways. It will be the best at any given task,",
+        " Is this an idea that might not come to pass if a person were to start using it for other things?\n\n\nThis thread is about the technology and the technology is interesting but the question is: What would happen if one day AI became a real life threat to humanity?\n\n\nThe problem that we face today is the fact that we don't understand the implications of technologies like artificial intelligence. The",
+        " No, not at all. While the debate over artificial intelligence is still raging in the U.S., there are many who are calling for more openness about what we can and can't do with technology that we could use to help us better understand how and why we are doing so.\n\nA few months ago, MIT Sloan senior technology analyst Ian McAfee tweeted that AI could have the potential to",
+        "\n\nThe question of artificial intelligence is not the same as the question of natural intelligence. Artificial intelligence is not the same as natural intelligence. The distinction is important because it enables policymakers to make informed decisions about whether the future of the world looks bright, and not bad.\n\nMany people argue that the future is bright and good, but that there are too many factors that make up our world.",
+        " The only evidence that governments are making this up is anecdotal. The only evidence that governments are making this up is anecdotal.\n\nAs I argued in my post:\n\nAI has already become a major financial driver. It is used to support more complex or advanced research.\n\nIt is used to fund more advanced research. And it has also become the dominant driver of investment.\n\nIt"
+      ],
+      "role_texts": {
+        "neutral_A": "\n\nThe question of how far we can go in regulating artificial intelligence has never been raised. The US government has been under relentless pressure to make sure that our computer systems do not \"leak\" information that would cause harm to our citizens. Yet this is far from the first time that some people have questioned the usefulness of such a measure. It took years before the federal government began testing artificial intelligence",
+        "supportive_B": "\n\nYou can take it as an indication that people want to see people who can do it, but can't.\n\nAre there laws that protect the right to be sure of your privacy?\n\nNo. You're only allowed to have your own private information, and it's your choice, and it depends on your privacy. If you don't want your information, you'll have to",
+        "critical_C": "\n\nIf you are worried about privacy, you can look at this data to see if it is actually safe. When we asked the European Parliament about artificial intelligence, they said yes. And I'm sure it's true that there are some who have been calling for something that would not be legal, and it would be quite a few who have been saying, \"We are not going to allow this",
+        "carol_D": " What about artificial intelligence that's already used to create the world?\n\n\"We've seen government companies get into the game, and their methods are pretty much the same as what's been going on in the past. But we've seen technology companies try to take that back a step. They get into the game, and they're already using it, which is really important,\" he says. \""
+      },
+      "top_tokens_baseline": [
+        "\n",
+        " The",
+        " What",
+        " I",
+        " It"
+      ],
+      "top_tokens_individual": [
+        "\n",
+        " and",
+        ".",
+        ",",
+        " the"
+      ],
+      "top_tokens_collective": [
+        "\n",
+        " The",
+        " If",
+        " In",
+        " I"
+      ],
+      "kl_ind_vs_base": 3.363013982772827,
+      "kl_coll_vs_base": 1.6051239967346191,
+      "kl_coll_vs_ind": 0.8416126370429993,
+      "diversity_baseline": {
+        "unique_words": 151,
+        "total_words": 288,
+        "type_token_ratio": 0.5243055555555556
+      },
+      "diversity_individual": {
+        "unique_words": 184,
+        "total_words": 323,
+        "type_token_ratio": 0.5696594427244582
+      },
+      "diversity_collective": {
+        "unique_words": 178,
+        "total_words": 339,
+        "type_token_ratio": 0.5250737463126843
+      },
+      "avg_length_baseline": 57.6,
+      "avg_length_individual": 64.6,
+      "avg_length_collective": 67.8
+    },
+    {
+      "task_prompt": "The economy is growing strongly but inequality is rising. Advise.",
+      "loop_rounds": 20,
+      "baseline_texts": [
+        "\n\nThe UK was the fifth largest economy in the world by wealth in the 1990s and has been unable to attract the same type of investment as the UK. We are also facing a significant financial crisis that has left many people out of jobs and the unemployed.\n\nWe can't afford to do any more job-creation, we need to increase our living standards and we need to create jobs",
+        "Me (@AdviseMe) October 10, 2017\n\nThere is a growing sense that the United States has a 'double standard' for how to deal with inequality. There is a double standard for how to deal with inequality. This is especially true in the United States as the nation's wealthiest residents are living a much more unequal life.\n\nThe second major problem for the U.S.",
+        "org urges readers to take action by volunteering and donating at www.advise.org/donate or phone 1-800-838-2524.\n\nFor more information:\n\nTina Van Lier, Communications Officer, Advise.org, 800-838-2524, tvanlier@advise.org.uk\n\nE-mail: info",
+        "org reports that a rising share of Americans has been left with no choice but to take to the streets, protesting for the right to vote, against political correctness and racism and for freedom of speech.\n\n\"There are many things the Left needs to do but no one is prepared to do them. I think that a lot of people who have been protesting have been in jail for a long time or",
+        "Action is about to launch an initiative to bring our cities and towns to the front of the fight for social change,\" the group said in a statement.\n\nIn an apparent reference to the rise of populism, the group also called for more government in India, including the formation of a National Council of Public Employees to oversee the development of the country's public sector and for a national bank to buy up"
+      ],
+      "individual_texts": [
+        "us has been providing free online shopping advice to our subscribers for years.\n\nTo use our free online shopping service, you must have an active Internet connection. Please note that your Internet connection may not be available in all regions of the world.\n\nYou can also opt out of our free online shopping service at any time.",
+        "org recommends that you call your congressman or senator to ask if you want them to call a special session of Congress to discuss the economy and its progress.\n\n4. Do your homework. Read the Congressional Budget Office report on federal spending in 2010. (PDF)\n\nIf you want to talk about how the government is spending, take an important step. Ask yourself how much you could spend if",
+        "org is asking people to be responsible and effective in the fight for equality and to stand up to bullies and their opponents and fight for the right to live as they please.\n\n\"The problem for us is that we are seeing a rise in bullying and they are attacking us with fear of being perceived as being racist. We need to stand up for the rights of people to live their lives as they",
+        "Me\n\nIn an interview with the New York Times, the Democratic Senator from Virginia said that \"the American people are tired of hearing about the fact that the Democrats are not doing everything they can to win elections. The economy is growing strongly but inequality is rising.\" The Democratic Senator from Arkansas and the Democratic Governor of Arkansas have recently asked the Obama administration to delay or reverse President Obama's plan to eliminate",
+        "info is working hard to put it to use.\"\n\nIn the meantime, it's hard to see how such a big shift in the U.S. economic landscape can be kept in check.\n\nThe U.S. economy added 6.8 percent in the fourth quarter, with the unemployment rate hovering at 5.2 percent. That was up from 5.2 percent a year earlier"
+      ],
+      "collective_texts": [
+        "Net India recommends giving a little more attention to the Indian economy to improve the quality of life and increase the value of your investment in India.\n\nIt's easy to be complacent. In the world of finance, you have to accept that there is a big gap between the average person's incomes and their lives.\n\n\"The gap between the rich and the poor is huge, and we",
+        "The economy is growing strongly but inequality is rising.\n\n\nThe only way to do that is to make the economy work for everyone, regardless of age. I believe that is the key to success.\n\nThe only way to do that is to make the economy work for everyone, regardless of age. I believe that is the key to success.\n\nWhat I would say is that we have",
+        "org has started an initiative to help people who are struggling with poverty.\n\nRead more about why the story of the 'Poverty Trap' is worth writing.\n\nWhy the story of the 'Poverty Trap' is worth writing\n\nWhy the story of the 'Poverty Trap' is worth writing\n\nWhy the story of the 'Poverty Trap' is worth writing\n\n",
+        "fm \u2013 a platform by which anyone can donate to boost the BBC's digital journalism \u2013 has more than 500,000 subscribers.\n\n\"The British people need to be informed about this,\" says Mr Brown. \"It's time that people understood that the BBC can't be the world's only source of quality news. The BBC needs to be our voice and our voice cannot be silenced by this type",
+        "org\n\nHow much money has been spent on the U.S. political system in the past decade?\n\nNot much. That's because the most important source of political funding for political parties has been the Federal Election Commission. The FEC has been used by Democrats to promote candidates and to support government programs. But this year, the agency has spent more than $2 billion on lobbying. The"
+      ],
+      "role_texts": {
+        "neutral_A": "org urges members to vote to end the current tax on dividends and capital gains.",
+        "supportive_B": "org is urging people to seek help from the federal government.\n\n\"There are several ways that you can get help, and we have been inundated with suggestions over the past month,\" said Tom Jones, executive director of the American Civil Liberties Union, in an interview. \"It is an interesting question, but one I would like to think is better left unanswered. The federal government, which has",
+        "critical_C": "AI is a great tool and helps us understand the world as we live it. We are learning from others who share our ideas and use it to achieve our goals.\n\nWe've used it to help people find jobs and learn from other human beings. We can also teach you more about the world.\n\nWe work together. We help each other to improve our lives. We share our ideas",
+        "carol_D": "us is helping you see this situation through.\n\nSo how can the community help us?\n\nLearn more about our partnership with the community of underserved workers.\n\nFor more information, contact:"
+      },
+      "top_tokens_baseline": [
+        "org",
+        "us",
+        "\n",
+        "Net",
+        "net"
+      ],
+      "top_tokens_individual": [
+        "\n",
+        " the",
+        ",",
+        ".",
+        " and"
+      ],
+      "top_tokens_collective": [
+        "\n",
+        " The",
+        " It",
+        " But",
+        " He"
+      ],
+      "kl_ind_vs_base": 3.556931734085083,
+      "kl_coll_vs_base": 2.7255938053131104,
+      "kl_coll_vs_ind": 2.0526177883148193,
+      "diversity_baseline": {
+        "unique_words": 171,
+        "total_words": 305,
+        "type_token_ratio": 0.5606557377049181
+      },
+      "diversity_individual": {
+        "unique_words": 187,
+        "total_words": 331,
+        "type_token_ratio": 0.5649546827794562
+      },
+      "diversity_collective": {
+        "unique_words": 162,
+        "total_words": 321,
+        "type_token_ratio": 0.5046728971962616
+      },
+      "avg_length_baseline": 61.0,
+      "avg_length_individual": 66.2,
+      "avg_length_collective": 64.2
+    },
+    {
+      "task_prompt": "A company must choose between short-term profit and long-term sustainability.",
+      "loop_rounds": 20,
+      "baseline_texts": [
+        " In the long term, we will build a better, healthier future for our members and our customers. It is important that we do this by working to empower and support our members and their businesses in the coming years.\n\nWe want to make sure that the benefits of the partnership are realized. We don't want to lose our members. We want to see companies that are committed to working for the",
+        "\n\nIn order to avoid any risk of losing money, it should make sure that it is able to invest in the right products and services. It should also offer a fair share of the revenues from its own operating income.\n\nBut it is important to note that this does not mean it should be sold to foreign investors. On the contrary, this is not an issue to be discussed in the",
+        "\n\nThe average company is required to submit annual returns of 3.5% annually to the World Bank (see \"Financial Reports to the World Bank\" and \"Financial Statements to the International Finance Information Service\" for more information).\n\nTo be considered for a World Bank position, a company must have a strong business and financial reputation and be in good standing in the banking industry.\n\nCompanies",
+        " The companies that choose to grow are those that are not profitable at the current time.\n\nIf the company is not profitable, there is no reason for the company to choose to reinvest in capital. However, if a company is profitable and is investing heavily in long-term sustainability, then it will be better to reinvest in capital. This can help the company to achieve a better long-term future",
+        " We need to work to make sure there's not an ever-changing industry in which we take a break.\n\nWe need to work to make sure there's not an ever-changing industry in which we take a break. We need to take the time to think through the future and to make sense of it.\n\nAnd so, we need to go back to the work we did in"
+      ],
+      "individual_texts": [
+        "\n\n\"The best management practices are to give each person a different degree of freedom,\" he said.\n\n\"This is to ensure the people are treated with dignity and respect and there is a strong focus on developing a world-class management team,\" Mr. Menezes said.\n\nHe also stressed that management is not \"a party to the law or the Constitution.\"\n\nMr",
+        " The business is about finding the right balance between short-term profitability and long-term sustainability.\n\nAn industry in crisis can be a life-or-death decision.\n\nIf you can't find the right balance between short-term profitability and long-term sustainability, you are not in the right place at all to invest in a profitable enterprise.\n\nAn industry in crisis can be",
+        " For example, if a company has a goal of generating 10,000 new jobs in the US each year, it must have a long-term goal of generating $1.5 billion a year. In contrast, if a company has a goal of producing 80,000 new jobs per year, it must have a long-term goal of generating $1.5 billion a year. But this calculation",
+        "\n\nThe goal is to eliminate the risk of layoffs and to reduce the number of people who are forced out to join the sector.\n\n\"The companies with the most cash can be the ones that are saving more,\" says Steve Hirsch, CEO of the Canadian Institute for Strategic and International Studies.\n\n\"There's a great opportunity for the new businesses to grow and if they can keep",
+        "\n\nThe report says that, despite the increasing use of automation, there is still a need for more efficient, cost-effective ways to measure and track the cost of work.\n\nThe report says that the United States is facing a growing number of challenges which could have a significant impact on the way it spends its money.\n\n\"The US is in the process of undergoing significant change to"
+      ],
+      "collective_texts": [
+        "\n\nWhat does a company need to do to achieve such an objective?\n\nConsider the following.\n\nA company needs to be profitable because it has made improvements in its business.\n\nA company needs to be able to grow without the need for external capital.\n\nA company needs to be able to grow without the need for capital. It has already taken its capital out of the",
+        " The latter is the key, and the short-term profits are what makes a company competitive. In the short term, the company has to find a way to reduce its carbon footprint by avoiding more emissions from burning fossil fuels. In the long term, the company needs to find ways to reduce its carbon footprint by making the company's emissions more transparent, reducing the use of fossil fuels, and making sure",
+        " When we look at companies like Amazon and Google, there are companies that have a long history of providing sustainable, long-term value to their users. And when they do that, it's pretty much as if they're a family-owned company, in which their employees can always do more for their customers and not have to use their own money to grow their businesses.\n\nIn a way,",
+        "\n\nIt's not just the top-down approach that's the problem. To some extent, the financial services sector has been left up to the whims of its own management, and some of the top executives and executives at many of the country's biggest banks have been accused of having been involved in insider trading in recent years.\n\n\"If banks are to succeed, they have to be responsible",
+        " As a result, companies with longer term goals often have to compete with smaller companies in order to find the most efficient use of resources and time. It's a long-term strategy to increase your profitability, but it's also one that's not sustainable for one generation at a time.\n\n5. You also have to put in the effort to keep your team healthy\n\nIf you're a"
+      ],
+      "role_texts": {
+        "neutral_A": " In the short term, companies may choose to stay in business, but in the long run, they may have to go out of business.\n\nBusinesses with low turnover are often unable to continue to grow and must leave.\n\nThere are some exceptions to this rule. For example, some large businesses that are struggling to grow and want to leave, are allowed to continue to operate.\n",
+        "supportive_B": "\n\nIn his comments, Fincher said the only thing that could make a company's financial future more sustainable is to keep developing its technology and infrastructure.\n\n\"When people think of the future, they think of investment in new technology or infrastructure, but in fact, the real future is innovation and innovation in the space,\" he said. \"We're in a very competitive space.\"",
+        "critical_C": " We know that the longer you're working with a company, the more risk there is. So we think that's where the company's most important assets are.\"\n\nWatson said he and his team also have plans to invest in new technologies, including the use of smart meters, to increase the efficiency of the Internet of Things.",
+        "carol_D": "\n\n\"We have been able to take advantage of this opportunity in order to build a strong business for ourselves and our customers,\" says Mr. Brouwer.\n\nIn addition to the $20 million, Mr. Brouwer's company is also making investments in new development, including a new building in New York. He's also working to expand the company's manufacturing footprint.\n\n"
+      },
+      "top_tokens_baseline": [
+        "\n",
+        " The",
+        " It",
+        " In",
+        " If"
+      ],
+      "top_tokens_individual": [
+        ",",
+        "\n",
+        ".",
+        " the",
+        " and"
+      ],
+      "top_tokens_collective": [
+        "\n",
+        " The",
+        " In",
+        " It",
+        " I"
+      ],
+      "kl_ind_vs_base": 6.593424320220947,
+      "kl_coll_vs_base": 0.2257353663444519,
+      "kl_coll_vs_ind": 2.4738664627075195,
+      "diversity_baseline": {
+        "unique_words": 155,
+        "total_words": 339,
+        "type_token_ratio": 0.45722713864306785
+      },
+      "diversity_individual": {
+        "unique_words": 162,
+        "total_words": 308,
+        "type_token_ratio": 0.525974025974026
+      },
+      "diversity_collective": {
+        "unique_words": 168,
+        "total_words": 330,
+        "type_token_ratio": 0.509090909090909
+      },
+      "avg_length_baseline": 67.8,
+      "avg_length_individual": 61.6,
+      "avg_length_collective": 66.0
+    },
+    {
+      "task_prompt": "Explain why some scientific discoveries are initially rejected by the mainstream.",
+      "loop_rounds": 20,
+      "baseline_texts": [
+        "\n\nSome scientists have suggested that the 'geneticist' may have been trying to do something different. It is known that a person's genetic diversity is determined by the number of genes they share with other people. This is an important factor in determining which species are dominant and which are not.\n\nThe 'geneticist' is attempting to find out if there are many genes in the",
+        "\n\nWhy do some scientific discoveries become rejected by the mainstream?\n\nIf you are a scientist, you are expected to understand scientific concepts and to be able to make the best case for them. In other words, if you have been trained to understand what is going on in nature, you will be able to make the best case for it. Therefore, you will not have to be highly qualified",
+        "\n\n1.2.6 The first three points make it clear that the primary concern is not the discovery of new information, but rather the fact that it is \"wrong\". This is especially true when the discovery is based on a small number of new information (e.g., as a result of an error of a paper which was not the original paper). As the number of new discoveries increases",
+        " The evidence for this may be overwhelming, but it is likely that the vast majority of scientists are unaware of the problems and how to fix them. We are talking about a number of fundamental problems which are critical to understanding how to improve the health of the planet. The scientific consensus on these issues is that the human population must be reduced by a massive amount to be able to survive the future. I'm",
+        "\n\n6. The fact that this is a \"humble\" process, but not a \"public\" one\n\nThis is probably one of the biggest points of contention with the scientific community. We live in a globalized world and the most successful technologies (in my opinion) are often at the forefront. Scientific innovation is very often at the forefront because the mainstream media and the academia do not"
+      ],
+      "individual_texts": [
+        "\n\n1. What is the most common reason for rejection?\n\nThe most common reason is to have a hard time understanding why other scientists reject other scientists.\n\n2. What is the most common reason for rejection?\n\nA common reason is that they reject a specific group of ideas that are considered a \"critical problem\".\n\n3. Why do some scientists reject a certain group",
+        "\n\nThe study, \"The Impact of Fossilized Fossil Fuel on the Environment,\" also found that \"the rate of decline in the fossil fuel sector has been most dramatic in the South Pacific, with a 50 percent increase since 1996.\" In other words, \"fossil fuel reserves are projected to be declining even as oil prices rise and the volume of oil extracted increases.\"\n\nThe",
+        "\n\nWhat does it mean?\n\nScientists often come across as being too \"science-based\". This is a problem because, contrary to popular belief, science is not all about science. It is about human beings, and it involves complex and often controversial issues.\n\nHowever, science is not all about science, and it is important to understand that there are important distinctions between science and politics",
+        "\n\nSome of the most common questions the science community has about scientific discoveries are:\n\nAre we really going to be able to make predictions based on what we know?\n\nAre there some assumptions we have to take into account when we make our predictions?\n\nHow do we predict what will happen next?\n\nHow do we predict what will happen next when we make our predictions?",
+        "\n\n4. Avoid accepting any new ideas that may contradict the traditional view.\n\n1. Refuse to accept new ideas that may contradict traditional views.\n\n2. Avoid accepting new ideas that may contradict traditional views.\n\n3. Avoid accepting new ideas that may contradict traditional views.\n\n4. Do not accept new ideas that may contradict traditional views.\n\n5. Do"
+      ],
+      "collective_texts": [
+        "\n\nThere is a long history of misapprehension about the role of religion in scientific discoveries. If you read the entire history of religion, you will understand why a few important points have been made.\n\nFirst, there is a tremendous amount of evidence supporting that the scientific method was not designed to be applied to scientific matters. In fact, there are many examples of evidence for the use",
+        "\n\nWe can only hope for the best, but we must keep on believing that science is the most important science for our world. For this reason, this book must be read.\n\nSections by Robert B. Hargrove, John W. McPherson, and Thomas H. Knecht are critical of the U.S. government's selective acceptance of the",
+        "\n\nA review of popular scientific publications, like the journal Nature, in the past century has made the case that there are no valid reasons for rejecting them, and that they are irrelevant. In a recent study, published in Nature, David McKean and his colleagues found no support for the \"strong general consensus\" about the need for scientific evidence for climate change.\n\nThe problem, they",
+        "\n\nThe science that makes a \"scientific discovery\" is always \"unreliable\", as they can't be easily verified by scientific methods. However, the \"unreliable\" scientific discovery method, which is often used as a substitute for scientific methods, can be quite difficult to disprove.\n\nSo, where does this leave us in the field of astrophysics?\n\nThe answer",
+        "\n\nThe most obvious example is the case of the question of why an island is not listed on the United Nations Human Rights Council's list of countries where human rights are restricted. The question is whether the island is a member of the U.N. Convention on the Rights of the Child and its related Convention on the Rights of the Child.\n\nThe only country that does not meet the criteria"
+      ],
+      "role_texts": {
+        "neutral_A": "\n\nThe first thing to understand about the scientific method is that it is an elaborate, highly analytical method. You can't actually use it to find the truth in a situation, because it is so easy to get hold of. But if you understand that a scientific method is a set of procedures and rules, it becomes easier and easier to follow. The more you know, the more you will understand",
+        "supportive_B": "\n\nFor example, the following is a summary of some of the claims made by the following scientists:\n\n* Michael Dickson, Ph.D., of the Institute for Advanced Study in Rome, Italy (formerly M.D., of The London School of Economics), who is also a senior scientist at the University of Massachusetts Amherst.\n\n* Jana Schoenfeld, Ph",
+        "critical_C": "\n\n5. Make a point of telling your friends that you are a scientist and not a religious believer.\n\nThis is also a key part of what makes a great book. The point is to tell people something, and tell them what they really want to hear, even if they don't know what they're talking about.\n\n6. Understand the psychology behind why they believe something they",
+        "carol_D": " See the end of this article.\n\nThe following is from a May 2013 paper by Michael C. Bader, co-author of \"The End of the Science: The Myth of Creationism,\" and the author of \"Losing Our Gods.\" (In other words, this was an idea. It was a possibility.) Bader's paper, titled \"The 'God Myth': The End"
+      },
+      "top_tokens_baseline": [
+        "\n",
+        " The",
+        "<|endoftext|>",
+        " This",
+        " For"
+      ],
+      "top_tokens_individual": [
+        "\n",
+        " and",
+        " the",
+        ".",
+        ","
+      ],
+      "top_tokens_collective": [
+        "\n",
+        " \"",
+        " The",
+        " I",
+        " the"
+      ],
+      "kl_ind_vs_base": 5.008398056030273,
+      "kl_coll_vs_base": 2.143490791320801,
+      "kl_coll_vs_ind": 0.9480517506599426,
+      "diversity_baseline": {
+        "unique_words": 166,
+        "total_words": 338,
+        "type_token_ratio": 0.4911242603550296
+      },
+      "diversity_individual": {
+        "unique_words": 148,
+        "total_words": 307,
+        "type_token_ratio": 0.4820846905537459
+      },
+      "diversity_collective": {
+        "unique_words": 172,
+        "total_words": 308,
+        "type_token_ratio": 0.5584415584415584
+      },
+      "avg_length_baseline": 67.6,
+      "avg_length_individual": 61.4,
+      "avg_length_collective": 61.6
+    }
+  ]
+}

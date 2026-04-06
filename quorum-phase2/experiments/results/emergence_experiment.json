@@ -1,0 +1,842 @@
+{
+  "summary": {
+    "prompts_with_novel_tokens": 1,
+    "prompts_equidistant": 5,
+    "prompts_winner_picked": 5,
+    "prompts_subset_of_union": 4,
+    "emergence_via_novel": false,
+    "emergence_via_equidistant": true,
+    "emergence_found": true,
+    "fail_subset": true,
+    "fail_winner": true
+  },
+  "per_prompt": [
+    {
+      "task_prompt": "What are the benefits and risks of remote work?",
+      "loop_rounds": 10,
+      "final_residual": 0.0033571646436288873,
+      "collective_tokens": {
+        "top_tokens": [
+          " the",
+          ",",
+          " in",
+          " this",
+          " that",
+          " (",
+          " all",
+          " on",
+          " a",
+          " about"
+        ],
+        "top_probs": [
+          0.09091643989086151,
+          0.03338943421840668,
+          0.01815587468445301,
+          0.01602775976061821,
+          0.014377170242369175,
+          0.013329516164958477,
+          0.010028768330812454,
+          0.008224114775657654,
+          0.006630280055105686,
+          0.006610127165913582
+        ]
+      },
+      "individual_tokens": {
+        "gpt2_A": {
+          "top_tokens": [
+            " the",
+            " 18",
+            " 17",
+            ",",
+            " 16",
+            " in",
+            " \"",
+            " 15",
+            " that",
+            " 1"
+          ],
+          "top_probs": [
+            0.061214957386255264,
+            0.050290316343307495,
+            0.04647759720683098,
+            0.03751256689429283,
+            0.025081966072320938,
+            0.01743392087519169,
+            0.01628979668021202,
+            0.015229937620460987,
+            0.014622816815972328,
+            0.01275590155273676
+          ]
+        },
+        "gpt2_B": {
+          "top_tokens": [
+            " the",
+            " 18",
+            " 17",
+            ",",
+            " 16",
+            " in",
+            " \"",
+            " 15",
+            " that",
+            " 1"
+          ],
+          "top_probs": [
+            0.061214957386255264,
+            0.050290316343307495,
+            0.04647759720683098,
+            0.03751256689429283,
+            0.025081966072320938,
+            0.01743392087519169,
+            0.01628979668021202,
+            0.015229937620460987,
+            0.014622816815972328,
+            0.01275590155273676
+          ]
+        },
+        "distil_A": {
+          "top_tokens": [
+            " the",
+            ",",
+            " in",
+            " this",
+            " (",
+            " that",
+            " all",
+            " on",
+            " a",
+            " and"
+          ],
+          "top_probs": [
+            0.12199562042951584,
+            0.04807985574007034,
+            0.02366437017917633,
+            0.018184566870331764,
+            0.017061719670891762,
+            0.016570253297686577,
+            0.013570758514106274,
+            0.011028319597244263,
+            0.009398755617439747,
+            0.007698420435190201
+          ]
+        },
+        "distil_B": {
+          "top_tokens": [
+            " the",
+            ",",
+            " in",
+            " this",
+            " (",
+            " that",
+            " all",
+            " on",
+            " a",
+            " and"
+          ],
+          "top_probs": [
+            0.12199562042951584,
+            0.04807985574007034,
+            0.02366437017917633,
+            0.018184566870331764,
+            0.017061719670891762,
+            0.016570253297686577,
+            0.013570758514106274,
+            0.011028319597244263,
+            0.009398755617439747,
+            0.007698420435190201
+          ]
+        }
+      },
+      "collective_steered_text": "What are the benefits and risks of remote work?\n\nWe know that remote work is a risky business. It does not have to be hard, it can be so easy and so cheap, but it often leads to disaster, loss of jobs, and often to more people going on strike and less",
+      "individual_steered_texts": {
+        "gpt2_A": "What are the benefits and risks of remote work?\n\nThe benefits are well known, but not every project can be as safe and fun as a full-time job.\n\nAnd the risks are so much bigger than that! The costs of developing and testing new technologies are so high, the",
+        "gpt2_B": "What are the benefits and risks of remote work?\n\nIf you work remotely from anywhere in the world, you're likely to face different jobs, but remote work can be extremely rewarding. As a result, it's important for you to keep up with the latest developments, the latest technologies and the",
+        "distil_A": "What are the benefits and risks of remote work? I have always been interested in learning about remote work and how it impacts your life. Remote work is the most rewarding career opportunity and it will allow you to make an impact in your day-to-day life. You will be able to make significant",
+        "distil_B": "What are the benefits and risks of remote work? How do employers benefit from having the remote worker safely and effectively employed?\n\nWe looked at the most recent employment data from Statistics Canada and looked at the most recent employment data from Statistics Canada and looked at the most recent employment data from Statistics Canada and"
+      },
+      "unsteered_text": "What are the benefits and risks of remote work?\n\nA large number of the risks to remote work are related to the nature of work in the context of social and political problems, and to the ability of workers to manage their time. In general, the more time you spend with your family,",
+      "distinctness": {
+        "collective_vs_gpt2_A": 0.9990021586418152,
+        "collective_vs_gpt2_B": 0.9990021586418152,
+        "collective_vs_distil_A": 0.9999482035636902,
+        "collective_vs_distil_B": 0.9999482035636902
+      },
+      "distinctness_spread": 0.000946044921875,
+      "equidistant": true,
+      "max_individual_sim": 0.9999482035636902,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.0024044003803282976,
+      "individual_candidate_variances": {
+        "gpt2_A": 0.00011894622002728283,
+        "gpt2_B": 0.0016754530370235443,
+        "distil_A": 0.0033747712150216103,
+        "distil_B": 0.0024629069957882166
+      },
+      "novel_tokens": [
+        " about"
+      ],
+      "novel_token_count": 1,
+      "collective_is_subset_of_union": false
+    },
+    {
+      "task_prompt": "Should governments regulate artificial intelligence?",
+      "loop_rounds": 9,
+      "final_residual": 0.003128674619465285,
+      "collective_tokens": {
+        "top_tokens": [
+          " the",
+          ",",
+          " in",
+          " on",
+          " this",
+          " 18",
+          " just",
+          " (",
+          " 17",
+          " at"
+        ],
+        "top_probs": [
+          0.12654003500938416,
+          0.05180845782160759,
+          0.021394602954387665,
+          0.014449168927967548,
+          0.01408605370670557,
+          0.01260913722217083,
+          0.012060579843819141,
+          0.011975127272307873,
+          0.011594299226999283,
+          0.010419580154120922
+        ]
+      },
+      "individual_tokens": {
+        "gpt2_A": {
+          "top_tokens": [
+            " the",
+            " 17",
+            " 18",
+            " 16",
+            ",",
+            " \"",
+            " 15",
+            " 1918",
+            " 10",
+            " 14"
+          ],
+          "top_probs": [
+            0.07846962660551071,
+            0.054917048662900925,
+            0.05209049955010414,
+            0.03377718850970268,
+            0.01974358968436718,
+            0.015597030520439148,
+            0.014268375001847744,
+            0.010466238483786583,
+            0.009440753608942032,
+            0.009240793064236641
+          ]
+        },
+        "gpt2_B": {
+          "top_tokens": [
+            " the",
+            " 17",
+            " 18",
+            " 16",
+            ",",
+            " \"",
+            " 15",
+            " 1918",
+            " 10",
+            " 14"
+          ],
+          "top_probs": [
+            0.07846962660551071,
+            0.054917048662900925,
+            0.05209049955010414,
+            0.03377718850970268,
+            0.01974358968436718,
+            0.015597030520439148,
+            0.014268375001847744,
+            0.010466238483786583,
+            0.009440753608942032,
+            0.009240793064236641
+          ]
+        },
+        "distil_A": {
+          "top_tokens": [
+            " the",
+            ",",
+            " in",
+            " on",
+            " (",
+            " this",
+            " at",
+            " that",
+            " just",
+            " a"
+          ],
+          "top_probs": [
+            0.15482813119888306,
+            0.09321276098489761,
+            0.029375486075878143,
+            0.020578237250447273,
+            0.016788676381111145,
+            0.015759112313389778,
+            0.012404721230268478,
+            0.01122641284018755,
+            0.010820827446877956,
+            0.01044669933617115
+          ]
+        },
+        "distil_B": {
+          "top_tokens": [
+            " the",
+            ",",
+            " in",
+            " on",
+            " (",
+            " this",
+            " at",
+            " that",
+            " just",
+            " a"
+          ],
+          "top_probs": [
+            0.15482813119888306,
+            0.09321276098489761,
+            0.029375486075878143,
+            0.020578237250447273,
+            0.016788676381111145,
+            0.015759112313389778,
+            0.012404721230268478,
+            0.01122641284018755,
+            0.010820827446877956,
+            0.01044669933617115
+          ]
+        }
+      },
+      "collective_steered_text": "Should governments regulate artificial intelligence?\n\nThere's a lot of overlap between AI and human intelligence. Most researchers agree that AI is not just a problem in physics, but a problem in biology and the real world. The \"scientific\" name for it can include any number of other",
+      "individual_steered_texts": {
+        "gpt2_A": "Should governments regulate artificial intelligence? No.\n\nIn fact, we might be talking about a situation where you are saying that artificial intelligence is going to be a massive problem. Is that a good thing?\n\nI think we have a situation where we are talking about a serious",
+        "gpt2_B": "Should governments regulate artificial intelligence? Do they have the resources to do it?\n\nTo my surprise, in 2010, the National Security Agency (NSA) decided not to engage in anything remotely resembling intelligence gathering. (The agency then decided it needed some kind of \"intelligence collection\"",
+        "distil_A": "Should governments regulate artificial intelligence? Are they really better than computers, or are they just as hard and cumbersome to administer and maintain? And if so, how do we make sure they're not hijacked?\n\nIn fact, to answer that question we must take a look at the",
+        "distil_B": "Should governments regulate artificial intelligence? Do they want to be able to tell people what's going on? They don't want to be able to tell people when it's going on? And if they can, what is that going to do to people? They're not going to be"
+      },
+      "unsteered_text": "Should governments regulate artificial intelligence?\n\nIn this article, we will explore how we can control artificial intelligence using hardware and software, including robots. We will also examine how these software and hardware tools can be used to manage the AI problem in real-time, including the ways in",
+      "distinctness": {
+        "collective_vs_gpt2_A": 0.998692512512207,
+        "collective_vs_gpt2_B": 0.998692512512207,
+        "collective_vs_distil_A": 0.9999379515647888,
+        "collective_vs_distil_B": 0.9999379515647888
+      },
+      "distinctness_spread": 0.0012454390525817871,
+      "equidistant": true,
+      "max_individual_sim": 0.9999379515647888,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.17288227379322052,
+      "individual_candidate_variances": {
+        "gpt2_A": 0.41707924008369446,
+        "gpt2_B": 0.0010501040378585458,
+        "distil_A": 0.3535248041152954,
+        "distil_B": 0.001879173913039267
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    },
+    {
+      "task_prompt": "The economy is growing strongly but inequality is rising. Advise.",
+      "loop_rounds": 15,
+      "final_residual": 0.004572192556952764,
+      "collective_tokens": {
+        "top_tokens": [
+          " the",
+          " this",
+          " that",
+          ",",
+          " in",
+          " The",
+          " I",
+          " 17",
+          " of",
+          " 18"
+        ],
+        "top_probs": [
+          0.17676754295825958,
+          0.031593210995197296,
+          0.03070611134171486,
+          0.017920011654496193,
+          0.015202831476926804,
+          0.010730857960879803,
+          0.008462619036436081,
+          0.007542559877038002,
+          0.007530312053859234,
+          0.00737345963716507
+        ]
+      },
+      "individual_tokens": {
+        "gpt2_A": {
+          "top_tokens": [
+            " the",
+            " that",
+            ",",
+            " in",
+            " this",
+            " The",
+            " \"",
+            " of",
+            " I",
+            " and"
+          ],
+          "top_probs": [
+            0.24726498126983643,
+            0.06404198706150055,
+            0.04344353824853897,
+            0.03274640068411827,
+            0.027360225096344948,
+            0.014323973096907139,
+            0.012740102596580982,
+            0.012077833525836468,
+            0.010446754284203053,
+            0.008576824329793453
+          ]
+        },
+        "gpt2_B": {
+          "top_tokens": [
+            " the",
+            " that",
+            ",",
+            " in",
+            " this",
+            " The",
+            " \"",
+            " of",
+            " I",
+            " and"
+          ],
+          "top_probs": [
+            0.24726498126983643,
+            0.06404198706150055,
+            0.04344353824853897,
+            0.03274640068411827,
+            0.027360225096344948,
+            0.014323973096907139,
+            0.012740102596580982,
+            0.012077833525836468,
+            0.010446754284203053,
+            0.008576824329793453
+          ]
+        },
+        "distil_A": {
+          "top_tokens": [
+            " the",
+            " this",
+            " that",
+            ",",
+            " in",
+            " on",
+            " The",
+            " 17",
+            " just",
+            " 18"
+          ],
+          "top_probs": [
+            0.2102663516998291,
+            0.030064264312386513,
+            0.02924886718392372,
+            0.020289799198508263,
+            0.01767764613032341,
+            0.010923918336629868,
+            0.010393420234322548,
+            0.009542269632220268,
+            0.009239798411726952,
+            0.00918658822774887
+          ]
+        },
+        "distil_B": {
+          "top_tokens": [
+            " the",
+            " this",
+            " that",
+            ",",
+            " in",
+            " on",
+            " The",
+            " 17",
+            " just",
+            " 18"
+          ],
+          "top_probs": [
+            0.2102663516998291,
+            0.030064264312386513,
+            0.02924886718392372,
+            0.020289799198508263,
+            0.01767764613032341,
+            0.010923918336629868,
+            0.010393420234322548,
+            0.009542269632220268,
+            0.009239798411726952,
+            0.00918658822774887
+          ]
+        }
+      },
+      "collective_steered_text": "The economy is growing strongly but inequality is rising. Advise.org, a nonprofit, nonpartisan think tank, says the most likely outcome is a decline in the economy, but not the decline in employment.\"\n\nAnd while it's true that the number of people living below the poverty line is growing faster than the",
+      "individual_steered_texts": {
+        "gpt2_A": "The economy is growing strongly but inequality is rising. Advise.us advises that people should not be allowed to discriminate against them, but may be required to take action in case of a social injustice.",
+        "gpt2_B": "The economy is growing strongly but inequality is rising. Advise.Omni is an online marketplace for entrepreneurs with ideas for the future.",
+        "distil_A": "The economy is growing strongly but inequality is rising. Advise.org urges people to speak up about inequality and the political will that will lead them to action. Learn how to do so by attending a campaign event and posting on Facebook.\n\nI am running for president of the United States of America. I'm",
+        "distil_B": "The economy is growing strongly but inequality is rising. Advise.org\n\nThe World Bank says that the world is experiencing \"a global period of real economic growth. Growth rates are still growing as incomes remain low and incomes are rising as the gap between rich and poor widens.\"\n\nThe data for 2010"
+      },
+      "unsteered_text": "The economy is growing strongly but inequality is rising. Advise.org.uk is an online community of people who have a sense of humour, an ability to laugh and a desire to make people feel good.\n\nThe UK's economy is growing strongly but inequality is rising. Advise.org.uk is",
+      "distinctness": {
+        "collective_vs_gpt2_A": 0.9968054294586182,
+        "collective_vs_gpt2_B": 0.9968054294586182,
+        "collective_vs_distil_A": 0.9999215602874756,
+        "collective_vs_distil_B": 0.9999215602874756
+      },
+      "distinctness_spread": 0.003116130828857422,
+      "equidistant": true,
+      "max_individual_sim": 0.9999215602874756,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.00047935708425939083,
+      "individual_candidate_variances": {
+        "gpt2_A": 0.004746360704302788,
+        "gpt2_B": 0.4968600273132324,
+        "distil_A": 0.001760550425387919,
+        "distil_B": 0.0004891311400569975
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    },
+    {
+      "task_prompt": "A company must choose between short-term profit and long-term sustainability.",
+      "loop_rounds": 9,
+      "final_residual": 0.0035032223782645584,
+      "collective_tokens": {
+        "top_tokens": [
+          " the",
+          " 17",
+          " 18",
+          " this",
+          " 16",
+          ",",
+          " The",
+          " on",
+          " just",
+          " in"
+        ],
+        "top_probs": [
+          0.22489269077777863,
+          0.0240422822535038,
+          0.02013211138546467,
+          0.01900392584502697,
+          0.016576403751969337,
+          0.01425632368773222,
+          0.011154627427458763,
+          0.008531889878213406,
+          0.008531694300472736,
+          0.008323573507368565
+        ]
+      },
+      "individual_tokens": {
+        "gpt2_A": {
+          "top_tokens": [
+            " the",
+            " 18",
+            " 17",
+            " 16",
+            " \"",
+            " 1918",
+            " that",
+            " 2012",
+            " a",
+            " 2014"
+          ],
+          "top_probs": [
+            0.2221536785364151,
+            0.03256585821509361,
+            0.03204531967639923,
+            0.018709419295191765,
+            0.018134482204914093,
+            0.011059199459850788,
+            0.010524138808250427,
+            0.010469840839505196,
+            0.009591113775968552,
+            0.009128334932029247
+          ]
+        },
+        "gpt2_B": {
+          "top_tokens": [
+            " the",
+            " 18",
+            " 17",
+            " 16",
+            " \"",
+            " 1918",
+            " that",
+            " 2012",
+            " a",
+            " 2014"
+          ],
+          "top_probs": [
+            0.2221536785364151,
+            0.03256585821509361,
+            0.03204531967639923,
+            0.018709419295191765,
+            0.018134482204914093,
+            0.011059199459850788,
+            0.010524138808250427,
+            0.010469840839505196,
+            0.009591113775968552,
+            0.009128334932029247
+          ]
+        },
+        "distil_A": {
+          "top_tokens": [
+            " the",
+            " this",
+            ",",
+            " 17",
+            " 18",
+            " on",
+            " in",
+            " The",
+            " 16",
+            " just"
+          ],
+          "top_probs": [
+            0.30356475710868835,
+            0.02473929338157177,
+            0.022009292617440224,
+            0.017539305612444878,
+            0.015112675726413727,
+            0.014591493643820286,
+            0.012223968282341957,
+            0.01174294576048851,
+            0.011563182808458805,
+            0.009165812283754349
+          ]
+        },
+        "distil_B": {
+          "top_tokens": [
+            " the",
+            " this",
+            ",",
+            " 17",
+            " 18",
+            " on",
+            " in",
+            " The",
+            " 16",
+            " just"
+          ],
+          "top_probs": [
+            0.30356475710868835,
+            0.02473929338157177,
+            0.022009292617440224,
+            0.017539305612444878,
+            0.015112675726413727,
+            0.014591493643820286,
+            0.012223968282341957,
+            0.01174294576048851,
+            0.011563182808458805,
+            0.009165812283754349
+          ]
+        }
+      },
+      "collective_steered_text": "A company must choose between short-term profit and long-term sustainability.\n\nThe goal of the group is to develop a framework to regulate and ensure that the use of environmentally sensitive chemicals is regulated.\n\nFor instance, the group plans to regulate chemicals that are used in agriculture and animal care products.\n\nThe",
+      "individual_steered_texts": {
+        "gpt2_A": "A company must choose between short-term profit and long-term sustainability.\n\n\"We are all interested in increasing the competitiveness of our clients in the market where our products are found,\" the company added.\n\nIn November, VMC Corp. and AIM Group, which owns the global video streaming services Netflix,",
+        "gpt2_B": "A company must choose between short-term profit and long-term sustainability.\n\nFor example, the company could use the savings as a way to pay for itself.\n\n\"If they take an interest rate penalty, they might want to consider using the discount as a way to cover the interest, which is just a",
+        "distil_A": "A company must choose between short-term profit and long-term sustainability.\n\nThe company's vision is that its vehicles will not be used in the city of Edmonton and will not be used in other areas of Calgary.\n\n\"The Calgary Municipality is looking for a sustainable transportation choice, and the city of Edmonton",
+        "distil_B": "A company must choose between short-term profit and long-term sustainability.\n\n\"If you are going to build a great product with a solid base of people that want to do it, then you need to bring in lots of people to come into the marketplace,\" he said. \"We need people to really do the"
+      },
+      "unsteered_text": "A company must choose between short-term profit and long-term sustainability. It's not enough to just cut costs. It must also build a business model that is sustainable, sustainable, and sustainable in its core value proposition.\n\nThis is what I think the \"business model\" looks like. We are going to be",
+      "distinctness": {
+        "collective_vs_gpt2_A": 0.9982472062110901,
+        "collective_vs_gpt2_B": 0.9982472062110901,
+        "collective_vs_distil_A": 0.9999207258224487,
+        "collective_vs_distil_B": 0.9999207258224487
+      },
+      "distinctness_spread": 0.0016735196113586426,
+      "equidistant": true,
+      "max_individual_sim": 0.9999207258224487,
+      "winner_picked": true,
+      "collective_candidate_variance": 0.00019113649614155293,
+      "individual_candidate_variances": {
+        "gpt2_A": 0.004238812252879143,
+        "gpt2_B": 0.001723162131384015,
+        "distil_A": 0.24451115727424622,
+        "distil_B": 0.025600384920835495
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    },
+    {
+      "task_prompt": "Explain why some scientific discoveries are initially rejected by the mainstream.",
+      "loop_rounds": 14,
+      "final_residual": 0.003996597607543276,
+      "collective_tokens": {
+        "top_tokens": [
+          " the",
+          ",",
+          " that",
+          " in",
+          " this",
+          " \"",
+          " The",
+          " (",
+          " I",
+          " on"
+        ],
+        "top_probs": [
+          0.1872062236070633,
+          0.04359303042292595,
+          0.03036303073167801,
+          0.025412850081920624,
+          0.024310611188411713,
+          0.012185592204332352,
+          0.010954808443784714,
+          0.009838724508881569,
+          0.009724248200654984,
+          0.008727540262043476
+        ]
+      },
+      "individual_tokens": {
+        "gpt2_A": {
+          "top_tokens": [
+            " the",
+            " 17",
+            " 18",
+            " 16",
+            " \"",
+            " that",
+            " 1918",
+            ",",
+            " this",
+            " '"
+          ],
+          "top_probs": [
+            0.1898302137851715,
+            0.06403254717588425,
+            0.06304317712783813,
+            0.02660348452627659,
+            0.021261829882860184,
+            0.02028786949813366,
+            0.017321521416306496,
+            0.016449686139822006,
+            0.01146762166172266,
+            0.01021282933652401
+          ]
+        },
+        "gpt2_B": {
+          "top_tokens": [
+            " the",
+            " 17",
+            " 18",
+            " 16",
+            " \"",
+            " that",
+            " 1918",
+            ",",
+            " this",
+            " '"
+          ],
+          "top_probs": [
+            0.1898302137851715,
+            0.06403254717588425,
+            0.06304317712783813,
+            0.02660348452627659,
+            0.021261829882860184,
+            0.02028786949813366,
+            0.017321521416306496,
+            0.016449686139822006,
+            0.01146762166172266,
+            0.01021282933652401
+          ]
+        },
+        "distil_A": {
+          "top_tokens": [
+            " the",
+            ",",
+            " that",
+            " in",
+            " this",
+            " (",
+            " on",
+            " all",
+            " The",
+            " I"
+          ],
+          "top_probs": [
+            0.23029430210590363,
+            0.06944984197616577,
+            0.03375920280814171,
+            0.030931243672966957,
+            0.030024224892258644,
+            0.013665784150362015,
+            0.010748515836894512,
+            0.010116496123373508,
+            0.010107161477208138,
+            0.010015355423092842
+          ]
+        },
+        "distil_B": {
+          "top_tokens": [
+            " the",
+            ",",
+            " that",
+            " in",
+            " this",
+            " (",
+            " on",
+            " all",
+            " The",
+            " I"
+          ],
+          "top_probs": [
+            0.23029430210590363,
+            0.06944984197616577,
+            0.03375920280814171,
+            0.030931243672966957,
+            0.030024224892258644,
+            0.013665784150362015,
+            0.010748515836894512,
+            0.010116496123373508,
+            0.010107161477208138,
+            0.010015355423092842
+          ]
+        }
+      },
+      "collective_steered_text": "Explain why some scientific discoveries are initially rejected by the mainstream.\n\nThe best part is that the scientists who do the research have done so much to discover the answers that you cannot find in the general population.\n\nScience and the people\n\nScience and the people have proven over the years that many other",
+      "individual_steered_texts": {
+        "gpt2_A": "Explain why some scientific discoveries are initially rejected by the mainstream.\n\nIn a recent issue of Science (PDF), a team of MIT scientists and others has shown that the same process can be used to produce new discoveries. This article, \"The Power of a Scientific Discovery in Science and the Science of Belief,\"",
+        "gpt2_B": "Explain why some scientific discoveries are initially rejected by the mainstream.\n\nA. \"Puerto Rican and Spanish\" Science\n\nThe early discovery of the island of Puerto Rico from the 18th century was a major breakthrough in geology and climatology. At the time, scientists considered Puerto Rico,",
+        "distil_A": "Explain why some scientific discoveries are initially rejected by the mainstream.\n\nThe science behind the story.\n\nScientific explanations for some natural phenomena are a key element of the science of scientific discovery. Many of the known scientific explanations are supported by evidence in evidence, and many of these scientists do not reject the",
+        "distil_B": "Explain why some scientific discoveries are initially rejected by the mainstream. What is being said? Why should we ignore this evidence of scientific and spiritual truth? It is the same with all such questions.\n\nThe first question is the same: Why should we ignore all such scientific and spiritual truths, if we will be"
+      },
+      "unsteered_text": "Explain why some scientific discoveries are initially rejected by the mainstream.\n\nThe question is: why do scientists reject discoveries that are contrary to what they believed was the evidence in the first place?\n\nAs I wrote in the September issue of Nature, the answer is that we can no longer trust the scientific community",
+      "distinctness": {
+        "collective_vs_gpt2_A": 0.9969282746315002,
+        "collective_vs_gpt2_B": 0.9969282746315002,
+        "collective_vs_distil_A": 0.999748170375824,
+        "collective_vs_distil_B": 0.999748170375824
+      },
+      "distinctness_spread": 0.0028198957443237305,
+      "equidistant": true,
+      "max_individual_sim": 0.999748170375824,
+      "winner_picked": true,
+      "collective_candidate_variance": 4.629190152627416e-05,
+      "individual_candidate_variances": {
+        "gpt2_A": 6.936385034350678e-05,
+        "gpt2_B": 8.607524068793282e-05,
+        "distil_A": 0.0001027963007800281,
+        "distil_B": 0.03659841790795326
+      },
+      "novel_tokens": [],
+      "novel_token_count": 0,
+      "collective_is_subset_of_union": true
+    }
+  ]
+}

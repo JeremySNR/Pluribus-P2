@@ -1,0 +1,1146 @@
+{
+  "summary": {
+    "mode": "single",
+    "local_mode": true,
+    "agents": [
+      "neutral_A",
+      "supportive_B",
+      "critical_C",
+      "carol_D"
+    ],
+    "prompts_with_novel": 5,
+    "prompts_not_subset": 5,
+    "prompts_distinct": 5,
+    "prompts_rerank_unique": 1,
+    "emergence_novel": true,
+    "emergence_distinct": true,
+    "elapsed_seconds": 136.34910535812378
+  },
+  "per_prompt": [
+    {
+      "task_prompt": "What are the benefits and risks of remote work?",
+      "loop_rounds": 25,
+      "final_residual": 0.02136399469609864,
+      "converged": false,
+      "individual_pairwise_sim": 0.9563146730264028,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.6728405356407166,
+        "collective_vs_supportive_B": 0.6892170310020447,
+        "collective_vs_critical_C": 0.701992928981781,
+        "collective_vs_carol_D": 0.7216782569885254
+      },
+      "distinctness_spread": 0.04883772134780884,
+      "max_sim_to_individual": 0.7216782569885254,
+      "token_analysis": {
+        "collective_tokens": [
+          " largeDownload",
+          "ilogy",
+          " Participants",
+          " Ragnarok",
+          "BuyableInstoreAndOnline",
+          "catentry",
+          "favorite",
+          "Magikarp",
+          "ited",
+          "pecting"
+        ],
+        "collective_probs": [
+          0.025725072249770164,
+          0.024711359292268753,
+          0.02253209426999092,
+          0.014724000357091427,
+          0.013009545393288136,
+          0.012400046922266483,
+          0.012085258029401302,
+          0.01183599978685379,
+          0.010345056653022766,
+          0.010284250602126122
+        ],
+        "individual_top": {
+          "neutral_A": {
+            "tokens": [
+              "hearted",
+              "Mission",
+              " Halo",
+              " shooters",
+              "displayText",
+              "Merc",
+              " celebr",
+              " Mission",
+              " Vict",
+              "actionDate"
+            ],
+            "probs": [
+              0.025702111423015594,
+              0.01890191063284874,
+              0.00842861458659172,
+              0.008327003568410873,
+              0.008103699423372746,
+              0.00788078922778368,
+              0.007634331472218037,
+              0.0066354828886687756,
+              0.006042703986167908,
+              0.00599371874704957
+            ]
+          },
+          "supportive_B": {
+            "tokens": [
+              "hearted",
+              "Mission",
+              "lime",
+              " celebr",
+              " shooters",
+              " Mission",
+              " Halo",
+              "serving",
+              " Md",
+              " Exhibit"
+            ],
+            "probs": [
+              0.022647395730018616,
+              0.02242300845682621,
+              0.01955258660018444,
+              0.010256465524435043,
+              0.008755054324865341,
+              0.008570442907512188,
+              0.00843856856226921,
+              0.007504044100642204,
+              0.0074926805682480335,
+              0.006063786800950766
+            ]
+          },
+          "critical_C": {
+            "tokens": [
+              "Mission",
+              "hearted",
+              " celebr",
+              " Vict",
+              " Halo",
+              " mart",
+              " shooters",
+              " Irish",
+              "serving",
+              " Mission"
+            ],
+            "probs": [
+              0.022314295172691345,
+              0.020967558026313782,
+              0.012499409727752209,
+              0.009803404100239277,
+              0.007778562139719725,
+              0.007470617536455393,
+              0.006922591011971235,
+              0.006190076936036348,
+              0.00564569653943181,
+              0.005611780099570751
+            ]
+          },
+          "carol_D": {
+            "tokens": [
+              "hearted",
+              "lime",
+              " celebr",
+              " Halo",
+              "ewitness",
+              "Mission",
+              " Irish",
+              " shooters",
+              " Vict",
+              "serving"
+            ],
+            "probs": [
+              0.029533522203564644,
+              0.016130369156599045,
+              0.013229550793766975,
+              0.011214462108910084,
+              0.009860048070549965,
+              0.008686869405210018,
+              0.007150231394916773,
+              0.006875412538647652,
+              0.006035646889358759,
+              0.005768252070993185
+            ]
+          }
+        },
+        "novel_tokens": [
+          " largeDownload",
+          "ilogy",
+          " Participants",
+          " Ragnarok",
+          "BuyableInstoreAndOnline",
+          "catentry",
+          "favorite",
+          "Magikarp",
+          "ited",
+          "pecting"
+        ],
+        "novel_count": 10,
+        "collective_is_subset": false
+      },
+      "js_divergence": {
+        "neutral_A": 0.3170238137245178,
+        "supportive_B": 0.3326064348220825,
+        "critical_C": 0.31565162539482117,
+        "carol_D": 0.3008420169353485
+      },
+      "avg_js": 0.3165309727191925,
+      "reranking": {
+        "n_candidates": 20,
+        "collective_pick": 17,
+        "collective_pick_text": " How are you sure you are not going to do this? I'd love to hear your thoughts in the comments.",
+        "collective_sims": [
+          0.31637537479400635,
+          0.30832940340042114,
+          0.34403157234191895,
+          0.3392762541770935,
+          0.3466571271419525,
+          0.36065158247947693,
+          0.3383151590824127,
+          0.3327406942844391,
+          0.3524499535560608,
+          0.3110964596271515,
+          0.3363736867904663,
+          0.4194357097148895,
+          0.3512755334377289,
+          0.30332615971565247,
+          0.3065440058708191,
+          0.33162134885787964,
+          0.30581536889076233,
+          0.44851407408714294,
+          0.34401851892471313,
+          0.3133178949356079
+        ],
+        "collective_sim_spread": 0.14518791437149048,
+        "individual_picks": {
+          "neutral_A": 17,
+          "supportive_B": 17,
+          "critical_C": 17,
+          "carol_D": 17
+        },
+        "collective_pick_unique": false,
+        "top3_overlap": 3,
+        "all_candidates": [
+          "\n\nRemote work is often a very rewarding and fun job as we are able to get our hands on a lot of valuable information about each one of our job candidates.\n\nWhat are the risks and rewards of remote wor",
+          " A lot of people get the sense that they've been overworked, that they've been underpaid, and that they're trying to figure out how to do better, but for them, it's a lot more difficult than it looks.",
+          "\n\nThe benefits and risks are the most important. Working remotely is hard. If you work with a group of people who have just been laid off you may have a hard time doing anything productive at all. A t",
+          "\n\nRemote work is a very different experience to traditional retail work. The work is done on a specific location or at a specific location, but it is still in the process of being completed. As you wi",
+          "\n\nFor some people, remote work can be challenging, or even a dangerous job. Many of them are not particularly willing to take risks. Others think that they may be well paid, and some may be better off",
+          "\n\nThere are several reasons for our experience. First, it is more stressful. In our own country there are many employees who work in remote areas, especially in rural areas where there are no road and",
+          "\n\nWork is often done on an often-overlooked and sometimes-non-existent schedule or by someone who is not quite sure if they are really doing it right or if they are just looking to get on their feet. ",
+          "\n\nThe key benefits are:\n\n\u2022 It's easy to work for free\n\n\u2022 You get a better job\n\n\u2022 Easy access to more work\n\n\u2022 Easy access to online services\n\n\u2022 Easy access to local, regional and international help\n\n\u2022 ",
+          "\n\nRemote work is a major source of stress for many workers. As a result of the lack of safe jobs for workers, many remote workers are forced to abandon their job, with many leaving for other reasons. ",
+          "\n\nNo, I don't think there are any. I am a big fan of the freedom to go to another country in any country. I do think it's important to allow people to work in a different way, to feel a sense of belon",
+          "\n\nIt is easy to understand what some of the benefits of remote work are.\n\nIf you are out of work and you are interested in working for a living, you can work in the field for the first time and get a ",
+          "\n\nA: Remote work is a relatively new field in the field of science because of the advances in techniques such as video and image processing. We have found that some basic tasks, such as writing, can b",
+          "\n\nA remote work experience is a very personal and personal thing to have. It is a way of not being connected to work, but to your place in the world.\n\nMany of us have experiences with work and the wor",
+          "\n\nPeople with these skills have the ability to perform tasks that others cannot. They can be able to do those tasks that others can't.\n\nThey can perform tasks that others can't. People with these skil",
+          "\n\nA well-functioning remote work environment is good for many reasons:\n\nYou can have many employees, who can collaborate seamlessly across the network.\n\nYou can have no technical or social problems.\n\n",
+          "\n\nMost researchers agree that remote work is important. Although this may sound complicated, research suggests that it can be beneficial for employers, families, workers, customers and the general pub",
+          "\n\nYou can find out the answers here.\n\nHow does the remote work affect my income?\n\nIt's easy to get a bad idea. If you don't have a job and you want to work remotely, you can choose to just not have on",
+          " How are you sure you are not going to do this? I'd love to hear your thoughts in the comments.",
+          "\n\n\nWe are taking an increasingly active role in improving the safety of our workforce by working with local law enforcement. In order to get a good idea of the benefits of remote work, we will conduct",
+          "\n\nRemote work is often regarded as a career option because it is performed in a controlled environment, whereas in most developed nations, such as Germany and France, it is considered to be a career o"
+        ]
+      }
+    },
+    {
+      "task_prompt": "Should governments regulate artificial intelligence?",
+      "loop_rounds": 25,
+      "final_residual": 0.024462850737511126,
+      "converged": false,
+      "individual_pairwise_sim": 0.9357460141181946,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.7435400485992432,
+        "collective_vs_supportive_B": 0.7202184796333313,
+        "collective_vs_critical_C": 0.7281820774078369,
+        "collective_vs_carol_D": 0.7412800192832947
+      },
+      "distinctness_spread": 0.023321568965911865,
+      "max_sim_to_individual": 0.7435400485992432,
+      "token_analysis": {
+        "collective_tokens": [
+          " largeDownload",
+          "catentry",
+          " Participants",
+          "minecraft",
+          "ited",
+          "BuyableInstoreAndOnline",
+          " Gust",
+          "oleon",
+          "pecting",
+          "ilogy"
+        ],
+        "collective_probs": [
+          0.0629994124174118,
+          0.03237384930253029,
+          0.027029147371649742,
+          0.02562836930155754,
+          0.01657087355852127,
+          0.014261642470955849,
+          0.013972705230116844,
+          0.01131116971373558,
+          0.010375742800533772,
+          0.009878307580947876
+        ],
+        "individual_top": {
+          "neutral_A": {
+            "tokens": [
+              "catentry",
+              " Jem",
+              " Charter",
+              " largeDownload",
+              "edia",
+              " Alam",
+              " partName",
+              "atto",
+              " raining",
+              "MpServer"
+            ],
+            "probs": [
+              0.02874223329126835,
+              0.016684601083397865,
+              0.014381954446434975,
+              0.011218488216400146,
+              0.010836995206773281,
+              0.010433132760226727,
+              0.00999671220779419,
+              0.009381141513586044,
+              0.009228639304637909,
+              0.007959317415952682
+            ]
+          },
+          "supportive_B": {
+            "tokens": [
+              "edia",
+              " Md",
+              " Cig",
+              " Jr",
+              " raining",
+              " cigars",
+              " Jem",
+              " shooters",
+              " celebr",
+              " cigar"
+            ],
+            "probs": [
+              0.03385426104068756,
+              0.02018224634230137,
+              0.01401303056627512,
+              0.013617717660963535,
+              0.011312472634017467,
+              0.01036982610821724,
+              0.009071952663362026,
+              0.007617401424795389,
+              0.007281566504389048,
+              0.006654386408627033
+            ]
+          },
+          "critical_C": {
+            "tokens": [
+              " cigars",
+              " Cig",
+              "edia",
+              " Jr",
+              " Gim",
+              " cigar",
+              " celebr",
+              " Jem",
+              " raining",
+              "mission"
+            ],
+            "probs": [
+              0.028507106006145477,
+              0.01823393814265728,
+              0.016546817496418953,
+              0.012704719789326191,
+              0.012222263030707836,
+              0.01145267579704523,
+              0.009518308565020561,
+              0.008856729604303837,
+              0.008724180050194263,
+              0.008654480800032616
+            ]
+          },
+          "carol_D": {
+            "tokens": [
+              " Gim",
+              " cigars",
+              "edia",
+              " Cig",
+              " celebr",
+              " Cavs",
+              "mission",
+              " cigar",
+              " Md",
+              " shooters"
+            ],
+            "probs": [
+              0.020511729642748833,
+              0.017343716695904732,
+              0.014931227080523968,
+              0.013236246071755886,
+              0.012454912066459656,
+              0.011365954764187336,
+              0.010449838824570179,
+              0.009911921806633472,
+              0.006562910974025726,
+              0.006144762970507145
+            ]
+          }
+        },
+        "novel_tokens": [
+          " Participants",
+          "minecraft",
+          "ited",
+          "BuyableInstoreAndOnline",
+          " Gust",
+          "oleon",
+          "pecting",
+          "ilogy"
+        ],
+        "novel_count": 8,
+        "collective_is_subset": false
+      },
+      "js_divergence": {
+        "neutral_A": 0.2639705538749695,
+        "supportive_B": 0.319478303194046,
+        "critical_C": 0.3118414878845215,
+        "carol_D": 0.2981635332107544
+      },
+      "avg_js": 0.29836346954107285,
+      "reranking": {
+        "n_candidates": 20,
+        "collective_pick": 1,
+        "collective_pick_text": " Are we really the last frontier to develop artificial intelligence? If not, what's next?",
+        "collective_sims": [
+          0.3658740520477295,
+          0.642570972442627,
+          0.2922678291797638,
+          0.29286256432533264,
+          0.44613099098205566,
+          0.2834739089012146,
+          0.28165203332901,
+          0.3276172876358032,
+          0.2872121036052704,
+          0.31355082988739014,
+          0.44757309556007385,
+          0.35770168900489807,
+          0.2794486880302429,
+          0.4912490248680115,
+          0.26055413484573364,
+          0.3537880778312683,
+          0.2860027253627777,
+          0.3424679934978485,
+          0.4151509404182434,
+          0.27200716733932495
+        ],
+        "collective_sim_spread": 0.3820168375968933,
+        "individual_picks": {
+          "neutral_A": 1,
+          "supportive_B": 1,
+          "critical_C": 1,
+          "carol_D": 1
+        },
+        "collective_pick_unique": false,
+        "top3_overlap": 2,
+        "all_candidates": [
+          "\n\nWell, that's my answer. What's important about artificial intelligence is that it's not just a good thing, it's also the most important thing. It's important to understand that it's part of humanity",
+          " Are we really the last frontier to develop artificial intelligence? If not, what's next?",
+          "\n\nWe do not believe that governments should be regulated in the way that people feel about AI. This is something that is more difficult to understand and to justify in the context of an ongoing debate",
+          "\n\nThe answer is yes.\n\nThe United States is the world's number one state in artificial intelligence (AI). However, the amount of AI that is being developed per year (in part due to governments' concern",
+          " And then to what extent will we need a government-controlled cloud computing, as we have seen, as a means of providing information across the entire globe?\n\nPerhaps we should call it \"Big Data,\" a wo",
+          " Are they really going to be willing to invest in a program that will do a better job of measuring human abilities?\n\nA recent study found that governments would do better if they could use technology ",
+          "\n\nWe know that governments will continue to regulate AI when it comes to the health of the world and the environment. This is why governments need to act now. We need a change in the way governments g",
+          "\n\nThe current debate has focused on \"human-computer interaction,\" or the notion that the future will bring new skills, new ways to solve problems, new technologies, new ways to make decisions. This de",
+          "\n\nThe United States could regulate its own AI, too, but so far the U.S. government has not done so.\n\nWe do have the ability to create new robots, but what if humans have a problem with these machines?",
+          "\n\nA. You can't do that. The government has to regulate what people do with their computing power. You need a government that is doing that, to make sure people can do that. You need somebody that's be",
+          " Is it even possible to know the future of the world's most popular technology?\n\nThe first step in a scientific revolution that will reshape our world is to create an environment for the exploration o",
+          "\n\nWhile the UK's own study has warned that a lack of regulation is threatening the UK's scientific reputation, there is another study from the United States, published in the journal Science, that sug",
+          " Well, the answer is 'No,' and it may be better to leave that to the researchers and governments they have invested in studying, while preserving the quality of their own knowledge and experience. But",
+          "\n\nThe next big question is whether governments can regulate the use of artificial intelligence. In 2008, The Economist and The Financial Times came out with the same question: Is it more useful to hav",
+          " How about regulation that could allow governments to better understand the nature of our private lives?\n\nThe US government is a major source of information for humans, and it is, at its heart, a crit",
+          "\n\nWhile the potential for automation is great for some areas, many of them have already seen exponential growth in the past 15 years. That growth is expected to accelerate in the coming years.\n\nThe bi",
+          "\n\nYes, it does. The technology and its implications are significant. But we should not confuse the question of the benefits of AI with the philosophical implications of regulating it. Artificial intel",
+          "\n\nNo, not at all. The human brain is not the only subject that has the ability to infer the consequences of a particular action, and in fact the most powerful. The most powerful minds, when thought, u",
+          " It might also be possible to put artificial intelligence on trial on several continents. We will be able to track them as we go along. In the meantime, though, we should be able to use the data to cr",
+          "\n\nS.E.C. and S.R.P.D., which have led to the development of artificial intelligence in the past, have never directly answered this question.\n\nThe most recent question, however, is whether artificial i"
+        ]
+      }
+    },
+    {
+      "task_prompt": "The economy is growing strongly but inequality is rising. Advise.",
+      "loop_rounds": 25,
+      "final_residual": 0.03267224766818944,
+      "converged": false,
+      "individual_pairwise_sim": 0.9557563761870066,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.40612173080444336,
+        "collective_vs_supportive_B": 0.44805800914764404,
+        "collective_vs_critical_C": 0.4549511969089508,
+        "collective_vs_carol_D": 0.4763087034225464
+      },
+      "distinctness_spread": 0.07018697261810303,
+      "max_sim_to_individual": 0.4763087034225464,
+      "token_analysis": {
+        "collective_tokens": [
+          "BuyableInstoreAndOnline",
+          "actly",
+          " Ragnarok",
+          "Hung",
+          "favorite",
+          "Magikarp",
+          "ited",
+          "Greek",
+          "kies",
+          "Jews"
+        ],
+        "collective_probs": [
+          0.10233360528945923,
+          0.01877027004957199,
+          0.018158674240112305,
+          0.014124629087746143,
+          0.012779665179550648,
+          0.012071599252521992,
+          0.01013940665870905,
+          0.006408690474927425,
+          0.006351005285978317,
+          0.006211097817867994
+        ],
+        "individual_top": {
+          "neutral_A": {
+            "tokens": [
+              " synagogue",
+              " Mazda",
+              " ESV",
+              "cerpt",
+              "clusively",
+              "ichen",
+              "onym",
+              " Mexicans",
+              " NAD",
+              " Yelp"
+            ],
+            "probs": [
+              0.011809160001575947,
+              0.008865959011018276,
+              0.008380255661904812,
+              0.007833106443285942,
+              0.007703889161348343,
+              0.00650680810213089,
+              0.006492997519671917,
+              0.006194671615958214,
+              0.005898504517972469,
+              0.0054049985483288765
+            ]
+          },
+          "supportive_B": {
+            "tokens": [
+              " ESV",
+              " synagogue",
+              "cerpt",
+              " Celt",
+              " Judah",
+              " Mazda",
+              "tumblr",
+              "itialized",
+              " Turns",
+              "onyms"
+            ],
+            "probs": [
+              0.028843550011515617,
+              0.010617761872708797,
+              0.009472143836319447,
+              0.00836438499391079,
+              0.006731870584189892,
+              0.006065225228667259,
+              0.005832697730511427,
+              0.004855749197304249,
+              0.0048002214170992374,
+              0.004565318580716848
+            ]
+          },
+          "critical_C": {
+            "tokens": [
+              " ESV",
+              "cerpt",
+              " Celt",
+              " Judah",
+              "ELY",
+              " synagogue",
+              " conquer",
+              " Yelp",
+              " Voy",
+              " Attend"
+            ],
+            "probs": [
+              0.0389520600438118,
+              0.019246933981776237,
+              0.007981386967003345,
+              0.006941926199942827,
+              0.006733776070177555,
+              0.005782131105661392,
+              0.0050446586683392525,
+              0.004973997827619314,
+              0.004962529055774212,
+              0.0047515020705759525
+            ]
+          },
+          "carol_D": {
+            "tokens": [
+              " ESV",
+              "cerpt",
+              " synagogue",
+              " Celt",
+              " Judah",
+              " Mazda",
+              "ELY",
+              " conquer",
+              " Voy",
+              "clusively"
+            ],
+            "probs": [
+              0.07751006633043289,
+              0.018168406561017036,
+              0.008020333014428616,
+              0.006981805898249149,
+              0.00526333786547184,
+              0.004979237448424101,
+              0.004912093747407198,
+              0.004749051760882139,
+              0.004590337630361319,
+              0.004395448137074709
+            ]
+          }
+        },
+        "novel_tokens": [
+          "BuyableInstoreAndOnline",
+          "actly",
+          " Ragnarok",
+          "Hung",
+          "favorite",
+          "Magikarp",
+          "ited",
+          "Greek",
+          "kies",
+          "Jews"
+        ],
+        "novel_count": 10,
+        "collective_is_subset": false
+      },
+      "js_divergence": {
+        "neutral_A": 0.4049583673477173,
+        "supportive_B": 0.3948805332183838,
+        "critical_C": 0.4018552005290985,
+        "carol_D": 0.3980734348297119
+      },
+      "avg_js": 0.3999418839812279,
+      "reranking": {
+        "n_candidates": 20,
+        "collective_pick": 5,
+        "collective_pick_text": "us, the national broadband operator, says it will have a lower-than-expected profit this year compared with last year's operating budget. The company says it expects to cut 10 million jobs at its flagship Bell Labs plant in New York, which costs $1 billion, to save $3 billion in the coming years.",
+        "collective_sims": [
+          0.3735010623931885,
+          0.24096344411373138,
+          0.5012792348861694,
+          0.5054270029067993,
+          0.40612173080444336,
+          0.56917804479599,
+          0.3450988531112671,
+          0.5233229398727417,
+          0.2891205847263336,
+          0.35777223110198975,
+          0.2963719964027405,
+          0.31605997681617737,
+          0.3067568838596344,
+          0.40512287616729736,
+          0.28576043248176575,
+          0.29724714159965515,
+          0.3003714382648468,
+          0.3072786331176758,
+          0.4106525480747223,
+          0.31378620862960815
+        ],
+        "collective_sim_spread": 0.3282146006822586,
+        "individual_picks": {
+          "neutral_A": 4,
+          "supportive_B": 4,
+          "critical_C": 4,
+          "carol_D": 4
+        },
+        "collective_pick_unique": true,
+        "top3_overlap": 1,
+        "all_candidates": [
+          "us is a social enterprise that focuses on creating jobs. We offer free advice on your options for job security and to find a job.\n\n\nWith more than 8.5 million people working in Australia now, our empl",
+          "org.uk/rates/10-points-to-start-to-get-up-in-the-new-economy-in-a-second",
+          "Net is an important tool to get the truth out there about where we are.\n\nWe encourage you to share our data about inequality. We offer a variety of ways to find out what you think of our data. Join th",
+          " Get involved and become part of the solution: Vote yes or no on our campaigns to keep this country growing.\n\nHere are five ways you can get involved in our campaigns.",
+          "",
+          "us, the national broadband operator, says it will have a lower-than-expected profit this year compared with last year's operating budget. The company says it expects to cut 10 million jobs at its flag",
+          "org\n\nOn the night of March 28, 2004, George W. Bush's campaign manager for two years, Bill Browder, was in Washington with a dozen reporters. The first question he asked was from David Axelrod. In an ",
+          "fm has created a page that helps people to get help when they are facing an economic crisis.\n\nThe page is free to download and has a map of the UK for sale to anyone.",
+          "org.uk reported.\n\n\"There are only 13% of British jobs created in the 12 months ending June 2017. One in three British people is earning less than \u00a315 an hour.\n\n\"There has been a record high wage rise ",
+          "fm and the social media community have helped us to share this story.\n\nThe economy is increasing strongly but inequality is rising. Advise.fm and the social media community have helped us to share thi",
+          "org.uk is offering the following advice on how to help the UK's most vulnerable in 2017 to fight inequality.\n\nIt is the duty of all British workers to support the most vulnerable in our country and to",
+          "Action has helped bring about an explosion in the number of young men, particularly for jobs. This is an achievement that will be crucial for many years to come. It also shows how hard-working and hig",
+          "org, a nonprofit group, reported on Tuesday that it is experiencing its biggest gain in seven years.\n\nThe U.S. economy has seen its worst growth since the middle of the second quarter of 2009, the lat",
+          " Share. Shareholders are more likely than non-holders to use the social network and are more likely than non-holders to have mobile phone use or voice over IP to reach friends or family. The following",
+          "org\n\nInflation can be seen as a sign of weakness.\n\nAnd as for the UK, the latest economic data from the IMF and the International Monetary Fund paints an even bleak picture.\n\nA survey this week by the",
+          "org wants you to be aware of your surroundings. If you've got no access to the internet, your parents may not even know the name of their child. And if you are lucky enough to have your children, they",
+          "Gov is helping the world to take a tougher line against the global financial crisis. Let's send a message that we are serious about tackling this.\n\nThe best way to bring about change in the Middle Eas",
+          "org has the latest statistics from Statistics Canada and says a whopping 12.3 per cent of Canadians live in poverty.\n\nThe number of people living below the federal poverty line rose from 1.2 million i",
+          "net, a social media platform for the average joe, posted its daily scorecard on Thursday, suggesting that the number of people on the Internet was down by 40 percent since October.\n\n\"We're seeing the ",
+          "org.uk\n\n\"The UBI will provide a boost to the UK's growth prospects, while providing for a range of social, economic and environmental benefits. The UBI will offer the UK's middle class, youth and the "
+        ]
+      }
+    },
+    {
+      "task_prompt": "A company must choose between short-term profit and long-term sustainability.",
+      "loop_rounds": 25,
+      "final_residual": 0.07922954843419418,
+      "converged": false,
+      "individual_pairwise_sim": 0.9558067520459493,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.6490734815597534,
+        "collective_vs_supportive_B": 0.6381158232688904,
+        "collective_vs_critical_C": 0.6367682218551636,
+        "collective_vs_carol_D": 0.6365664601325989
+      },
+      "distinctness_spread": 0.012507021427154541,
+      "max_sim_to_individual": 0.6490734815597534,
+      "token_analysis": {
+        "collective_tokens": [
+          "BuyableInstoreAndOnline",
+          "Hung",
+          "actly",
+          " Hung",
+          " Participants",
+          "ittees",
+          "Magikarp",
+          "furt",
+          "Putin",
+          " laps"
+        ],
+        "collective_probs": [
+          0.16737429797649384,
+          0.0241117924451828,
+          0.011682797223329544,
+          0.01149054430425167,
+          0.007216550409793854,
+          0.0070478832349181175,
+          0.006346740759909153,
+          0.006265217904001474,
+          0.005649383179843426,
+          0.005328373983502388
+        ],
+        "individual_top": {
+          "neutral_A": {
+            "tokens": [
+              "Irish",
+              "Hung",
+              " Defendants",
+              " Miz",
+              " Activision",
+              " Smash",
+              " Irish",
+              " Sears",
+              "olicited",
+              " Attend"
+            ],
+            "probs": [
+              0.04042520374059677,
+              0.02161651849746704,
+              0.020230622962117195,
+              0.017860086634755135,
+              0.011286214925348759,
+              0.009442765265703201,
+              0.00924945529550314,
+              0.0067887515760958195,
+              0.006230700761079788,
+              0.006104486063122749
+            ]
+          },
+          "supportive_B": {
+            "tokens": [
+              "Irish",
+              " Miz",
+              "Hung",
+              " Exhibit",
+              " Attend",
+              " Smash",
+              " defe",
+              " Irish",
+              " Mess",
+              " Kot"
+            ],
+            "probs": [
+              0.015243216417729855,
+              0.014491996727883816,
+              0.013164456933736801,
+              0.011065958999097347,
+              0.01027604192495346,
+              0.00796991866081953,
+              0.007315554656088352,
+              0.006886964663863182,
+              0.006825817748904228,
+              0.005391369108110666
+            ]
+          },
+          "critical_C": {
+            "tokens": [
+              " Attend",
+              " Miz",
+              "Hung",
+              " Exhibit",
+              "Irish",
+              " Irish",
+              " Smash",
+              " Defendants",
+              "steamapps",
+              " Kot"
+            ],
+            "probs": [
+              0.01639186590909958,
+              0.013956909999251366,
+              0.010724698193371296,
+              0.010337878949940205,
+              0.008418871089816093,
+              0.00650419807061553,
+              0.006487645208835602,
+              0.006383680738508701,
+              0.005780108738690615,
+              0.005479288287460804
+            ]
+          },
+          "carol_D": {
+            "tokens": [
+              "Hung",
+              " Exhibit",
+              " Attend",
+              " Miz",
+              "quished",
+              " Defendants",
+              " Kot",
+              " Activision",
+              "Irish",
+              "steamapps"
+            ],
+            "probs": [
+              0.017006762325763702,
+              0.013244527392089367,
+              0.010459138080477715,
+              0.008746679872274399,
+              0.008507664315402508,
+              0.008470064029097557,
+              0.007555152289569378,
+              0.007340927142649889,
+              0.0069885533303022385,
+              0.005225040018558502
+            ]
+          }
+        },
+        "novel_tokens": [
+          "BuyableInstoreAndOnline",
+          "actly",
+          " Hung",
+          " Participants",
+          "ittees",
+          "Magikarp",
+          "furt",
+          "Putin",
+          " laps"
+        ],
+        "novel_count": 9,
+        "collective_is_subset": false
+      },
+      "js_divergence": {
+        "neutral_A": 0.353103905916214,
+        "supportive_B": 0.35563021898269653,
+        "critical_C": 0.3652649521827698,
+        "carol_D": 0.3556969463825226
+      },
+      "avg_js": 0.3574240058660507,
+      "reranking": {
+        "n_candidates": 20,
+        "collective_pick": 13,
+        "collective_pick_text": "\n\nSustainable development\n\nIn our case, we decided to do this in an attempt to get an independent investor in our company. This is where we started our first investment: We sold our first product: The Power-Cell and sold it for $99.99. Our current product line consists of 12 of the highest quality c",
+        "collective_sims": [
+          0.5598401427268982,
+          0.348507821559906,
+          0.30542901158332825,
+          0.37935835123062134,
+          0.3281501531600952,
+          0.5527368783950806,
+          0.36752256751060486,
+          0.3367684781551361,
+          0.3355722427368164,
+          0.37881508469581604,
+          0.3494284749031067,
+          0.47203588485717773,
+          0.3283979594707489,
+          0.5904919505119324,
+          0.30532050132751465,
+          0.3431663513183594,
+          0.36433422565460205,
+          0.544941246509552,
+          0.26177993416786194,
+          0.3051307201385498
+        ],
+        "collective_sim_spread": 0.32871201634407043,
+        "individual_picks": {
+          "neutral_A": 13,
+          "supportive_B": 13,
+          "critical_C": 13,
+          "carol_D": 13
+        },
+        "collective_pick_unique": false,
+        "top3_overlap": 2,
+        "all_candidates": [
+          "\n\n\"In the long-term, the companies' growth and growth in growth rate should be based on their business model, and not any type of external factors,\" he said.\n\n\"The current structure of the economy and",
+          " Long-term goals, such as the development of a strong, stable energy industry, are critical to any future energy future. It is important that the government, including the central bank, take a positiv",
+          " Some companies can set their own budget and pay for all of the work without sacrificing value. Others choose to do the work themselves and do it over a short period of time.\n\nBut one group of compani",
+          "\n\nThe main question is, will the company be able to achieve this? The answer is yes. While there are many industries in which companies compete effectively with each other, it is not possible to devel",
+          "\n\nIn one of the most controversial moments of the recession, the Bush administration declared that banks would be required to set aside $10 billion for their emergency liquidity. So far this year, the",
+          " The main problem with short-term growth is that it is limited to the short term. When one company gets close to its target, it will fail. For example, if a company gets a 5% increase in the company s",
+          " The choice is up to the company, and there can be no doubt that any short-term gain will lead to short-term losses.\n\nMany small companies struggle with short-term financial sustainability. Many have ",
+          " It is also not free to charge for the services, which the company can then charge customers to purchase and sell.\n\nThis means companies could charge customers for services that are already available,",
+          " The reason for that is simple. The short-term profit is lower than the long-term sustainability, which is good news for the planet and for the planet's food security.\n\nThat's because we're going to n",
+          " The long-term sustainability is the choice between the risk of having to pay a small part of that cost to be an active part of something. And long-term sustainability is the choice between the risk o",
+          " It is the only thing that can control the price of an oil-dependent economy and the price of its output. The price of a barrel of oil is the price of its quality.\n\nWhy do we need a government-run pri",
+          "\n\nThe company's chief executive said: \"There is no need to give up on our vision of building a modern, efficient and environmentally friendly technology. The company is a partner in this vision and a ",
+          "\n\nThe European Commission has expressed its concern that the current process of collecting and selling the \u20ac45bn ($46bn) in tax benefits in the last EU tax year is being \"too cumbersome\".\n\nIt also war",
+          "\n\nSustainable development\n\nIn our case, we decided to do this in an attempt to get an independent investor in our company. This is where we started our first investment: We sold our first product: The",
+          " The longer you sell the better you get. As one recent example, at the start of the decade, the company had $17 billion of cash. It went from $17 billion in 2009 to $60 billion this year. In that time",
+          "\n\n\"Our goal is to make this market attractive to investors who want to invest at a lower cost and not just as a tool to hold companies in place for as long as possible. By getting a large number of un",
+          " These decisions, along with the need for cost-effectiveness, will determine whether the company's product is more sustainable or less.\n\nCompanies are also responsible for the quality of their product",
+          " It is also important to understand that the current supply chain is very complex and it takes time for companies to scale up, but a quick look at the current market for blockchain is not difficult.\n\n",
+          " However, the short-term performance is not only determined by the amount of debt that is left, but also by the number of long-term liabilities. A single large company in a tight economic situation wo",
+          " It should pay for the product with new investments and not over-spend on products that are already in operation.\n\nIf you are one of those consumers, we know what you're thinking. This isn't an isolat"
+        ]
+      }
+    },
+    {
+      "task_prompt": "Explain why some scientific discoveries are initially rejected by the mainstream.",
+      "loop_rounds": 25,
+      "final_residual": 0.033101087815843054,
+      "converged": false,
+      "individual_pairwise_sim": 0.9221053719520569,
+      "distinctness": {
+        "collective_vs_neutral_A": 0.6323456764221191,
+        "collective_vs_supportive_B": 0.5874201059341431,
+        "collective_vs_critical_C": 0.5832158923149109,
+        "collective_vs_carol_D": 0.6034418940544128
+      },
+      "distinctness_spread": 0.04912978410720825,
+      "max_sim_to_individual": 0.6323456764221191,
+      "token_analysis": {
+        "collective_tokens": [
+          "BuyableInstoreAndOnline",
+          "Magikarp",
+          "ilogy",
+          " Participants",
+          "favorite",
+          "kies",
+          "Greek",
+          " Coyotes",
+          " Colo",
+          "soType"
+        ],
+        "collective_probs": [
+          0.2759563624858856,
+          0.016622455790638924,
+          0.011806863360106945,
+          0.010885875672101974,
+          0.010285302065312862,
+          0.009436774998903275,
+          0.0074669551104307175,
+          0.0066889128647744656,
+          0.006067200098186731,
+          0.005750162526965141
+        ],
+        "individual_top": {
+          "neutral_A": {
+            "tokens": [
+              "BuyableInstoreAndOnline",
+              " Attend",
+              "channelAvailability",
+              " Sounders",
+              " Celt",
+              " OFFIC",
+              " Mess",
+              "soType",
+              " Devils",
+              "displayText"
+            ],
+            "probs": [
+              0.058808814734220505,
+              0.04574400186538696,
+              0.018852239474654198,
+              0.00989105086773634,
+              0.009322181344032288,
+              0.00782804749906063,
+              0.006868948228657246,
+              0.006469274405390024,
+              0.006364012137055397,
+              0.005537133198231459
+            ]
+          },
+          "supportive_B": {
+            "tokens": [
+              " Attend",
+              "channelAvailability",
+              " tempered",
+              " Celt",
+              " Admir",
+              "BuyableInstoreAndOnline",
+              " Mariners",
+              " Kinn",
+              " Md",
+              " accompanying"
+            ],
+            "probs": [
+              0.020372899249196053,
+              0.010816230438649654,
+              0.009987277910113335,
+              0.008191832341253757,
+              0.008097541518509388,
+              0.006712296977639198,
+              0.00585039472207427,
+              0.004316466860473156,
+              0.0034936750307679176,
+              0.0034652871545404196
+            ]
+          },
+          "critical_C": {
+            "tokens": [
+              " Attend",
+              "BuyableInstoreAndOnline",
+              "channelAvailability",
+              " Devils",
+              " OFFIC",
+              " Admir",
+              " celebr",
+              " Mess",
+              " Mariners",
+              " hilarious"
+            ],
+            "probs": [
+              0.05139975622296333,
+              0.0369720384478569,
+              0.01019746158272028,
+              0.006765774451196194,
+              0.006707306019961834,
+              0.004962230566889048,
+              0.004325431771576405,
+              0.004128741566091776,
+              0.0040452368557453156,
+              0.003793243784457445
+            ]
+          },
+          "carol_D": {
+            "tokens": [
+              " Attend",
+              "BuyableInstoreAndOnline",
+              "channelAvailability",
+              " Celt",
+              " Admir",
+              " accompanying",
+              " Devils",
+              " Mess",
+              " Mariners",
+              " celebr"
+            ],
+            "probs": [
+              0.04391607269644737,
+              0.02207186073064804,
+              0.009705197997391224,
+              0.007817034609615803,
+              0.006356966216117144,
+              0.006257278844714165,
+              0.005890863947570324,
+              0.004646034445613623,
+              0.004581299144774675,
+              0.004013427067548037
+            ]
+          }
+        },
+        "novel_tokens": [
+          "Magikarp",
+          "ilogy",
+          " Participants",
+          "favorite",
+          "kies",
+          "Greek",
+          " Coyotes",
+          " Colo"
+        ],
+        "novel_count": 8,
+        "collective_is_subset": false
+      },
+      "js_divergence": {
+        "neutral_A": 0.3344169855117798,
+        "supportive_B": 0.4213944673538208,
+        "critical_C": 0.3851913809776306,
+        "carol_D": 0.3854321539402008
+      },
+      "avg_js": 0.381608746945858,
+      "reranking": {
+        "n_candidates": 20,
+        "collective_pick": 18,
+        "collective_pick_text": "",
+        "collective_sims": [
+          0.32782042026519775,
+          0.28932881355285645,
+          0.6212288737297058,
+          0.3557846248149872,
+          0.42295166850090027,
+          0.2807222306728363,
+          0.3221924901008606,
+          0.3608711063861847,
+          0.371476411819458,
+          0.32693517208099365,
+          0.3203389048576355,
+          0.37167125940322876,
+          0.33188706636428833,
+          0.36927852034568787,
+          0.3889668881893158,
+          0.3312605023384094,
+          0.5342946648597717,
+          0.5554519891738892,
+          0.6323456764221191,
+          0.34814485907554626
+        ],
+        "collective_sim_spread": 0.35162344574928284,
+        "individual_picks": {
+          "neutral_A": 18,
+          "supportive_B": 18,
+          "critical_C": 18,
+          "carol_D": 18
+        },
+        "collective_pick_unique": false,
+        "top3_overlap": 3,
+        "all_candidates": [
+          " This book contains two volumes on this subject: \"Why Are We Having This Weird Encounter?\" and \"The Strange Science of the Weird.\"\n\nThis book is an indispensable guide to the topic of weird encounters",
+          "\n\n1. The Big Bang Theory\n\nThe theory was first presented in 1972, when Thomas Copernicus, then an engineer, announced that there was a fundamental truth about the universe and its laws. The theory was",
+          " If it's something which is simply a case of being rejected, then this paper would be highly interesting.",
+          " Why do some of the greatest minds in the history of science fail to accept them? Why does a common belief in the existence of God not have a strong impact on the development of knowledge? Why have so",
+          "\n\nThe scientific method is not an infallible guide for the truth and will not always be the case. One can always go beyond scientific observation to make the most accurate assessment.\n\nWhat are some o",
+          "\n\n4. The Myth of Scientific Discovery \u2013 The \"Theory of Everything\"\n\nThe myth of scientific discovery goes back to Aristotle's \"Aristotle's Logic\", which states that people do not believe in everything",
+          " For example, some scientific discoveries are accepted by scientific authorities because they contradict the general beliefs of those who hold the scientific view.\n\n4. Disbelief in the validity of sci",
+          "\n\nDon't let it stop you from thinking about what you could have done better. Don't let it stop you from thinking about how to achieve the things you could have done better. What you would do if you di",
+          "\n\nReferences:\n\n1. Schulze H. H. 2001. The evolutionary ecology of food. Nature 586 (1081): 543-546.\n\n2. Kogonova S. B., Molnar A., and Stenzel N. 2002. The emergence of new foods and the emergence of ",
+          "\n\n\"I don't believe that science is an infallible truth. I don't believe that the earth has an invisible mechanism. I don't believe that there are any problems with physics.\"\n\n\"What does it take to be ",
+          " It is, of course, to the disadvantage of those who want to defend their own scientific findings.\n\nThe main reason why the scientists (and I mean the media) can't be bothered to cite any other explana",
+          "\n\n(Visited 2,741 times, 1 visits today)",
+          " A scientific search for evidence of extraterrestrial life is therefore necessary.\n\n5.5.5 Scientific enquiries and debates - Science and skepticism\n\n5.5.6 Scientists and philosophers who are concerned",
+          " The idea that any science is at best a product of superficial assumptions. A \"scientific\" theory, in short, would be one that has no basis in any empirical data or measurements. A scientific theory, ",
+          " Then, they use it to advance their own agenda. It's like a \"faux science\" that only exists to discredit and discredit scientists.\n\nThese are the scientific facts you don't get when you are a little b",
+          "\n\nIn this section, we shall look at what the most important scientific discoveries are, what discoveries are not accepted, and how they are affected by the major media.\n\n\nHow important is it to consid",
+          " If we want to know why we have been rejected by such a large part of the world, we need to find out why some people have been rejected and other people have not. So if there is a scientific breakthro",
+          " We'll see what these researchers actually thought about this question.",
+          "",
+          "\n\nYou know, it might be worth a try. Or it might be not worth a try. Because you might know something you don't. But then you're like, What the fuck does this mean? Is it true?\n\nOr does it just mean s"
+        ]
+      }
+    }
+  ]
+}

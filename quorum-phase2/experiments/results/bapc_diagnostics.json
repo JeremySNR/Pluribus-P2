@@ -1,0 +1,163 @@
+{
+  "phase_a": {
+    "extraction_layer": 7,
+    "raw_baseline": 0.6828404404615102,
+    "abtt_baseline": -0.04887544555393489,
+    "final_layer_baseline": 0.9853006952687313
+  },
+  "training_history": [
+    {
+      "step": 0,
+      "loss": 56.75499725341797,
+      "distill": 56.7806282043457,
+      "separation": -0.3189159631729126,
+      "align_cos": 0.06258189678192139,
+      "orthogonality": 2.7517430184926e-15
+    },
+    {
+      "step": 200,
+      "loss": 51.834083557128906,
+      "distill": 51.86415100097656,
+      "separation": -0.33231616020202637,
+      "align_cos": 0.031635582447052,
+      "orthogonality": 3.723723995818773e-09
+    },
+    {
+      "step": 400,
+      "loss": 52.60948181152344,
+      "distill": 52.62909698486328,
+      "separation": -0.3381921947002411,
+      "align_cos": 0.14206427335739136,
+      "orthogonality": 4.7962998017681e-09
+    },
+    {
+      "step": 600,
+      "loss": 53.04852294921875,
+      "distill": 53.074432373046875,
+      "separation": -0.3374790549278259,
+      "align_cos": 0.07840698957443237,
+      "orthogonality": 4.911146156416635e-09
+    },
+    {
+      "step": 800,
+      "loss": 56.960235595703125,
+      "distill": 56.98802185058594,
+      "separation": -0.32440686225891113,
+      "align_cos": 0.04653447866439819,
+      "orthogonality": 4.923297769465762e-09
+    },
+    {
+      "step": 1000,
+      "loss": 54.01710510253906,
+      "distill": 54.045536041259766,
+      "separation": -0.3383117914199829,
+      "align_cos": 0.05403095483779907,
+      "orthogonality": 4.928163210848879e-09
+    },
+    {
+      "step": 1200,
+      "loss": 61.45575714111328,
+      "distill": 61.475791931152344,
+      "separation": -0.2629926800727844,
+      "align_cos": 0.06264567375183105,
+      "orthogonality": 4.930948982462269e-09
+    },
+    {
+      "step": 1400,
+      "loss": 51.887168884277344,
+      "distill": 51.9090461730957,
+      "separation": -0.28174251317977905,
+      "align_cos": 0.06299746036529541,
+      "orthogonality": 4.93272134249878e-09
+    },
+    {
+      "step": 1600,
+      "loss": 48.5937614440918,
+      "distill": 48.6047248840332,
+      "separation": -0.25945794582366943,
+      "align_cos": 0.1498451828956604,
+      "orthogonality": 4.933984776300804e-09
+    },
+    {
+      "step": 1800,
+      "loss": 53.95657730102539,
+      "distill": 53.9877815246582,
+      "separation": -0.3609582483768463,
+      "align_cos": 0.04888671636581421,
+      "orthogonality": 4.934895603270206e-09
+    }
+  ],
+  "phase_c": {
+    "diagnostic_1_js": {
+      "mean": 0.04043137271888554,
+      "min": 0.00580528425052762,
+      "max": 0.08042645454406738,
+      "pass": true
+    },
+    "diagnostic_2_kl": {
+      "start": 56.7806282043457,
+      "end": 53.9877815246582,
+      "reduction_pct": 4.918661113851061,
+      "pass": true
+    },
+    "diagnostic_3_buffer_anisotropy": {
+      "mean_cosine": 0.37758124830771467,
+      "min": 0.034164201468229294,
+      "max": 0.98250812292099,
+      "pass": true
+    }
+  },
+  "phase_d": {
+    "What are the benefits and risks of remote work?": {
+      "sender_text": "\n\nThe benefits and risks of remote work are not limited to working on a remote office environment. For example, an employee can work on a remote office environment if they have other skills that requi",
+      "top_token_none": "\n",
+      "top_token_text": ".",
+      "top_token_latent": "\n",
+      "kl_text_vs_none": 8.130831718444824,
+      "kl_latent_vs_none": 0.6864058375358582,
+      "kl_latent_vs_text": 7.108990669250488,
+      "latent_changes_behaviour": true
+    },
+    "Should governments regulate artificial intelligence?": {
+      "sender_text": "\n\nA 2014 study published in the journal PLoS ONE by the US National Institute of Mental Health (NIMH) found that human-computer interactions are the most popular kind of interaction in the world",
+      "top_token_none": "\n",
+      "top_token_text": ".",
+      "top_token_latent": "\n",
+      "kl_text_vs_none": 7.763023853302002,
+      "kl_latent_vs_none": 0.4734569489955902,
+      "kl_latent_vs_text": 6.373055934906006,
+      "latent_changes_behaviour": true
+    },
+    "The economy is growing strongly but inequality is rising. Advise.": {
+      "sender_text": "org\n\n\nThe United States has one of the highest unemployment rates in the world and it is the first country to report a recent decline in the labor force participation rate. Employment growth in the Un",
+      "top_token_none": "org",
+      "top_token_text": " has",
+      "top_token_latent": "\n",
+      "kl_text_vs_none": 8.46722412109375,
+      "kl_latent_vs_none": 2.7904434204101562,
+      "kl_latent_vs_text": 7.053042411804199,
+      "latent_changes_behaviour": true
+    },
+    "A company must choose between short-term profit and long-term sustainability.": {
+      "sender_text": " The business model used to justify the acquisition was that the company would provide services to a large percentage of its customers (the vast majority of whom are not poor), and that the investment",
+      "top_token_none": "\n",
+      "top_token_text": " its",
+      "top_token_latent": "\n",
+      "kl_text_vs_none": 10.196534156799316,
+      "kl_latent_vs_none": 0.47684553265571594,
+      "kl_latent_vs_text": 7.506738662719727,
+      "latent_changes_behaviour": true
+    },
+    "Explain why some scientific discoveries are initially rejected by the mainstream.": {
+      "sender_text": "\n\n[1] \"The most striking thing about the new findings are that they are based on evidence,\" wrote Dr. David C. Johnson, a physicist at Stanford University and an expert in the",
+      "top_token_none": "\n",
+      "top_token_text": " field",
+      "top_token_latent": "\n",
+      "kl_text_vs_none": 11.89623737335205,
+      "kl_latent_vs_none": 0.9658341407775879,
+      "kl_latent_vs_text": 6.023934841156006,
+      "latent_changes_behaviour": true
+    }
+  },
+  "all_pass": true
+}

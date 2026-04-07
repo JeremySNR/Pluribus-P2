@@ -12,7 +12,7 @@
 
 [Phase 1](https://github.com/JeremySNR/Pluribus) built a blackboard hive. Agents debated in text, challenged each other, and converged on a shared answer. Carol dissented regardless. It worked.
 
-But something about it bothered me. The agents were thinking in continuous high-dimensional space — and then translating those thoughts into tokens, passing them around as words, and translating back. That translation is lossy in both directions. A transformer's final hidden state encodes roughly 40,000 bits of information per position. A discrete token encodes about 15.
+But something about it bothered me. The agents were thinking in continuous high-dimensional space, then translating those thoughts into tokens, passing them around as words, and translating back. That translation is lossy in both directions. A transformer's final hidden state encodes roughly 40,000 bits of information per position. A discrete token encodes about 15.
 
 The text channel was throwing away almost everything the model actually computed.
 
@@ -28,7 +28,7 @@ Multiple LLM agents share a continuous-valued buffer `B ∈ ℝ^(S×D)` instead 
 
 1. **Propose** — each agent encodes its hidden state into buffer space via a per-agent BAPC codec
 2. **Resolve** — TIES-Resolve merges competing proposals using sign-election-based cross-inhibition (majority wins at each coordinate; minority is excluded, not diluted)
-3. **Update** — the buffer is updated by damped fixed-point iteration; convergence is monitored by the relative residual
+3. **Update** — the buffer updates by damped fixed-point iteration; convergence is monitored by the relative residual
 
 Slot 5 is structurally immune to cross-inhibition. Carol writes there. Nothing overwrites it.
 
@@ -57,23 +57,25 @@ Slot 5 is structurally immune to cross-inhibition. Carol writes there. Nothing o
                                   └───────────────────────┘
 ```
 
-### Key mechanisms
+**BAPC codec** — encoder/decoder trained via KL distillation rather than cosine reconstruction. Preserves the model's output distribution, not just geometric similarity.
 
-- **BAPC codec (Behaviourally-Aligned Prefix Codec)**: encoder/decoder trained via KL distillation rather than cosine reconstruction — preserves the model's output distribution, not just geometric similarity
-- **Isotropy calibration (ABTT)**: removes the shared cone direction that makes upper-layer transformer representations cluster near a single centroid. Without this, 0.998 cosine similarity is a meaningless metric — random word pairs already score 0.985 in GPT-2's final layer
-- **TIES-Resolve**: trim low-magnitude components, elect signs by majority, average only sign-agreeing proposals. Cross-inhibition at the representation level, not through textual argument
-- **Damped iteration**: `B_{t+1} = (1-α)B_t + α(B_t + Δ_t)`, α=0.5. Contraction guaranteed by the Banach fixed-point theorem
-- **Carol's protected slot**: Slot 5 is immune to cross-inhibition. The dissenter's contribution cannot be suppressed regardless of how much everyone else agrees
+**Isotropy calibration (ABTT)** — removes the shared cone direction that makes upper-layer transformer representations cluster near a single centroid. Without this, 0.998 cosine similarity is a meaningless number. Random word pairs already score 0.985 in GPT-2's final layer.
+
+**TIES-Resolve** — trim low-magnitude components, elect signs by majority, average only sign-agreeing proposals. Cross-inhibition at the representation level, not through textual argument.
+
+**Damped iteration** — `B_{t+1} = (1-α)B_t + α(B_t + Δ_t)`, α=0.5. Contraction guaranteed by the Banach fixed-point theorem.
+
+**Carol's protected slot** — Slot 5 is immune to cross-inhibition. The dissenter's contribution cannot be suppressed regardless of how much everyone else agrees. This is structural immunity, not a strongly-worded system prompt.
 
 ---
 
 ## The anisotropy problem
 
-The first version of Phase 2 looked spectacular on paper. Codec roundtrip cosine similarity of 0.998. But the decoded tokens collapsed to function words — "the", commas, periods — with near-flat probability distributions.
+The first version of Phase 2 looked good on paper. Codec roundtrip cosine similarity of 0.998. I was quite pleased with this. Then I noticed the decoded tokens were function words — "the", commas, periods — with near-flat probability distributions.
 
-This is a known failure mode. In GPT-2's upper layers, all hidden states occupy a narrow cone in embedding space. Arbitrary random word pairs already share cosine similarity above 0.95. A codec achieving 0.998 is preserving the shared cone direction — a trivial accomplishment — while destroying the small angular residuals that carry all the task-specific information.
+This is a known failure mode. In GPT-2's upper layers, all hidden states occupy a narrow cone in embedding space. Arbitrary random word pairs already share cosine similarity above 0.95. A codec achieving 0.998 is preserving the shared cone direction, a trivial accomplishment, while destroying the small angular residuals that carry all the task-specific information. I had built a very precise instrument for measuring something that does not matter.
 
-The fix is All-But-the-Top (ABTT) calibration. Remove the mean and the top principal components before encoding. After the fix, pairwise cosine similarity between random word pairs drops from 0.985 to below 0.15. The maximum decoded token probability jumps from 10.7% to 63.7%.
+The fix is All-But-the-Top (ABTT) calibration: remove the mean and the top principal components before encoding. After the fix, pairwise cosine similarity between random word pairs drops from 0.985 to below 0.15. The maximum decoded token probability jumps from 10.7% to 63.7%.
 
 The paper covers this in detail, including the progression of encoding strategies that led to the fix.
 
@@ -81,7 +83,7 @@ The paper covers this in detail, including the progression of encoding strategie
 
 ## Results
 
-**Emergence confirmed at GPT-2 scale and 7B scale.** On all five test prompts, the collective buffer state decodes to tokens absent from every individual agent's top-10 distribution. The collective sits at cosine similarity 0.61–0.75 from all individuals — well below identity.
+Emergence confirmed at GPT-2 scale and 7B scale. On all five test prompts, the collective buffer state decodes to tokens absent from every individual agent's top-10 distribution. The collective sits at cosine similarity 0.61–0.75 from all individuals — well below identity.
 
 | Prompt | Rounds | Residual | Max sim to any individual | Novel tokens | JS divergence |
 |--------|--------|----------|--------------------------|--------------|---------------|
@@ -91,7 +93,7 @@ The paper covers this in detail, including the progression of encoding strategie
 | Profit vs sustainability | 25 | 0.079 | 0.651 | 3 | 0.115 |
 | Rejected discoveries | 25 | 0.066 | 0.675 | 4 | 0.128 |
 
-**Reranking quality is mixed.** The collective shows a clear advantage on high-tension judgment prompts (89.5th percentile vs 65.8th on prompt 4) but only a marginal overall advantage (+1.1pp). The paper is honest about this.
+Reranking quality is mixed. The collective shows a clear advantage on high-tension judgment prompts (89.5th percentile vs 65.8th on prompt 4) but only a marginal overall advantage (+1.1pp). The paper is honest about this.
 
 ---
 
@@ -103,9 +105,7 @@ cd Pluribus-P2
 pip install -e quorum-phase2/
 ```
 
-### Run the anisotropy diagnostic first
-
-This takes minutes and tells you immediately whether the codec problem exists for your model:
+Run the anisotropy diagnostic first — it takes minutes and tells you immediately whether the codec problem exists for your model:
 
 ```bash
 python quorum-phase2/experiments/anisotropy_baseline.py
@@ -113,7 +113,7 @@ python quorum-phase2/experiments/anisotropy_baseline.py
 
 If average pairwise cosine similarity in the final layer is above 0.95, the codec needs ABTT calibration. It almost certainly will be.
 
-### Run core experiments
+### Core experiments
 
 ```bash
 # Codec roundtrip fidelity (with and without ABTT)
@@ -185,19 +185,13 @@ pytest quorum-phase2/tests/ -v
 
 ## Paper
 
-The full paper is in [`paper/`](paper/). LaTeX source and diagram included. It covers both phases of the research and is honest about what is and isn't established.
+*Don't Merge Carol: Cross-Inhibition, Protected Dissent, and Emergent Latent Consensus in Multi-Agent Language Systems* — full paper in [`paper/`](paper/). LaTeX source and diagram included. Covers both phases and is honest about what is and isn't established.
 
 ---
 
 ## Phase 1
 
-The text-level blackboard hive that preceded this work: [github.com/JeremySNR/Pluribus](https://github.com/JeremySNR/Pluribus)
-
----
-
-## Contributing
-
-Pull requests are welcome. For significant changes, please open an issue first.
+The text-level blackboard hive that preceded this: [github.com/JeremySNR/Pluribus](https://github.com/JeremySNR/Pluribus)
 
 ---
 
